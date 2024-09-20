@@ -1,0 +1,131 @@
+/* --- General CSS Variables --- */
+
+@font-face {
+    font-family: 'Book'; 
+    src: url('fonts/Book.woff2') format('woff2'); /* Correct path to your font file */
+}
+
+@font-face {
+    font-family: 'Demi'; 
+    src: url('fonts/Demi.woff2') format('woff2'); /* Correct path to your font file */
+}
+
+/* 1C stands for a multiple of 8px, so 1C = 8px, 2C = 16px, etc. */
+:root {
+    --spacing-unit: 8px;
+    --bg-color: #232323;
+    --text-color: white;
+    --font-size: 16px;
+    --max-width: 900px;
+}
+
+/* --- Universal Styles --- */
+
+/* Set default background and text color, apply custom font, and limit max-width */
+body {
+    font-family: 'Book';
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: var(--font-size);
+    padding: calc(5 * var(--spacing-unit));
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* Media query for screens smaller than 400px */
+@media (max-width: 500px) {
+    body {
+        width: 500px;
+        padding: calc(3 * var(--spacing-unit));
+    }
+}
+
+/* --- Header Styles --- */
+
+/* Center header, left-align image and subheading */
+.header {
+    text-align: left;
+    margin-bottom: calc(3 * var(--spacing-unit));
+
+}
+
+/* Logo image styling */
+.logo {
+    width: 300px; /* Logo width */
+    height: auto;
+    margin-bottom: var(--spacing-unit);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Demi'; 
+}
+
+/* Subheading styling */
+.subheading {
+    margin: 0;
+    font-size: calc(1.5 * var(--font-size)); /* Double the base font size */
+    color: var(--text-color);
+}
+
+/* --- Navigation Bar --- */
+
+/* Simple horizontal navigation bar, links spaced equally */
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    gap: calc(2 * var(--spacing-unit)); /* Space between links */
+    padding: var(--spacing-unit) 0;
+}
+
+/* Style individual nav links */
+.navbar a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: calc(1.3 * var(--font-size)); /* Slightly larger than body text */
+}
+
+/* --- Main Content Styles --- */
+
+/* Content section for all pages */
+.content {
+    padding: calc(2 * var(--spacing-unit)) 0;
+}
+
+/* --- Page-specific Styles (for Resume page) --- */
+
+/* Resume page with two columns */
+.resume {
+    display: flex;
+    gap: calc(2 * var(--spacing-unit)); /* Space between columns */
+}
+
+.resume-left {
+    width: 30%; /* Left column width */
+}
+
+.resume-right {
+    width: 70%; /* Right column width */
+}
+
+/* --- Typography --- */
+
+
+
+/* Ensure all paragraphs have consistent spacing */
+p {
+    margin-bottom: calc(5 * var(--spacing-unit));
+    line-height: 2;
+}
+
+/* --- Miscellaneous --- */
+
+/* Make images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Links should change color when hovered for better UX */
+a:hover {
+    color: #999999; /* Light gray color on hover */
+}
