@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'Book'; 
-    src: url('fonts/Book.woff2') format('woff2'); /* Correct path to your font file */
+    src: url('fonts/Book.ttf') format('truetype'); /* Correct path to your font file */
 }
 
 /* 1C stands for a multiple of 8px, so 1C = 8px, 2C = 16px, etc. */
@@ -133,15 +133,11 @@ a:hover {
     color: #999999; /* Light gray color on hover */
 }
 
-/* Remove padding and margin for the unordered list and list items */
-.list ul {
-    padding-left: 0;
-    margin-left: 0;
-    list-style-position: inside; /* Ensures the bullets align with text */
+ul {
+    padding-left: calc(2 * var(--spacing-unit));
+    list-style-position: outside; /* Ensures the bullets align with text */
 }
 
-/* Ensure list items align with the paragraph text */
-.list ul li {
+ul li {
     margin-bottom: calc(1.5 * var(--spacing-unit));
-    padding-left: 0;
 }
