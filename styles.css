@@ -18,9 +18,9 @@ html {
 :root {
     --spacing-unit: 8px;
     --bg-color: #131313;
-    --text-color: #FFFFFF;
-    --font-size: 16px;
-    --max-width: 576px;
+    --text-color: #B1B3B5;
+    --font-size: 20px;
+    --max-width: 720px;
 
     /* Variables for code styling */
     --code-bg-color: #1e1e1e;
@@ -48,7 +48,7 @@ body {
 }
 
 /* Further adjustments for very small screens (phones) */
-@media (max-width: 576px) {
+@media (max-width: 720px) {
     body {
         max-width: 100%;
         padding: calc(2 * var(--spacing-unit));
@@ -193,7 +193,7 @@ ul {
     padding: calc(0.5 * var(--spacing-unit)) !important;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 10px;
+    font-size: 18px;
 }
 
 .copy-to-clipboard-button:hover {
@@ -211,7 +211,7 @@ pre {
 
 pre code[class*="language-"] {
     font-family: 'Cascadia', monospace;
-    font-size: 12px !important;
+    font-size: 18px !important;
     display: inline-block;
     padding-right: calc(1 * var(--spacing-unit));
 }
@@ -219,7 +219,7 @@ pre code[class*="language-"] {
 pre .line-numbers-rows {
     position: absolute;
     top: calc(1 * var(--spacing-unit));
-    width: calc(3 * var(--spacing-unit)) !important;
+    width: calc(5 * var(--spacing-unit)) !important;
     color: var(--code-line-number-color);
 }
 
