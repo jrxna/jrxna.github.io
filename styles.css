@@ -10,11 +10,11 @@
 }
 
 html {
-    -webkit-text-size-adjust: 100%; /* Prevents automatic text size adjustments on iOS */
-    -ms-text-size-adjust: 100%;     /* Prevents automatic text size adjustments on Windows Phone */
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
 
-/* 1C stands for a multiple of 8px, so 1C = 8px, 2C = 16px, etc. */
+/* 1C = 8px */
 :root {
     --spacing-unit: 8px;
     --bg-color: #131313;
@@ -22,16 +22,15 @@ html {
     --font-size: 20px;
     --max-width: 720px;
 
-    /* Variables for code styling */
-    --code-bg-color: #1e1e1e;
-    --code-text-color: #dcdcdc;
-    --code-border-color: #333;
+    /* Code styling vars */
+    --code-bg-color: #2b2b2b;
+    --code-text-color: #a9b7c6;
+    --code-border-color: #3c3f41;
     --code-line-number-color: #858585;
     --code-copy-button-bg: #333333;
     --code-copy-button-text: #fff;
 }
 
-/* Set default background and text color, apply custom font, and limit max-width */
 body {
     font-family: 'Selawik';
     color: var(--text-color);
@@ -40,14 +39,13 @@ body {
     padding: calc(5 * var(--spacing-unit));
     max-width: var(--max-width);
     margin: 0 auto;
-    background-image: url('images/Background.png'); /* Path to the image in the images directory */
-    background-repeat: no-repeat; /* Prevents the background from repeating */
-    background-size: cover; /* Ensures the image fills the entire background */
-    background-attachment: fixed; /* Makes the background stay in place during scrolling */
-    background-position: center; /* Centers the image */
+    background-image: url('images/Background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 }
 
-/* Further adjustments for very small screens (phones) */
 @media (max-width: 720px) {
     body {
         max-width: 100%;
@@ -55,8 +53,7 @@ body {
     }
 }
 
-/* --- Header Styles --- */
-
+/* Header Styles */
 .header {
     text-align: left;
     margin-bottom: calc(3 * var(--spacing-unit));
@@ -80,54 +77,120 @@ h6 {
     font-weight: 300;
 }
 
-/* --- Navigation Bar --- */
-
+/* Navigation Bar */
 .navbar {
     display: flex;
     justify-content: flex-start;
     gap: calc(2 * var(--spacing-unit));
     padding: var(--spacing-unit) 0;
     flex-wrap: wrap;
+    font-size: 18px;
 }
 
-.navbar a {
+.navbar-link {
+  display: flex;
+  align-items: center;
+  background-color: #0088FF;
+  width: 120px;
+  height: 40px;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: 1s ease-in-out;
+}
+
+svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: none;
+  stroke: #fff;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+}
+
+.navbar-link:hover {
+  transition: 1s ease-in-out;
+  background: #0055DD;
+}
+
+.navbar-link:hover svg {
+  stroke-dashoffset: -480;
+}
+
+.navbar-link span {
+    padding-left: var(--spacing-unit);
+}
+
+/* Links: left-to-right blue background animation on hover
+   Removed inline-block and used inline so links sit inline with text properly */
+a {
+    position: relative;
+    color: #FFFFFF;
     text-decoration: none;
-    color: var(--text-color);
+    overflow: hidden;
+    transition: color 0.3s ease;
+    display: inline; /* Use inline so it aligns properly with surrounding text */
+    vertical-align: baseline; /* Ensure link baseline alignment with text */
 }
 
-/* --- Main Content Styles --- */
+a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #0088FF;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
 
+a:hover::before {
+    transform: scaleX(1);
+}
+
+a:hover {
+    color: #fff;
+}
+
+/* Main Content */
 .content {
     padding: calc(2 * var(--spacing-unit)) 0;
 }
 
-/* --- Miscellaneous --- */
+/* Lists in blog/projects: title with summary */
+.content ul li {
+    margin-bottom: calc(2 * var(--spacing-unit));
+}
+
+.content ul li h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: calc(1 * var(--spacing-unit));
+    color: #fff;
+}
+
+.content ul li p.summary {
+    color: #ccc;
+    margin: 0;
+}
 
 img {
     max-width: 100%;
     height: auto;
 }
 
-a {
-    color: #FFFFFF;
-}
-
-a:hover {
-    color: #B1B3B5;
-}
-
-ul {
-    padding-left: calc(2 * var(--spacing-unit));
-    list-style-position: outside;
-}
-
-/* Syntax Highlighting */
+/* Syntax Highlighting IntelliJ-like */
 .token.comment,
 .token.block-comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-    color: #6a9955;
+    color: #808080;
 }
 
 .token.punctuation {
@@ -141,18 +204,24 @@ ul {
 .token.function-name,
 .token.constant,
 .token.symbol,
-.token.deleted {
-    color: #569cd6;
+.token.deleted,
+.token.keyword,
+.token.selector {
+    color: #cc7832;
 }
 
-.token.selector,
-.token.attr-name,
 .token.string,
+.token.attr-name,
 .token.char,
 .token.function,
 .token.builtin,
 .token.inserted {
-    color: #d69d85;
+    color: #6A8759;
+}
+
+.token.class-name,
+.token.function {
+    color: #ffc66d;
 }
 
 .token.operator,
@@ -163,9 +232,7 @@ ul {
 }
 
 .token.atrule,
-.token.attr-value,
-.token.keyword,
-.token.class-name {
+.token.attr-value {
     color: #c586c0;
 }
 
@@ -182,39 +249,41 @@ ul {
     font-style: italic;
 }
 
-/* --- Code Snippet Styles --- */
-
-
+/* Code Snippet Styles */
 .copy-to-clipboard-button {
     position: absolute;
     top: calc(1 * var(--spacing-unit));
     right: calc(1 * var(--spacing-unit));
     color: var(--code-copy-button-text);
-    padding: calc(0.5 * var(--spacing-unit)) !important;
-    border-radius: 5px;
+    background-color: var(--code-copy-button-bg);
+    padding: calc(0.5 * var(--spacing-unit)) calc(1 * var(--spacing-unit)) !important;
     cursor: pointer;
     font-size: 18px;
+    border: none;
 }
 
 .copy-to-clipboard-button:hover {
     background-color: #444;
 }
 
-/* Code block styling */
 pre {
     background-color: var(--code-bg-color);
     color: var(--code-text-color);
     border: 1px solid var(--code-border-color);
     border-radius: 5px;
-    position: relative; 
+    position: relative;
+    overflow: auto;
+    box-sizing: border-box;
 }
 
 pre code[class*="language-"] {
     font-family: 'Cascadia', monospace;
-    font-size: 18px !important;
+    font-size: 16px !important;
     display: inline-block;
     padding-right: calc(1 * var(--spacing-unit));
+    box-sizing: border-box;
 }
+
 /* Line numbers styling */
 pre .line-numbers-rows {
     position: absolute;
@@ -222,4 +291,3 @@ pre .line-numbers-rows {
     width: calc(5 * var(--spacing-unit)) !important;
     color: var(--code-line-number-color);
 }
-
