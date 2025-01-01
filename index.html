@@ -1,203 +1,445 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home | JRXNA</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="images/JRXNAFavicon.png">
-    <!-- Prism.js CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
-    <!-- Prism.js Plugins CSS -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
-
-    <!-- Prism.js JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <!-- Prism.js Language Components -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
-    <!-- Prism.js Plugins -->
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <link rel="stylesheet" href="css/core-styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-    <!-- Title Bar -->
-    <header class="header">
-        <a href="index.html">
-            <img src="images/JRXNA.png" alt="Website Logo" class="logo">
-        </a>
-    </header>
+<header>
+    <div id="cs-navigation">
+        <div class="cs-container">
+            <a href="" class="cs-logo" aria-label="JRXNA">
+                <img src="assets/images/JRXNA.png" alt="logo" aria-hidden="true" decoding="async">
+            </a>
+            <nav class="cs-nav" role="navigation">
+                <button class="cs-toggle" aria-label="mobile menu toggle">
+                    <div class="cs-box" aria-hidden="true">
+                        <span class="cs-line cs-line1" aria-hidden="true"></span>
+                        <span class="cs-line cs-line2" aria-hidden="true"></span>
+                        <span class="cs-line cs-line3" aria-hidden="true"></span>
+                    </div>
+                </button>
+            </nav>
+        </div>
+    </div>
+    <div id="menu-overlay">
+        <ul class="menu-overlay-ul" aria-expanded="false">
+            <li class="cs-li">
+                <a href="https://jrxna.com" target="_blank" class="cs-li-link cs-active">
+                    JRXNA Home
+                </a>
+            </li>
+            <li class="cs-li">
+                <a href="https://jrxna.com" target="_blank" class="cs-li-link">
+                    Study Notes
+                </a>
+            </li>
+            <li class="cs-li">
+                <a href="https://jrxna.com" target="_blank" class="cs-li-link">
+                    JRXNA Bio
+                </a>
+            </li>
+            <li class="cs-li">
+                <a href="https://linkedin.com/in/jrxna" target="_blank" class="cs-li-link">
+                    LinkedIn
+                </a>
+            </li>
+            <li class="cs-li">
+                <a href="https://github.com/jrxna" target="_blank" class="cs-li-link">
+                    GitHub
+                </a>
+            </li>
+            <li class="cs-li">
+                <a href="https://bsky.app/profile/jrxna.com" target="_blank" class="cs-li-link">
+                    BlueSky
+                </a>
+            </li>
+            <li class="cs-li">
+                <a href="https://leetcode.com/u/jrxna/" target="_blank" class="cs-li-link">
+                    LeetCode
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <a href="index.html" class="navbar-link">
-            <svg width="120px" height="40px" viewBox="0 0 120 40" class="border">
-                <polyline points="120,0 120,40 0,40 0,0 120,0" class="bg-line" />
-                <polyline points="120,0 120,40 0,40 0,0 120,0" class="hl-line" />
-            </svg>
-            <span>Home</span>
-        </a>
-        <a href="blog.html" class="navbar-link">
-            <svg width="120px" height="40px" viewBox="0 0 120 40" class="border">
-                <polyline points="120,0 120,40 0,40 0,0 120,0" class="bg-line" />
-                <polyline points="120,0 120,40 0,40 0,0 120,0" class="hl-line" />
-            </svg>
-            <span>Blog</span>
-        </a>
-        <a href="projects.html" class="navbar-link">
-            <svg width="120px" height="40px" viewBox="0 0 120 40" class="border">
-                <polyline points="120,0 120,40 0,40 0,0 120,0" class="bg-line" />
-                <polyline points="120,0 120,40 0,40 0,0 120,0" class="hl-line" />
-            </svg>
-            <span>Projects</span>
-        </a>
-    </nav>
+<main>
+    <section id="hero-1426">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Welcome to JRXNA War Room</span>
+                <h1 class="cs-title">Master the Craft, Redefine the Standard</h1>
+                <p class="cs-text">
+                  Mastery demands relentless effort and unshakable focus. I’m Joel Rego, and this blog is about my passions. Refuse mediocrity. Strive for greatness.
+                </p>
+                <div class="cs-button-group">
+                    <a href="" class="cs-button-solid">Study Notes</a>
+                    <a href="https://buymeacoffee.com/jrxna" target="_blank" class="cs-button-solid-secondary">Coffee Fund</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <main class="content">
-        <hr>
-        <h3>Hello!</h3>
-<p>I'm Joel Rego - coder, gamer, magic man. By day, I tinker with code and data to conjure up software. By night, you might find me diving into epic battles in <em>Halo</em> or strumming away on my acoustic guitar, attempting to hit that perfect note (still chasing it).</p>
-<p>This blog is about my passions. Here, I mostly write about software engineering. I also delve into startups, productivity hacks (because who doesn't want more hours in a day?), personal finance, mental health, history, geopolitics, and book reviews.</p>
-<p>I'd be thrilled to have you join me over on <a href="https://www.linkedin.com/in/jrxna">LinkedIn</a>. I share thoughts &amp; insights every Monday, Wednesday, and Friday during the following times:</p>
-<ul>
-<li>Pacific Standard Time (PST): 11:00 AM</li>
-<li>Mountain Standard Time (MST): 12:00 PM</li>
-<li>Central Standard Time (CST): 1:00 PM</li>
-<li>Eastern Standard Time (EST): 2:00 PM</li>
-<li>Indian Standard Time (IST): 11:30 PM</li>
-</ul>
-<p>I am currently working on the following projects and would love to collaborate if you have any interesting ideas:</p>
-<ul>
-<li>
-<p><a href="#">Mongoose</a>: A static site generator I’m building with Java and Spring Boot. Mongoose is all about simplicity and speed—it's designed to make static site creation as straightforward as possible, with a focus on performance and flexibility that goes beyond existing tools.</p>
-</li>
-<li>
-<p><a href="#">Gungoose</a>: While Mongoose tackles general static sites, Gungoose is specialized for documentation. Built with the same Java and Spring Boot stack, Gungoose is aimed at developers who need a fast, customizable way to generate well-structured documentation sites that can scale as their projects grow.</p>
-</li>
-<li>
-<p><a href="#">Grappleshot</a>: Think of Grappleshot as a next-level toolkit for terminal lovers. It’s a versatile alternative to grep and awk, giving you powerful tools to handle string manipulation, calculations, and pattern matching directly from the terminal. Whether you’re parsing logs, transforming data, or automating reports, Grappleshot is built to make complex tasks feel easy.</p>
-</li>
-<li>
-<p><a href="#">Scorpion</a>: I wanted something more powerful than Thymeleaf for dynamic web templates, so I’m developing Scorpion. It’s a robust, developer-friendly alternative, designed with flexibility and efficiency at its core, allowing for richer template management and faster page rendering.</p>
-</li>
-</ul>
-<p>On this blog, I am also making notes on several programming textbooks, which I have listed below. I love reading, so feel free to give me suggestions and recommendations.</p>
-<h2>1. Java: A Beginner’s Guide by Herbert Schildt</h2>
-<h3>Summary</h3>
-<p>Java: A Beginner’s Guide by Herbert Schildt is a comprehensive introduction to Java, ideal for beginners and those looking to refresh their basics. Schildt is known for his accessible writing style and has authored numerous best-selling programming books. This guide covers everything from basic syntax and data types to object-oriented principles, exception handling, and more.</p>
-<h3>Java Code Example</h3>
-<pre class=" line-numbers language-java"><code class="language-java line-numbers language-java">public class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println(&quot;Hello, World!&quot;);
-    }
-}
-</code></pre>
-<h2>2. Spring Boot in Action by Craig Walls (Recommended by Manning)</h2>
-<h3>Summary</h3>
-<p>Spring Boot in Action by Craig Walls is a go-to resource for learning Spring Boot, a popular framework for building Java-based applications. Walls is a recognized authority on Spring and writes in a way that demystifies complex concepts. This book covers Spring Boot’s auto-configuration, embedded server, and simplified setup for rapid development.</p>
-<h3>Spring Boot Code Example</h3>
-<pre class=" line-numbers language-java"><code class="language-java line-numbers language-java">import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+    <section id="pricing-357">
+        <div class="cs-container">
+            <ul class="cs-card-group">
+                <!-- Option 1 -->
+                <li class="cs-item">
+                    <h3 class="cs-h3">Data Structures</h3>
+                    <div class="divider"></div>
+                    <ul class="cs-ul">
+                        <li class="cs-li">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Time and Space Complexity
+                        </li>
+                        <li class="cs-li">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Arrays and Strings in Depth
+                        </li>
+                        <li class="cs-li cs-disabled">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Understanding Linked Lists
+                        </li>
+                        <li class="cs-li cs-disabled">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Stacks and Queues in Depth
+                        </li>
+                        <li class="cs-li cs-disabled">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Trees and Binary Search Trees
+                        </li>
+                        <li class="cs-li cs-disabled">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Graphs: BFS, DFS, and Shortest Path
+                        </li>
+                        <li class="cs-li cs-disabled">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Sorting and Searching Algorithms
+                        </li>
+                        <li class="cs-li cs-disabled">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Dynamic Programming in Depth
+                        </li>
+                        <li class="cs-li cs-disabled">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Greedy Algorithms and Backtracking
+                        </li>
+                    </ul>
+                    <a href="#" class="cs-button-solid card-button">Read Study Notes</a>
+                </li>
+                <!-- Option 2 -->
+                <li class="cs-item cs-popular">
+                    <h3 class="cs-h3">System Design</h3>
+                    <div class="divider"></div>
+                    <ul class="cs-ul">
+                        <li class="cs-li">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Fundamentals of System Design
+                        </li>
+                        <li class="cs-li">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Scalability and Load Balancing
+                        </li>
+                        <li class="cs-li">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Cache Mechanisms and Strategies
+                        </li>
+                        <li class="cs-li">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Database Design: SQL vs NoSQL
+                        </li>
+                        <li class="cs-li cs-disabled">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Distributed Systems
+                        </li>
+                        <li class="cs-li cs-disabled">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            APIs and Microservices Architecture
+                        </li>
+                        <li class="cs-li">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Reliability and Fault Tolerance
+                        </li>
+                        <li class="cs-li cs-disabled">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Designing Messaging Systems
+                        </li>
+                        <li class="cs-li cs-disabled">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Case Studies: Real-World Systems
+                        </li>
+                    </ul>
+                    <a href="#" class="cs-button-solid-secondary card-button">Read Study Notes</a>
+                </li>
+                <!-- Option 3 -->
+                <li class="cs-item">
+                    <h3 class="cs-h3">Compiler Design</h3>
+                    <div class="divider"></div>
+                    <ul class="cs-ul">
+                        <li class="cs-li">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Fundamentals of Compiler Design
+                        </li>
+                        <li class="cs-li">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Lexical Analysis Basics
+                        </li>
+                        <li class="cs-li">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Parsing: Top-Down & Bottom-Up
+                        </li>
+                        <li class="cs-li">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Semantic Analysis Techniques
+                        </li>
+                        <li class="cs-li">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Intermediate Code & IR
+                        </li>
+                        <li class="cs-li">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Optimization Techniques
+                        </li>
+                        <li class="cs-li">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            JIT and Runtime Optimization
+                        </li>
+                        <li class="cs-li">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Java Performance Tuning
+                        </li>
+                        <li class="cs-li">
+                            <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                            Contributing to OpenJDK
+                        </li>
+                    </ul>
+                    <a href="#" class="cs-button-solid card-button">Read Study Notes</a>
+                </li>
+            </ul>
+        </div>
+    </section>
 
-@SpringBootApplication
-public class MyApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(MyApplication.class, args);
-    }
-}
-</code></pre>
-<h2>3. Hadoop: The Definitive Guide by Tom White</h2>
-<h3>Summary</h3>
-<p>Hadoop: The Definitive Guide by Tom White is a comprehensive resource on Hadoop, an essential tool for handling massive amounts of data in distributed computing environments. White, a leading Hadoop expert, presents practical examples for mastering Hadoop’s data processing techniques, covering the Hadoop Distributed File System (HDFS), MapReduce, and more.</p>
-<h3>Hadoop Code Example (Pseudo-code for MapReduce)</h3>
-<pre class=" line-numbers language-java"><code class="language-java line-numbers language-java">public class WordCountMapper extends Mapper&lt;LongWritable, Text, Text, IntWritable&gt; {
-    private final static IntWritable one = new IntWritable(1);
-    private Text word = new Text();
+    <section id="sbs-1308">
+        <div class="cs-container">
+            <!-- Left Image Section -->
+            <div class="cs-image-group">
+                <!--Image-->
+                <picture class="cs-picture">
+                    <img loading="lazy" decoding="async" src="./assets/images/Profile.webp" aria-hidden="true">
+                </picture>
+            </div>
+            <!-- Right Content Section-->
+            <div class="cs-content">
+                <span class="cs-topper">About</span>
+                <h2 class="cs-title">Magic Man</h2>
+                <p class="cs-text">
+                    I'm Joel Rego - coder, gamer, magic man. By day, I tinker with code and data to conjure up software. By night, you might find me diving into epic battles in Halo or strumming away on my acoustic guitar, attempting to hit that perfect note (still chasing it).
 
-    public void map(LongWritable key, Text value, Context context) {
-        StringTokenizer itr = new StringTokenizer(value.toString());
-        while (itr.hasMoreTokens()) {
-            word.set(itr.nextToken());
-            context.write(word, one);
-        }
-    }
-}
-</code></pre>
-<h2>4. Learning Spark by Holden Karau, Andy Konwinski, Patrick Wendell, and Matei Zaharia</h2>
-<h3>Summary</h3>
-<p>Learning Spark from O'Reilly covers the Apache Spark framework, an open-source engine designed for large-scale data processing. Written by Holden Karau and co-authors, this book provides a hands-on introduction to Spark’s core concepts and APIs, including Spark SQL, DataFrames, and Spark MLlib for machine learning.</p>
-<h3>Spark Code Example (Using Java)</h3>
-<pre class=" line-numbers language-java"><code class="language-java line-numbers language-java">import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
+                    This blog is about my passions.
+                </p>
+                <a class="cs-button-solid" aria-label="learn more" href="">Learn More</a>
+                <ul class="cs-ul">
+                    <li class="cs-item">
+                        <span class="cs-number">50K+</span>
+                        <h3 class="cs-h3">Monthly Reads</h3>
+                    </li>
+                    <li class="cs-item">
+                        <span class="cs-number">10K+</span>
+                        <h3 class="cs-h3">Followers</h3>
+                    </li>
+                    <li class="cs-item">
+                        <span class="cs-number">900+</span>
+                        <h3 class="cs-h3">Study Notes</h3>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
 
-public class SparkExample {
-    public static void main(String[] args) {
-        SparkSession spark = SparkSession.builder()
-                                         .appName(&quot;Example&quot;)
-                                         .config(&quot;spark.master&quot;, &quot;local&quot;)
-                                         .getOrCreate();
+<footer id="cs-footer-710">
+    <div class="cs-container">
+        <!--Top Section-->
+        <div class="cs-top">
+            <!--Warpped logo in wrapper div so that div can be 100% width to force the lists below it to stay in their line.  The cs-logo can maintain its' max width. we didn't want it 100% width becuase then the blank area to the right of the logo will also result in a click and hover event. -->
+            <div class="cs-logo-wrapper">
+                <a href="" class="cs-logo">
+                    <img src="assets/images/JRXNA.png" alt="logo" aria-hidden="true" decoding="async" loading="lazy">
+                </a>
+                <div class="footer-text-group">
+                    <p class="footer-text">
+                        JRXNA is your ultimate ally in mastering the building blocks of software. It’s not just about learning. It’s about redefining what’s possible. It’s a relentless pursuit of greatness. JRXNA is your go-to partner for learning Data Structures, excelling in System Design, and mastering Compiler Design. This is where mastery begins.
+                    </p>
+                </div>
+            </div>
+            <ul class="cs-ul">
+                <li class="cs-li">
+                    <h3 class="cs-header">JRXNA Resources</h3>
+                </li>
+                <li class="cs-li">
+                    <a href="" class="cs-link" target="_blank" rel="noopener">
+                        JRXNA Terms
+                    </a>
+                </li>
+                <li class="cs-li">
+                    <a href="" class="cs-link" target="_blank" rel="noopener">
+                        JRXNA Privacy
+                    </a>
+                </li>
+                <li class="cs-li">
+                    <a href="" class="cs-link" target="_blank" rel="noopener">
+                        JRXNA Legal
+                    </a>
+                </li>
+                <li class="cs-li">
+                    <a href="" class="cs-link" target="_blank" rel="noopener">
+                        JRXNA FAQs
+                    </a>
+                </li>
+                <li class="cs-li">
+                    <a href="" class="cs-link" target="_blank" rel="noopener">
+                        JRXNA Press
+                    </a>
+                </li>
+            </ul>
+            <ul class="cs-ul">
+                <li class="cs-li">
+                    <h3 class="cs-header">JRXNA Projects</h3>
+                </li>
+                <li class="cs-li">
+                    <a href="" class="cs-link" target="_blank" rel="noopener">
+                        JRXNA Gungoose
+                    </a>
+                </li>
+                <li class="cs-li">
+                    <a href="" class="cs-link" target="_blank" rel="noopener">
+                        JRXNA Grappleshot
+                    </a>
+                </li>
+                <li class="cs-li">
+                    <a href="" class="cs-link" target="_blank" rel="noopener">
+                        JRXNA Warthog
+                    </a>
+                </li>
+                <li class="cs-li">
+                    <a href="" class="cs-link" target="_blank" rel="noopener">
+                        JRXNA Scorpion
+                    </a>
+                </li>
+                <li class="cs-li">
+                    <a href="" class="cs-link" target="_blank" rel="noopener">
+                        JRXNA Razorback
+                    </a>
+                </li>
+            </ul>
+            <ul class="cs-ul cs-contact-ul">
+                <li class="cs-li">
+                    <h3 class="cs-header">JRXNA Contact</h3>
+                </li>
+                <li class="cs-li">
+                    <a href="" class="cs-link">
+                        <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fmail-stroke.svg" alt="icon" loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
+                        hello@jrxna.com
+                    </a>
+                </li>
+                <li class="cs-li">
+                    <a href="" class="cs-link" target="_blank" rel="noopener">
+                        <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fpin-stroke.svg" alt="icon" loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
+                        JRXNA War Room <br />
+                        Austin, TX 78741 <br />
+                        United States
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--Middle Section-->
+        <div class="cs-middle">
+            <!--Navigation-->
+            <ul class="cs-nav">
+                <li class="cs-nav-li">
+                    <a href="https://jrxna.com" target="_blank" class="cs-nav-link">
+                        JRXNA Home
+                    </a>
+                </li>
+                <li class="cs-nav-li">
+                    <a href="https://jrxna.com" target="_blank" class="cs-nav-link">
+                        Study Notes
+                    </a>
+                </li>
+                <li class="cs-nav-li">
+                    <a href="https://jrxna.com" target="_blank" class="cs-nav-link">
+                        JRXNA Bio
+                    </a>
+                </li>
+                <li class="cs-nav-li">
+                    <a href="https://linkedin.com/in/jrxna" target="_blank" class="cs-nav-link">
+                        LinkedIn
+                    </a>
+                </li>
+                <li class="cs-nav-li">
+                    <a href="https://github.com/jrxna" target="_blank" class="cs-nav-link">
+                        GitHub
+                    </a>
+                </li>
+                <li class="cs-nav-li">
+                    <a href="https://bsky.app/profile/jrxna.com" target="_blank" class="cs-nav-link">
+                        BlueSky
+                    </a>
+                </li>
+                <li class="cs-nav-li">
+                    <a href="https://leetcode.com/u/jrxna/" target="_blank" class="cs-nav-link">
+                        LeetCode
+                    </a>
+                </li>
+            </ul>
+            <!--Social-->
+            <ul class="cs-social">
+                <li class="cs-social-li">
+                    <a href="" class="cs-social-link" aria-label="" target="_blank" rel="noopener">
+                        <!--Default Icon-->
+                        <img class="cs-social-icon cs-default" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Ffacebook.svg" alt="icon" loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
+                        <!--On Hover Icon-->
+                        <img class="cs-social-icon cs-hover" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Ffacebook-green.svg" alt="icon" loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
+                    </a>
+                </li>
+                <li class="cs-social-li">
+                    <a href="" class="cs-social-link" aria-label="" target="_blank" rel="noopener">
+                        <!--Default Icon-->
+                        <img class="cs-social-icon cs-default" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Ftwitter.svg" alt="icon" loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
+                        <!--On Hover Icon-->
+                        <img class="cs-social-icon cs-hover" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Ftwitter-green.svg" alt="icon" loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
+                    </a>
+                </li>
+                <li class="cs-social-li">
+                    <a href="" class="cs-social-link" aria-label="" target="_blank" rel="noopener">
+                        <!--Default Icon-->
+                        <img class="cs-social-icon cs-default" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Finstagram.svg" alt="icon" loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
+                        <!--On Hover Icon-->
+                        <img class="cs-social-icon cs-hover" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Finstagram-green2.svg" alt="icon" loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
+                    </a>
+                </li>
+                <li class="cs-social-li">
+                    <a href="" class="cs-social-link" aria-label="" target="_blank" rel="noopener">
+                        <!--Default Icon-->
+                        <img class="cs-social-icon cs-default" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fyoutube.svg" alt="icon" loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
+                        <!--On Hover Icon-->
+                        <img class="cs-social-icon cs-hover" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fyoutube-green.svg" alt="icon" loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--Bottom Section-->
+        <div class="cs-bottom">
+            <span class="cs-copyright">
+               (C) Joel Rego
+            </span>
+        </div>
+    </div>
+</footer>
 
-        Dataset&lt;Row&gt; data = spark.read().option(&quot;header&quot;, &quot;true&quot;).csv(&quot;data.csv&quot;);
-        data.show();
-        spark.stop();
-    }
-}
-</code></pre>
-<h2>5. Kafka: The Definitive Guide by Neha Narkhede, Gwen Shapira, and Todd Palino</h2>
-<h3>Summary</h3>
-<p>Kafka: The Definitive Guide by Neha Narkhede, Gwen Shapira, and Todd Palino explores Apache Kafka, a powerful tool for real-time data streaming. Narkhede, a Kafka co-creator, along with Shapira and Palino, delves into Kafka's core concepts, including producers, consumers, and Kafka Streams, making this book ideal for those looking to harness Kafka for distributed applications.</p>
-<h3>Kafka Code Example (Java Producer)</h3>
-<pre class=" line-numbers language-java"><code class="language-java line-numbers language-java">import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.ProducerRecord;
-
-import java.util.Properties;
-
-public class KafkaExample {
-    public static void main(String[] args) {
-        Properties props = new Properties();
-        props.put(&quot;bootstrap.servers&quot;, &quot;localhost:9092&quot;);
-        props.put(&quot;key.serializer&quot;, &quot;org.apache.kafka.common.serialization.StringSerializer&quot;);
-        props.put(&quot;value.serializer&quot;, &quot;org.apache.kafka.common.serialization.StringSerializer&quot;);
-
-        KafkaProducer&lt;String, String&gt; producer = new KafkaProducer&lt;&gt;(props);
-        producer.send(new ProducerRecord&lt;&gt;(&quot;my-topic&quot;, &quot;key&quot;, &quot;value&quot;));
-        producer.close();
-    }
-}
-</code></pre>
-<p>Thanks for stopping by, and I hope you find something here that's useful and enjoyable.</p>
-<p>Stay curious, stay quirky, and keep on rocking!</p>
-<p>This blog is dedicated to my sweetheart, Namita &lt;3</p>
-<pre class=" line-numbers language-java"><code class="language-java line-numbers language-java">public class BannerApplication {
-    public static void main(String[] args) {
-        String whoILove = &quot;Namita&quot;;
-        int times = Integer.MAX_VALUE;
-        for(int i = 1; i &lt;= times; i++) {
-            System.out.println(&quot;I love &quot; + whoILove + &quot; x&quot; + i);
-        }
-    }
-}
-</code></pre>
-<p>Cheers,</p>
-<p>The Master Chief</p>
-
-        <hr>
-    </main>
-
-    <!-- Footer Section -->
-    <footer class="footer">
-        <p>&copy; Joel Rego</p>
-    </footer>
-
+<script src="js/script.js"></script>
 </body>
-
 </html>

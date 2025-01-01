@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url('../assets/fonts/JetBrainsMono.ttf') format('truetype');
+}
+
+:root {
+    --spacingUnit: 8px;
+    --primary: #EE0000;
+    --secondary: #1E1E1E;
+    --bodyTextColor: #FFFFFF;
+    --bodyBackgroundColorLight: #2B2B2B;
+    --bodyBackgroundColorDark: #1E1E1E;
+    --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+    --fontSize: 16px;
+    --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+
+    --codeBackgroundColor: #2b2b2b;
+    --codeTextColor: #a9b7c6;
+    --codeBorderColor: #3c3f41;
+    --codeLineNumberColor: #858585;
+    --codeCopyButtonBackgroundColor: #333333;
+    --codeCopyButtonText: #fff;
+}
+
+body {
+    font-family: 'JetBrainsMono';
+    color: var(--bodyTextColor);
+    background-color: var(--bodyBackgroundColor);
+    font-size: var(--fontSize);
+    margin: 0;
+    padding: 0;
+}
+
+
+.cs-topper {
+    font-size: var(--topperFontSize);
+    line-height: 1.2em;
+    text-transform: uppercase;
+    text-align: inherit;
+    letter-spacing: .1em;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.cs-title {
+    font-size: var(--headerFontSize);
+    line-height: 1.2em;
+    text-align: inherit;
+    max-width: 43.75rem;
+    margin: 0 0 1rem 0;
+    color: var(--headerColor);
+    position: relative;
+}
+
+.cs-text {
+    font-size: var(--bodyFontSize);
+    line-height: 1.5em;
+    text-align: inherit;
+    width: 100%;
+    max-width: 40.625rem;
+    margin: 0;
+    color: var(--bodyTextColor);
+}
