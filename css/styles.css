@@ -48,7 +48,7 @@ body.scroll #cs-navigation:before {
 	position: fixed;
 	top: calc(3 * var(--spacingUnit));
 	left: 50%;
-	z-index: 10000;
+	z-index: 100;
 	transform: translateX(-50%);
 	transition: top 0.3s, border-radius 0.3s, width 0.3s, max-width 0.3s;
 }
@@ -89,9 +89,9 @@ body.scroll #cs-navigation:before {
 	margin: 0 auto 0 0;
 	box-sizing: border-box;
 	display: flex;
+	z-index: 100;
 	justify-content: flex-start;
 	align-items: center;
-	z-index: 10;
 }
 
 #cs-navigation .cs-logo img {
@@ -111,7 +111,6 @@ body.scroll #cs-navigation:before {
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	z-index: 1;
 	transition: transform .6s;
 }
 
@@ -179,6 +178,8 @@ body.scroll #cs-navigation:before {
 
 #menu-overlay {
 	opacity: 0;
+	visibility: hidden;  
+  pointer-events: none;  
 	background: var(--primary);
 	background-image: url("../assets/images/Background.png");
 	background-attachment: fixed;
@@ -186,22 +187,18 @@ body.scroll #cs-navigation:before {
 	width: 100vw;
 	height: 100vh;
 	position: fixed;
+	z-index: 10;
 	top: 0;
 	left: 0;
 	margin: 0;
 	padding: 0;
-	z-index: 999;
-	transition: transform 1s, opacity 1s;
-	overflow-y: scroll;
-	-ms-overflow-style: none;
-}
-
-#menu-overlay::-webkit-scrollbar {
-	display: none;
+	transition: transform 1s, opacity 1s, visibility 1s;
 }
 
 #menu-overlay.active {
 	opacity: 1;
+	visibility: visible; 
+  pointer-events: all; 
 }
 
 #menu-overlay .menu-overlay-ul {
@@ -306,7 +303,6 @@ body.scroll #cs-navigation:before {
     text-align: center;
     overflow: hidden;
     position: relative;
-    z-index: 1;
 }
 
 #hero-1426 .cs-container {
@@ -384,7 +380,6 @@ body.scroll #cs-navigation:before {
     border-radius: var(--spacingUnit);
     display: inline-block;
     position: relative;
-    z-index: 1;
     box-sizing: border-box;
     background-color: var(--primary);
     color: var(--bodyTextColor);
@@ -407,7 +402,6 @@ body.scroll #cs-navigation:before {
     border-radius: var(--spacingUnit);
     display: inline-block;
     position: relative;
-    z-index: 1;
     box-sizing: border-box;
     background-color: var(--secondary);
     color: var(--bodyTextColor);
@@ -449,7 +443,6 @@ body.scroll #cs-navigation:before {
 		/* centers content horizontally, set to flex-start to left align */
 		align-items: flex-start;
 		position: relative;
-		z-index: 10;
 	}
 
 	#sbs-1308 .cs-ul {
@@ -499,7 +492,6 @@ body.scroll #cs-navigation:before {
 		max-height: 39.375rem;
 		position: relative;
 		display: block;
-		z-index: 1;
 	}
 
 	#sbs-1308 .cs-picture img {
@@ -529,7 +521,6 @@ body.scroll #cs-navigation:before {
 		position: absolute;
 		right: 0;
 		bottom: 0;
-		z-index: 10;
 	}
 
 	#sbs-1308 .cs-desc {
@@ -539,7 +530,6 @@ body.scroll #cs-navigation:before {
 		width: 100%;
 		color: var(--bodyTextColorWhite);
 		position: relative;
-		z-index: 10;
 	}
 }
 
@@ -788,7 +778,6 @@ body.scroll #cs-navigation:before {
 	  background-attachment: fixed;
     background-position: center;
 		position: relative;
-		z-index: 1;
 	}
 
 	#cs-footer-710 .cs-container {
