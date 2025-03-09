@@ -335,13 +335,6 @@ body.scroll #cs-navigation:before {
     position: relative;
 }
 
-.cs-title {
-    font-size: 40px;
-    text-align: center;
-    color: #fff;
-    position: relative;
-}
-
 .cs-text {
     font-size: 16px;
     width: 100%;
@@ -770,7 +763,7 @@ body.scroll #cs-navigation:before {
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-	#cs-footer-710 {
+	#jrxna-footer {
 		padding: var(--sectionPadding);
 		padding-bottom: 3.125rem;
 		background-color: var(--primary);
@@ -780,7 +773,7 @@ body.scroll #cs-navigation:before {
 		position: relative;
 	}
 
-	#cs-footer-710 .cs-container {
+	#jrxna-footer .cs-container {
 		width: 100%;
 		max-width: 80rem;
 		margin: auto;
@@ -789,11 +782,11 @@ body.scroll #cs-navigation:before {
 		align-items: center;
 	}
 
-	#cs-footer-710 .cs-logo-wrapper {
+	#jrxna-footer .cs-logo-wrapper {
 		width: 100%;
 	}
 
-	#cs-footer-710 .cs-logo {
+	#jrxna-footer .cs-logo {
 		width: 100%;
 		max-width: 20rem;
 		height: auto;
@@ -801,12 +794,12 @@ body.scroll #cs-navigation:before {
 		display: block;
 	}
 
-	#cs-footer-710 .cs-logo img {
+	#jrxna-footer .cs-logo img {
 		width: 100%;
 		height: auto;
 	}
 
-	#cs-footer-710 .cs-top {
+	#jrxna-footer .cs-top {
 		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
@@ -816,7 +809,7 @@ body.scroll #cs-navigation:before {
 		row-gap: 2rem;
 	}
 
-	#cs-footer-710 .cs-ul {
+	#jrxna-footer .cs-ul {
 		margin: 0;
 		padding: 0;
 		width: auto;
@@ -827,34 +820,30 @@ body.scroll #cs-navigation:before {
 		flex: none;
 	}
 
-	#cs-footer-710 .cs-contact-ul {
+	#jrxna-footer .cs-contact-ul {
 		/* we remove the :before animated underline from the contact list and replace it with an underline.  The animated line doesn't work well on this section */
 		width: 100%;
 		max-width: 100%;
 		gap: 0.75rem;
 	}
 
-	#cs-footer-710 .cs-contact-ul .cs-link:hover {
-		text-decoration: underline;
-	}
-
-	#cs-footer-710 .cs-contact-ul .cs-link:before {
+	#jrxna-footer .cs-contact-ul .cs-link:before {
 		display: none;
 	}
 
-	#cs-footer-710 .cs-li {
+	#jrxna-footer .cs-li {
 		list-style: none;
 		margin: 0;
 		display: block;
 	}
 
-	#cs-footer-710 .cs-header {
+	#jrxna-footer .cs-header {
 		margin: 0 0 1rem 0;
 		color: #fff;
 		display: block;
 	}
 
-	#cs-footer-710 .cs-link {
+	#jrxna-footer .cs-link {
 		/* 14px - 16px */
 		font-size: 16px;
 		text-decoration: none;
@@ -866,35 +855,17 @@ body.scroll #cs-navigation:before {
 		position: relative;
 	}
 
-	#cs-footer-710 .cs-link:hover:before {
-		width: 100%;
-	}
-
-	#cs-footer-710 .cs-link:before {
-		/* on hover underline */
-		content: "";
-		width: 0%;
-		height: 1px;
-		background: currentColor;
-		opacity: 1;
-		position: absolute;
-		display: block;
-		bottom: 0;
-		left: 0;
-		transition: width 0.3s;
-	}
-
-	#cs-footer-710 .cs-block {
+	#jrxna-footer .cs-block {
 		display: block;
 	}
 
-	#cs-footer-710 .cs-icon {
+	#jrxna-footer .cs-icon {
 		width: 1.5rem;
 		height: auto;
 		margin: -0.0625rem 0.75rem 0 0;
 	}
 
-	#cs-footer-710 .cs-middle {
+	#jrxna-footer .cs-middle {
 		width: 100%;
 		/* changes at tablet */
 		max-width: 28.125rem;
@@ -908,7 +879,7 @@ body.scroll #cs-navigation:before {
 		gap: 1.5rem;
 	}
 
-	#cs-footer-710 .cs-nav {
+	#jrxna-footer .cs-nav {
 		margin: 0;
 		padding: 0;
 		display: flex;
@@ -919,11 +890,11 @@ body.scroll #cs-navigation:before {
 		row-gap: 0.5rem;
 	}
 
-	#cs-footer-710 .cs-nav-li {
+	#jrxna-footer .cs-nav-li {
 		list-style: none;
 	}
 
-	#cs-footer-710 .cs-nav-link {
+	#jrxna-footer .cs-nav-link {
 		/* 14px - 16px */
 		font-size: clamp(0.875rem, 1.5vw, 1rem);
 		text-decoration: none;
@@ -932,25 +903,7 @@ body.scroll #cs-navigation:before {
 		position: relative;
 	}
 
-	#cs-footer-710 .cs-nav-link:hover:before {
-		width: 100%;
-	}
-
-	#cs-footer-710 .cs-nav-link:before {
-		/* on hover underline */
-		content: "";
-		width: 0%;
-		height: 1px;
-		background: currentColor;
-		opacity: 1;
-		position: absolute;
-		display: block;
-		bottom: 0;
-		left: 0;
-		transition: width 0.3s;
-	}
-
-	#cs-footer-710 .cs-social {
+	#jrxna-footer .cs-social {
 		margin: 0;
 		padding: 0;
 		display: flex;
@@ -959,48 +912,31 @@ body.scroll #cs-navigation:before {
 		gap: 0.5rem;
 	}
 
-	#cs-footer-710 .cs-social-li {
+	#jrxna-footer .cs-social-li {
 		list-style: none;
 	}
 
-	#cs-footer-710 .cs-social-link {
-		width: 2rem;
-		height: 2rem;
+	#jrxna-footer .cs-social-link {
+		width: 24px;
+		height: 24px;
 		background-color: transparent;
-		border: 1px solid #f6e5db;
 		border-radius: 50%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		transition: background-color 0.3s;
 	}
 
-	#cs-footer-710 .cs-social-link:hover {
-		background-color: #f6e5db;
-	}
-
-	#cs-footer-710 .cs-social-link:hover .cs-default {
-		display: none;
-	}
-
-	#cs-footer-710 .cs-social-link:hover .cs-hover {
-		display: block;
-	}
-
-	#cs-footer-710 .cs-social-icon {
-		width: 0.75rem;
+	#jrxna-footer .cs-social-icon {
+		width: 24px;
 		height: auto;
 		display: block;
+		filter: invert(100%);
+
 	}
 
-	#cs-footer-710 .cs-hover {
-		display: none;
-	}
-
-	#cs-footer-710 .cs-bottom {
+	#jrxna-footer .cs-bottom {
 		width: 100%;
 		margin: 0;
-		/* 24px - 40px, matches the cs-middle padding bottom */
 		padding: clamp(1.25rem, 5vw, 2.5rem) 0 0 0;
 		border-top: 1px solid rgba(186, 186, 186, 0.2);
 		display: flex;
@@ -1008,7 +944,7 @@ body.scroll #cs-navigation:before {
 		align-items: center;
 	}
 
-	#cs-footer-710 .cs-copyright {
+	#jrxna-footer .cs-copyright {
 		font-size: 16px;
 		text-align: center;
 		width: 70%;
@@ -1017,53 +953,49 @@ body.scroll #cs-navigation:before {
 		display: block;
 	}
 
-	#cs-footer-710 .cs-copyright-link {
+	#jrxna-footer .cs-copyright-link {
 		font-size: inherit;
 		text-decoration: none;
 		margin: 0;
 		color: inherit;
 		display: inline-block;
 	}
-
-	#cs-footer-710 .cs-copyright-link:hover {
-		text-decoration: underline;
-	}
 }
 
 /* inbetween - 600px */
 @media only screen and (min-width: 37.5rem) {
-	#cs-footer-710 .cs-top {
+	#jrxna-footer .cs-top {
 		justify-content: flex-end;
 	}
 
-	#cs-footer-710 .cs-ul {
+	#jrxna-footer .cs-ul {
 		width: auto;
 	}
 
-	#cs-footer-710 .cs-contact-ul {
+	#jrxna-footer .cs-contact-ul {
 		width: 15rem;
 	}
 }
 
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-	#cs-footer-710 .cs-top {
+	#jrxna-footer .cs-top {
 		flex-wrap: nowrap;
 	}
 
-	#cs-footer-710 .cs-logo-wrapper {
+	#jrxna-footer .cs-logo-wrapper {
 		width: auto;
 		margin-right: auto;
 	}
 
-	#cs-footer-710 .cs-middle {
+	#jrxna-footer .cs-middle {
 		max-width: 100%;
 	}
 }
 
 /* Small Desktop 1024px */
 @media only screen and (min-width: 64rem) {
-	#cs-footer-710 .cs-middle {
+	#jrxna-footer .cs-middle {
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;

@@ -10,9 +10,9 @@
     --bodyTextColor: #FFFFFF;
     --bodyBackgroundColorLight: #2B2B2B;
     --bodyBackgroundColorDark: #1E1E1E;
-    --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+    --headerFontSize: 49px;
     --fontSize: 16px;
-    --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+    --sectionPadding: 60px 16px; 
 
     --codeBackgroundColor: #2b2b2b;
     --codeTextColor: #a9b7c6;
@@ -33,32 +33,32 @@ body {
 
 
 .cs-topper {
-    font-size: var(--topperFontSize);
+    font-size: 14px; 
     line-height: 1.2em;
     text-transform: uppercase;
     text-align: inherit;
     letter-spacing: .1em;
     color: var(--primary);
-    margin-bottom: 0.25rem;
+    margin-bottom: 4px;
     display: block;
 }
 
-.cs-title {
-    font-size: var(--headerFontSize);
+.jrxna-title {
+    font-size: 40px;
     line-height: 1.2em;
     text-align: inherit;
-    max-width: 43.75rem;
-    margin: 0 0 1rem 0;
+    max-width: 600px; 
+    margin: 0 0 16px 0; 
     color: var(--headerColor);
     position: relative;
 }
 
 .cs-text {
-    font-size: var(--bodyFontSize);
+    font-size: 16px; 
     line-height: 1.5em;
     text-align: inherit;
     width: 100%;
-    max-width: 40.625rem;
+    max-width: 600px; 
     margin: 0;
     color: var(--bodyTextColor);
 }
