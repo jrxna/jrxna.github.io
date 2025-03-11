@@ -1,8 +1,8 @@
 // Select DOM elements
 var body = document.querySelector("body");
-const CSnavbarMenu = document.querySelector("#cs-navigation");
+const CSnavbarMenu = document.querySelector("#jrxna-navigation");
 const navigationMenuOverlay = document.querySelector("#menu-overlay")
-const CShamburgerMenu = document.querySelector("#cs-navigation .cs-toggle");
+const CShamburgerMenu = document.querySelector("#jrxna-navigation .cs-toggle");
 
 if (CShamburgerMenu) {
     // Add event listener for the mobile menu toggle

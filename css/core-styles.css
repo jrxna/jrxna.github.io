@@ -1,12 +1,13 @@
 @font-face {
     font-family: 'JetBrainsMono';
-    src: url('../assets/fonts/JetBrainsMono.ttf') format('truetype');
+    src: url('../assets/fonts/JRXNADisplay.ttf') format('truetype');
 }
 
 :root {
     --spacingUnit: 8px;
     --primary: #EE0000;
     --secondary: #1E1E1E;
+    --tertiary: #7E7E7E;
     --bodyTextColor: #FFFFFF;
     --bodyBackgroundColorLight: #2B2B2B;
     --bodyBackgroundColorDark: #1E1E1E;
@@ -31,26 +32,11 @@ body {
     padding: 0;
 }
 
-
-.cs-topper {
-    font-size: 14px; 
-    line-height: 1.2em;
-    text-transform: uppercase;
-    text-align: inherit;
-    letter-spacing: .1em;
-    color: var(--primary);
-    margin-bottom: 4px;
-    display: block;
-}
-
 .jrxna-title {
     font-size: 40px;
-    line-height: 1.2em;
-    text-align: inherit;
-    max-width: 600px; 
+    text-align: inherit; 
     margin: 0 0 16px 0; 
     color: var(--headerColor);
-    position: relative;
 }
 
 .jrxna-text {
@@ -58,7 +44,25 @@ body {
     line-height: 1.5em;
     text-align: inherit;
     width: 100%;
-    max-width: 600px; 
     margin: 0 0 16px 0; 
     color: var(--bodyTextColor);
+}
+
+.jrxna-topper {
+	font-size: 16px;
+	font-weight: 800;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	color: var(--bodyTextColor);
+}
+
+.jrxna-content {
+	max-width: 1024px;
+	margin: 0 auto;
+    padding: 0 calc(2 * var(--spacingUnit));
+    @media only screen and (min-width: 1280px) {
+        padding: 0;
+    }
+    display: flex;
+    flex-direction: column;
 }
