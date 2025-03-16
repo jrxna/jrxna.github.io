@@ -1164,8 +1164,8 @@ pre .line-numbers-rows {
 		color: var(--bodyTextColor);
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
-		gap: 1rem;
+		align-items: flex-start;
+		gap: calc(2 * var(--spacingUnit));
 		transition: color 0.3s;
 	}
 
