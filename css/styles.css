@@ -364,75 +364,69 @@ body.scroll #jrxna-navigation:before {
 	gap: 1.5rem;
 }
 
-
-/*-- -------------------------- -->
-<---       Side By Side         -->
-<--- -------------------------- -*/
-
 @media only screen and (min-width: 0rem) {
 	#jrxna-dual-content {
 		overflow: hidden;
 		max-width: 1024px;
-		margin: calc(3 * var(--spacingUnit)) auto;
+		margin: 0 auto;
+		padding: calc(2 * var(--spacingUnit));
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		gap: calc(3 * var(--spacingUnit));
+		gap: calc(2 * var(--spacingUnit));
 		@media only screen and (min-width: 1280px) {
 			flex-direction: row;
+			padding: calc(2 * var(--spacingUnit)) 0;
 		};
 	}
 
 	#jrxna-dual-content .cs-content {
 		text-align: left;
 		height: 100%;
-		width: 70%;
-		padding: calc(2 * var(--spacingUnit));
+		width: 100%;
 		@media only screen and (min-width: 1280px) {
-			padding: 0;
-		};	
+			width: 50%;
+		}
 	}
 
 	#jrxna-dual-content .cs-ul {
 		width: 100%;
 		padding: 0;
-		/* 32px - 48px */
-		margin: clamp(2rem, 5vw, 3rem) 0 0 0;
-		/* 32px - 48px */
-		padding: clamp(2rem, 5vw, 3rem) 0 0 0;
-		border-top: 1px solid #e8e8e8;
+		margin: 0;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		column-gap: 0.75rem;
+		padding: calc(2 * var(--spacingUnit)) 0 0;
+	}
+	
+	#jrxna-dual-content .numbers {
+		padding: calc(3 * var(--spacingUnit)) 0 0;
 	}
 
 	#jrxna-dual-content .cs-item {
 		list-style: none;
-		width: 32%;
-		/* making flex so we can align a heading with 1 line to the bottom */
+		padding: 0;
+		margin: 0;
+		width: 30%;
 		display: flex;
 		flex-direction: column;
-		align-self: stretch;
-		align-content: space-between;
 	}
 
 	#jrxna-dual-content .cs-number {
-		font-size: 40px;
+		font-size: 32px;
 		font-weight: 800;
+		margin: 0;
+		padding: 0;
 		text-align: left;
 		color: var(--primary);
 		display: block;
-		margin: 0 0 0.5rem 0;
 	}
 
 	#jrxna-dual-content .cs-h3 {
 		font-size: 16px;
-		font-weight: 800;
-		text-align: left;
-		/* auto margin top will push text to bottom if there's only one line */
 		margin: 0;
+		padding: 0;
 		color: var(--bodyTextColor);
 	}
 
@@ -636,7 +630,7 @@ body.scroll #jrxna-navigation:before {
 	#jrxna-dual-content .cs-image-group {
 		width: 55%;
 		max-width: 41.875rem;
-		min-height: 41.875rem;
+		min-height: 500px;
 		max-height: 100%;
 		height: auto;
 		margin: 0;
@@ -727,10 +721,9 @@ body.scroll #jrxna-navigation:before {
 	}
 
 	#jrxna-footer .cs-contact-ul {
-		/* we remove the :before animated underline from the contact list and replace it with an underline.  The animated line doesn't work well on this section */
 		width: 100%;
 		max-width: 100%;
-		gap: 0.75rem;
+		gap: calc(2 * var(--spacingUnit));
 	}
 
 	#jrxna-footer .cs-contact-ul .cs-link:before {
@@ -773,16 +766,10 @@ body.scroll #jrxna-navigation:before {
 
 	#jrxna-footer .cs-middle {
 		width: 100%;
-		/* changes at tablet */
-		max-width: 28.125rem;
-		/* 60px - 100px */
-		margin: clamp(3.75rem, 8vw, 6.25rem) 0 0 0;
-		/* 24px - 40px */
-		padding-bottom: clamp(1.25rem, 5vw, 2.5rem);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 1.5rem;
+		gap: calc(2 * var(--spacingUnit));
 	}
 
 	#jrxna-footer .cs-nav {
@@ -792,8 +779,8 @@ body.scroll #jrxna-navigation:before {
 		justify-content: center;
 		align-items: center;
 		flex-wrap: wrap;
-		column-gap: 2.5rem;
-		row-gap: 0.5rem;
+		column-gap: calc(2 * var(--spacingUnit));
+		row-gap: calc(2 * var(--spacingUnit));
 	}
 
 	#jrxna-footer .cs-nav-li {
@@ -815,7 +802,7 @@ body.scroll #jrxna-navigation:before {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: 0.5rem;
+		gap: calc(2 * var(--spacingUnit));
 	}
 
 	#jrxna-footer .cs-social-li {
@@ -825,8 +812,6 @@ body.scroll #jrxna-navigation:before {
 	#jrxna-footer .cs-social-link {
 		width: 24px;
 		height: 24px;
-		background-color: transparent;
-		border-radius: var(--spacingUnit);
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -840,23 +825,11 @@ body.scroll #jrxna-navigation:before {
 
 	}
 
-	#jrxna-footer .cs-bottom {
-		width: 100%;
-		margin: 0;
-		padding: clamp(1.25rem, 5vw, 2.5rem) 0 0 0;
-		border-top: 1px solid #FFFFFF;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
 	#jrxna-footer .cs-copyright {
 		font-size: 16px;
 		font-weight: 400;
+		padding: calc(2 * var(--spacingUnit)) 0;
 		text-align: center;
-		margin: 0;
-		color: var(--bodyTextColorWhite);
-		display: block;
 	}
 }
 
@@ -1030,18 +1003,7 @@ pre .line-numbers-rows {
 		left: 0;
 		height: 100%;
 		width: 100%;
-		/* Makes img tag act as a background image */
 		object-fit: cover;
-	}
-}
-
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-	#banner-712 .cs-background:before {
-		opacity: 1;
-		background: linear-gradient(90.01deg,
-				rgba(0, 0, 0, 0.9) 16.86%,
-				rgba(0, 0, 0, 0) 100%);
 	}
 }
 
@@ -1187,7 +1149,6 @@ pre .line-numbers-rows {
 	}
 }
 
-/* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
 	#jrxna-blog .cs-item {
 		grid-column: span 4;
