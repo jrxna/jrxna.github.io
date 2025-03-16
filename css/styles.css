@@ -1,7 +1,3 @@
-/*-- -------------------------- -->
-<---     Mobile Navigation      -->
-<--- -------------------------- -*/
-
 html,
 body {
 	background-color: var(--bodyBackgroundColorDark);
@@ -489,11 +485,6 @@ body.scroll #jrxna-navigation:before {
 	}
 }
 
-/*-- -------------------------- -->
-<---          Pricing           -->
-<--- -------------------------- -*/
-
-/* Mobile */
 @media only screen and (min-width: 0rem) {
 	#jrxna-pricing {
 		background-color: var(--bodyBackgroundColorLight);
@@ -511,23 +502,21 @@ body.scroll #jrxna-navigation:before {
 
 	#jrxna-pricing .cs-item {
 		list-style: none;
-		padding: calc(3 * var(--spacingUnit));
+		padding: calc(2 * var(--spacingUnit));
 		width: 100%;
-		max-width: 25.8125rem;
 		border-radius: var(--spacingUnit);
 		background: var(--bodyBackgroundColorDark);
-		/* prevents padding from adding to height and width */
 		box-sizing: border-box;
 	}
 
 	#jrxna-pricing .cs-item:nth-of-type(2) .cs-option2-text,
 	#jrxna-pricing .cs-item:nth-of-type(2) .cs-option1-text {
-		transition-delay: 0.1s;
+		transition-delay: 0.3s;
 	}
 
 	#jrxna-pricing .cs-item:nth-of-type(3) .cs-option2-text,
 	#jrxna-pricing .cs-item:nth-of-type(3) .cs-option1-text {
-		transition-delay: 0.2s;
+		transition-delay: 0.3s;
 	}
 
 	#jrxna-pricing .cs-popular {
@@ -562,14 +551,15 @@ body.scroll #jrxna-navigation:before {
 	#jrxna-pricing .cs-popular .cs-h3,
 	#jrxna-pricing .cs-popular .cs-item-text,
 	#jrxna-pricing .cs-popular .cs-price,
-	#jrxna-pricing .cs-popular .cs-included,
 	#jrxna-pricing .cs-popular .cs-li,
 	#jrxna-pricing .cs-popular .cs-small {
 		color: var(--bodyTextColorWhite);
 	}
 
 	#jrxna-pricing .cs-h3 {
-		padding: var(--spacingUnit) 0 calc(3 * var(--spacingUnit)) 0;
+		padding: 0 0 calc(2 * var(--spacingUnit)) 0;
+		font-size: 16px;
+		font-weight: 800;
 	}
 
 	.divider {
@@ -584,19 +574,9 @@ body.scroll #jrxna-navigation:before {
 		display: block;
 	}
 
-	#jrxna-pricing .cs-included {
-		font-size: 16px;
-		/* 16px - 24px */
-		margin-bottom: clamp(1rem, 3vw, 1.5rem);
-		color: var(--headerColor);
-		display: block;
-	}
-
 	#jrxna-pricing .cs-ul {
-		padding: 0;
+		padding: calc(2 * var(--spacingUnit)) 0;
 		margin: 0;
-		/* 32px - 40px */
-		margin-bottom: clamp(2rem, 4vw, 2.5rem);
 	}
 
 	#jrxna-pricing .cs-li {
@@ -986,11 +966,6 @@ pre .line-numbers-rows {
 	color: var(--code-line-number-color);
 }
 
-/*-- -------------------------- -->
-<---          Banner            -->
-<--- -------------------------- -*/
-
-/* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
 	#banner-712 {
 		padding: clamp(10.9375rem, 10vw, 12.5rem) 1rem 6.25rem;
@@ -1070,10 +1045,6 @@ pre .line-numbers-rows {
 	}
 }
 
-/*-- -------------------------- -->
-<---        Recent Posts        -->
-<--- -------------------------- -*/
-/* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
 
 	#jrxna-blog .cs-card-group {
