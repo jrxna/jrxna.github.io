@@ -1172,7 +1172,7 @@ pre .line-numbers-rows {
 	#jrxna-blog .cs-icon-wrapper {
 		width: 48px;
 		height: 48px;
-		border: 1px solid var(--tertiary);
+		background-color: var(--bodyBackgroundColorDark);
 		border-radius: var(--spacingUnit);
 		display: flex;
 		justify-content: center;
@@ -1183,7 +1183,7 @@ pre .line-numbers-rows {
 
 	#jrxna-blog .cs-icon {
 		width: auto;
-		height: 0.75rem;
+		height: 16px;
 		transition:
 			filter 0.3s,
 			transform 0.3s;
@@ -1198,7 +1198,7 @@ pre .line-numbers-rows {
 	}
 
 	#jrxna-blog .cs-date {
-		font-size: 0.875rem;
+		font-size: 16px;
 		line-height: 1.5em;
 		text-align: left;
 		color: var(--bodyTextColor);
@@ -1209,7 +1209,7 @@ pre .line-numbers-rows {
 	}
 
 	#jrxna-blog .cs-category {
-		font-size: 0.875rem;
+		font-size: 16px;
 		text-align: center;
 		padding: 0.25rem 1rem;
 		color: var(--bodyTextColor);
@@ -1229,8 +1229,6 @@ pre .line-numbers-rows {
 		top: 0;
 		left: 0;
 		z-index: -1;
-		opacity: 0.5;
-		/* Adjust the opacity as needed */
 	}
 }
 
