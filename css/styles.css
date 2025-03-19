@@ -353,6 +353,23 @@ body.scroll #jrxna-navigation:before {
 	opacity: 1;
 }
 
+.cs-button-solid-tertiary {
+	font-size: 16px;
+	font-weight: 800;
+	text-decoration: none;
+	text-align: center;
+	margin: 0;
+	min-width: 10rem;
+	padding: calc(2 * var(--spacingUnit)) var(--spacingUnit);
+	border-radius: var(--spacingUnit);
+	display: inline-block;
+	position: relative;
+	box-sizing: border-box;
+	background-color: var(--bodyBackgroundColorLight);
+	color: var(--bodyTextColor);
+	opacity: 1;
+}
+
 .jrxna-content-container {
 	width: 100%;
 	max-width: 80rem;
