@@ -34,7 +34,13 @@ body {
     font-size: 40px;
     font-weight: 800;
     text-align: inherit; 
-    margin: 0 0 16px 0; 
+    color: var(--headerColor);
+}
+
+.jrxna-subtitle {
+    font-size: 24px;
+    font-weight: 800;
+    text-align: inherit; 
     color: var(--headerColor);
 }
 

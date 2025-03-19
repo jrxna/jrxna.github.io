@@ -22,7 +22,6 @@ body.scroll #jrxna-navigation:before {
 	border-radius: 0;
 }
 
-
 #jrxna-navigation {
 	width: 100%;
 	max-width: 95%;
@@ -482,6 +481,7 @@ body.scroll #jrxna-navigation:before {
 @media only screen and (min-width: 0rem) {
 	#jrxna-pricing {
 		background-color: var(--bodyBackgroundColorLight);
+		padding: calc(2 * var(--spacingUnit)) 0;
 	}
 
 	#jrxna-pricing .cs-card-group {
@@ -618,10 +618,6 @@ body.scroll #jrxna-navigation:before {
 
 /* Desktop - 1024px */
 @media only screen and (min-width: 1024px) {
-
-	#jrxna-blog .cs-item {
-		grid-column: span 4;
-	}
 
 	#jrxna-blog .cs-card-group {
 		flex-direction: row;
@@ -988,12 +984,18 @@ pre .line-numbers-rows {
 	}
 }
 
+#jrxna-blog {
+	padding: calc(2 * var(--spacingUnit)) 0;
+}
+
 @media only screen and (min-width: 0rem) {
 
+
+
 	#jrxna-blog .cs-card-group {
+		padding: calc(2 * var(--spacingUnit)) 0;
 		width: 100%;
 		margin: 0;
-		padding: calc(2 * var(--spacingUnit)) 0;
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
 		gap: calc(2 * var(--spacingUnit));
