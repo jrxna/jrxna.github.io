@@ -44,7 +44,6 @@ body.scroll #jrxna-navigation:before {
 	height: 100%;
 	background-color: var(--bodyBackgroundColorDark);
 	border-radius: var(--spacingUnit);
-	opacity: 1;
 	position: absolute;
 	display: block;
 	top: 0;
@@ -314,13 +313,15 @@ body.scroll #jrxna-navigation:before {
 	color: #fff;
 }
 /* Default Button */
-.cs-button-solid {
+.cs-button-solid,
+.cs-button-solid-secondary,
+.cs-button-solid-tertiary {
 	font-size: 16px;
 	font-weight: 800;
 	text-decoration: none;
 	text-align: center;
 	margin: 0;
-	min-width: 10rem;
+	min-width: 160px;
 	padding: calc(2 * var(--spacingUnit)) var(--spacingUnit);
 	border-radius: var(--spacingUnit);
 	display: inline-block;
@@ -328,46 +329,111 @@ body.scroll #jrxna-navigation:before {
 	box-sizing: border-box;
 	background-color: var(--primary);
 	color: var(--bodyTextColor);
-	opacity: 1;
+	overflow: hidden;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Text shimmer effect */
+.cs-button-solid span,
+.cs-button-solid-secondary span,
+.cs-button-solid-tertiary span {
+	position: relative;
+	z-index: 1;
+	background: linear-gradient(90deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 1) 15%, rgba(255, 255, 255, 0.6) 30%);
+	background-size: 200% 100%;
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	animation: shimmer 2s infinite linear;
+}
+
+/* Button shine effect */
+.cs-button-solid::before,
+.cs-button-solid-secondary::before,
+.cs-button-solid-tertiary::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -75%;
+	width: 50%;
+	height: 100%;
+	background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+	transform: skewX(-25deg);
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+/* Shadow lift and hover effects */
+.cs-button-solid:hover,
+.cs-button-solid-secondary:hover,
+.cs-button-solid-tertiary:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cs-button-solid:hover::before,
+.cs-button-solid-secondary:hover::before,
+.cs-button-solid-tertiary:hover::before {
+	animation: shine 1s ease;
+}
+
+.cs-button-solid:active,
+.cs-button-solid-secondary:active,
+.cs-button-solid-tertiary:active {
+	transform: translateY(0);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cs-button-solid-secondary {
+	background-color: var(--secondary);
+}
+
+.cs-button-solid-tertiary {
+	background-color: var(--bodyBackgroundColorLight);
+}
+
+@keyframes shine {
+	0% {
+		opacity: 1;
+		left: -75%;
+	}
+	100% {
+		opacity: 0;
+		left: 125%;
+	}
 }
 
 .card-button {
 	width: 100%;
 }
 
-/* Default Button 2 */
-.cs-button-solid-secondary {
-	font-size: 16px;
-	font-weight: 800;
-	text-decoration: none;
-	text-align: center;
-	margin: 0;
-	min-width: 10rem;
-	padding: calc(2 * var(--spacingUnit)) var(--spacingUnit);
-	border-radius: var(--spacingUnit);
-	display: inline-block;
-	position: relative;
-	box-sizing: border-box;
-	background-color: var(--secondary);
-	color: var(--bodyTextColor);
-	opacity: 1;
+/* Ensure card buttons can show the shine effect */
+#jrxna-pricing .cs-item {
+	overflow: visible;
 }
 
-.cs-button-solid-tertiary {
-	font-size: 16px;
-	font-weight: 800;
-	text-decoration: none;
-	text-align: center;
-	margin: 0;
-	min-width: 10rem;
-	padding: calc(2 * var(--spacingUnit)) var(--spacingUnit);
-	border-radius: var(--spacingUnit);
-	display: inline-block;
-	position: relative;
-	box-sizing: border-box;
-	background-color: var(--bodyBackgroundColorLight);
-	color: var(--bodyTextColor);
+.cs-button-solid.shine-hover::before,
+.cs-button-solid-secondary.shine-hover::before,
+.cs-button-solid-tertiary.shine-hover::before {
 	opacity: 1;
+	animation: shine 1.5s ease;
+}
+
+.cs-button-solid.shine-unhover::before,
+.cs-button-solid-secondary.shine-unhover::before,
+.cs-button-solid-tertiary.shine-unhover::before {
+	opacity: 1;
+	animation: shine-reverse 1.5s ease;
+}
+
+@keyframes shine-reverse {
+	0% {
+		transform: translateX(100%) rotate(45deg);
+	}
+	100% {
+		transform: translateX(-100%) rotate(45deg);
+	}
 }
 
 .jrxna-content-container {
@@ -1152,5 +1218,48 @@ pre .line-numbers-rows {
 @media only screen and (min-width: 64rem) {
 	#jrxna-blog .cs-item {
 		grid-column: span 4;
+	}
+}
+
+.jrxna-title {
+	font-size: 40px;
+	font-weight: 800;
+	text-align: inherit; 
+	color: var(--bodyTextColor);
+	position: relative;
+}
+
+.jrxna-subtitle {
+	font-size: 24px;
+	font-weight: 800;
+	text-align: inherit; 
+	color: var(--bodyTextColor);
+	position: relative;
+}
+
+.jrxna-topper {
+	font-size: 12px;
+	font-weight: 800;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	color: var(--bodyTextColor);
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	max-width: 200px;
+	background: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 1) 15%, rgba(255, 255, 255, 0.7) 30%);
+	background-size: 200% 100%;
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	animation: shimmer 2s infinite linear;
+}
+
+@keyframes shimmer {
+	0% {
+		background-position: 200% 0;
+	}
+	100% {
+		background-position: -200% 0;
 	}
 }

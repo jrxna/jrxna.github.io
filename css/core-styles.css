@@ -1,6 +1,11 @@
 @font-face {
-    font-family: 'JetBrainsMono';
-    src: url('../assets/fonts/JRXNADisplay.ttf') format('truetype');
+    font-family: 'AmazonEmberBold';
+    src: url('../assets/fonts/AmazonEmberBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'AmazonEmberRegular';
+    src: url('../assets/fonts/AmazonEmberRegular.ttf') format('truetype');
 }
 
 :root {
@@ -22,7 +27,8 @@
 }
 
 body {
-    font-family: 'JetBrainsMono';
+    font-family: 'AmazonEmberRegular';
+    line-height: 1.5;
     color: var(--bodyTextColor);
     background-color: var(--bodyBackgroundColor);
     font-size: var(--fontSize);
@@ -31,34 +37,25 @@ body {
 }
 
 .jrxna-title {
+    font-family: 'AmazonEmberBold';
     font-size: 40px;
-    font-weight: 800;
     text-align: inherit; 
     color: var(--headerColor);
 }
 
 .jrxna-subtitle {
+    font-family: 'AmazonEmberBold';
     font-size: 24px;
-    font-weight: 800;
     text-align: inherit; 
     color: var(--headerColor);
 }
 
 .jrxna-text {
     font-size: 16px; 
-    line-height: 1.5em;
     text-align: inherit;
     width: 100%;
     margin: 0 0 16px 0; 
     color: var(--bodyTextColor);
-}
-
-.jrxna-topper {
-	font-size: 12px;
-	font-weight: 800;
-	letter-spacing: .1em;
-	text-transform: uppercase;
-	color: var(--bodyTextColor);
 }
 
 .jrxna-content {
@@ -70,4 +67,4 @@ body {
     @media only screen and (min-width: 1280px) {
         padding: 0;
     };
-}
+} 

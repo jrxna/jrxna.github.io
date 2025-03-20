@@ -1,31 +1,27 @@
 // Select DOM elements
-var body = document.querySelector("body");
+const body = document.querySelector("body");
 const CSnavbarMenu = document.querySelector("#jrxna-navigation");
-const navigationMenuOverlay = document.querySelector("#menu-overlay")
+const navigationMenuOverlay = document.querySelector("#menu-overlay");
 const CShamburgerMenu = document.querySelector("#jrxna-navigation .cs-toggle");
 
+// Navigation Menu Toggle
 if (CShamburgerMenu) {
-    // Add event listener for the mobile menu toggle
     CShamburgerMenu.addEventListener('click', function () {
         CShamburgerMenu.classList.toggle("cs-active");
         CSnavbarMenu.classList.toggle("cs-active");
-
         body.classList.toggle("cs-open");
         ariaExpanded();
-
         const active = navigationMenuOverlay.classList.toggle("active");
-        console.log(active);
         toggleScrolling(active);
-
     });
 }
 
 function toggleScrolling(disable) {
-  if (disable) {
-    body.style.overflow = 'hidden'; // Disable scrolling
-  } else {
-    body.style.overflow = ''; // Enable scrolling
-  }
+    if (disable) {
+        body.style.overflow = 'hidden'; // Disable scrolling
+    } else {
+        body.style.overflow = ''; // Enable scrolling
+    }
 }
 
 function ariaExpanded() {
@@ -36,9 +32,17 @@ function ariaExpanded() {
     }
 }
 
-document.addEventListener('scroll', () => {
-    const scroll = document.documentElement.scrollTop;
-    if (scroll >= 100) {
+// Scroll to Section
+function scrollToSection(sectionId) {
+    const navHeight = 80;
+    const element = document.querySelector(sectionId);
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - navHeight;
+    window.scrollTo({top: elementPosition, behavior: 'smooth'});
+}
+
+// Add scroll class to navigation
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
         body.classList.add('scroll');
     } else {
         body.classList.remove('scroll');
