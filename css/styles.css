@@ -165,7 +165,7 @@ body.scroll #jrxna-navigation:before {
 	visibility: hidden;
 	pointer-events: none;
 	background: var(--primary);
-	background-image: url("../assets/images/Background.png");
+	background-image: url("../assets/images/Background.webp");
 	background-attachment: fixed;
 	background-position: center;
 	width: 100vw;
@@ -256,7 +256,7 @@ body.scroll #jrxna-navigation:before {
 
 #menu-overlay .cs-li-link {
 	font-size: 16px;
-	font-weight: 800;
+	font-family: 'AmazonEmberBold';
 	text-decoration: none;
 	margin: 0;
 	color: var(--bodyTextColor);
@@ -289,7 +289,7 @@ body.scroll #jrxna-navigation:before {
 	padding-top: calc(14 * var(--spacingUnit));
 	padding-bottom: calc(2 * var(--spacingUnit));
 	margin: 0 auto;
-	background-image: url("../assets/images/Background.png");
+	background-image: url("../assets/images/Background.webp");
 	background-attachment: fixed;
 	background-position: center;
 	justify-content: center;
@@ -317,7 +317,7 @@ body.scroll #jrxna-navigation:before {
 .cs-button-solid-secondary,
 .cs-button-solid-tertiary {
 	font-size: 16px;
-	font-weight: 800;
+	font-family: 'AmazonEmberBold';
 	text-decoration: none;
 	text-align: center;
 	margin: 0;
@@ -408,11 +408,6 @@ body.scroll #jrxna-navigation:before {
 	width: 100%;
 }
 
-/* Ensure card buttons can show the shine effect */
-#jrxna-pricing .cs-item {
-	overflow: visible;
-}
-
 .cs-button-solid.shine-hover::before,
 .cs-button-solid-secondary.shine-hover::before,
 .cs-button-solid-tertiary.shine-hover::before {
@@ -497,7 +492,7 @@ body.scroll #jrxna-navigation:before {
 
 	#jrxna-dual-content .cs-number {
 		font-size: 32px;
-		font-weight: 800;
+		font-family: 'AmazonEmberBold';
 		margin: 0;
 		padding: 0;
 		text-align: left;
@@ -506,6 +501,7 @@ body.scroll #jrxna-navigation:before {
 	}
 
 	#jrxna-dual-content .cs-h3 {
+		font-family: 'AmazonEmberBold';
 		font-size: 16px;
 		margin: 0;
 		padding: 0;
@@ -553,7 +549,6 @@ body.scroll #jrxna-navigation:before {
 	#jrxna-dual-content .cs-desc {
 		/* 16px - 31px */
 		font-size: 16px;
-		font-weight: 400;
 		text-align: inherit;
 		width: 100%;
 		color: var(--bodyTextColorWhite);
@@ -583,7 +578,6 @@ body.scroll #jrxna-navigation:before {
 		width: 100%;
 		border-radius: var(--spacingUnit);
 		background: var(--bodyBackgroundColorDark);
-		box-sizing: border-box;
 	}
 
 	#jrxna-pricing .cs-item:nth-of-type(2) .cs-option2-text,
@@ -598,7 +592,7 @@ body.scroll #jrxna-navigation:before {
 
 	#jrxna-pricing .cs-popular {
 		background: var(--primary);
-		background-image: url("../assets/images/Background.png");
+		background-image: url("../assets/images/Background.webp");
 		background-attachment: fixed;
 		background-position: center;
 		position: relative;
@@ -612,7 +606,7 @@ body.scroll #jrxna-navigation:before {
 		/* Most Popular Tag */
 		content: "Popular";
 		font-size: 16px;
-		font-weight: 800;
+		font-family: 'AmazonEmberBold';
 		text-align: center;
 		width: 10.625rem;
 		padding: 0 0.75rem;
@@ -636,7 +630,7 @@ body.scroll #jrxna-navigation:before {
 	#jrxna-pricing .cs-h3 {
 		padding: 0 0 calc(2 * var(--spacingUnit)) 0;
 		font-size: 16px;
-		font-weight: 800;
+		font-family: 'AmazonEmberBold';
 	}
 
 	.divider {
@@ -659,7 +653,6 @@ body.scroll #jrxna-navigation:before {
 	#jrxna-pricing .cs-li {
 		/* 14px - 16px */
 		font-size: 16px;
-		font-weight: 400;
 		list-style: none;
 		padding: 0;
 		margin: 0 0 0.75rem;
@@ -736,6 +729,9 @@ body.scroll #jrxna-navigation:before {
 	#jrxna-pricing .cs-item {
 		width: 100%;
 		align-self: stretch;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 	}
 
 	#jrxna-pricing .cs-popular {
@@ -746,9 +742,9 @@ body.scroll #jrxna-navigation:before {
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
 	#jrxna-footer {
-		padding: calc(2 * var(--spacingUnit)) 0;
+		padding: calc(4 * var(--spacingUnit)) 0 calc(2 * var(--spacingUnit));
 		background-color: var(--primary);
-		background-image: url("../assets/images/Background.png");
+		background-image: url("../assets/images/Background.webp");
 		background-attachment: fixed;
 		background-position: center;
 		position: relative;
@@ -805,6 +801,7 @@ body.scroll #jrxna-navigation:before {
 	}
 
 	#jrxna-footer .cs-header {
+		font-family: 'AmazonEmberBold';
 		margin: 0 0 1rem 0;
 		color: #fff;
 		display: block;
@@ -887,7 +884,6 @@ body.scroll #jrxna-navigation:before {
 
 	#jrxna-footer .cs-copyright {
 		font-size: 16px;
-		font-weight: 400;
 		padding: calc(2 * var(--spacingUnit)) 0 0;
 		text-align: center;
 	}
@@ -1005,7 +1001,7 @@ pre .line-numbers-rows {
 		position: relative;
 		z-index: 1;
 		background: var(--primary);
-		background-image: url("../assets/images/Background.png");
+		background-image: url("../assets/images/Background.webp");
 		background-attachment: fixed;
 		background-position: center;
 	}
@@ -1025,7 +1021,7 @@ pre .line-numbers-rows {
 	#banner-712 .cs-int-title {
 		/* 39px - 61px */
 		font-size: 40px;
-		font-weight: 800;
+		font-family: 'AmazonEmberBold';
 		line-height: 1.2em;
 		text-align: inherit;
 		margin: 0;
@@ -1089,7 +1085,7 @@ pre .line-numbers-rows {
 		display: flex;
 		flex-direction: column;
 		grid-column: span 12;
-		background: url("../assets/images/Background.png") no-repeat center center fixed;
+		background: url("../assets/images/Background.webp") no-repeat center center fixed;
 		border-radius: var(--spacingUnit);
 	}
 
@@ -1137,7 +1133,7 @@ pre .line-numbers-rows {
 	#jrxna-blog .blog-title {
 		/* 20px - 25px */
 		font-size: 16px;
-		font-weight: 800;
+		font-family: 'AmazonEmberBold';
 		text-align: left;
 		margin: 0;
 		color: var(--bodyTextColor);
@@ -1223,7 +1219,7 @@ pre .line-numbers-rows {
 
 .jrxna-title {
 	font-size: 40px;
-	font-weight: 800;
+	font-family: 'AmazonEmberBold';
 	text-align: inherit; 
 	color: var(--bodyTextColor);
 	position: relative;
@@ -1231,7 +1227,7 @@ pre .line-numbers-rows {
 
 .jrxna-subtitle {
 	font-size: 24px;
-	font-weight: 800;
+	font-family: 'AmazonEmberBold';
 	text-align: inherit; 
 	color: var(--bodyTextColor);
 	position: relative;
@@ -1239,7 +1235,7 @@ pre .line-numbers-rows {
 
 .jrxna-topper {
 	font-size: 12px;
-	font-weight: 800;
+	font-family: 'AmazonEmberBold';
 	letter-spacing: .1em;
 	text-transform: uppercase;
 	color: var(--bodyTextColor);

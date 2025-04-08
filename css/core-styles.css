@@ -10,7 +10,7 @@
 
 :root {
     --spacingUnit: 8px;
-    --primary: #EE0000;
+    --primary: #0072C6;
     --secondary: #1E1E1E;
     --bodyTextColor: #FFFFFF;
     --bodyBackgroundColorLight: #2B2B2B;
@@ -41,6 +41,8 @@ body {
     font-size: 40px;
     text-align: inherit; 
     color: var(--headerColor);
+    margin: 0 0 8px 0; 
+    line-height: normal;
 }
 
 .jrxna-subtitle {
