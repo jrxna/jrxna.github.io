@@ -8,22 +8,24 @@
     <title>About | JRXNA</title>
     <link rel="stylesheet" href="css/core-styles.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
 </head>
 
 <body>
     <header>
         <div id="jrxna-navigation">
-            <div class="cs-container">
-                <a href="https://jrxna.com" class="cs-logo" aria-label="JRXNA">
+            <div class="jrxna-container">
+                <a href="https://jrxna.com" class="jrxna-logo" aria-label="JRXNA">
                     <img src="assets/images/JRXNA.png" alt="logo" aria-hidden="true" decoding="async">
                 </a>
-                <nav class="cs-nav" role="navigation">
-                    <button class="cs-toggle" aria-label="mobile menu toggle">
-                        <div class="cs-box" aria-hidden="true">
-                            <span class="cs-line cs-line1" aria-hidden="true"></span>
-                            <span class="cs-line cs-line2" aria-hidden="true"></span>
-                            <span class="cs-line cs-line3" aria-hidden="true"></span>
+                <nav class="jrxna-nav" role="navigation">
+                    <button class="jrxna-navigation-menu-toggle" aria-label="mobile menu toggle">
+                        <div class="jrxna-navigation-toggle-box" aria-hidden="true">
+                            <span class="jrxna-navigation-toggle-line jrxna-navigation-toggle-line1"
+                                aria-hidden="true"></span>
+                            <span class="jrxna-navigation-toggle-line jrxna-navigation-toggle-line2"
+                                aria-hidden="true"></span>
+                            <span class="jrxna-navigation-toggle-line jrxna-navigation-toggle-line3"
+                                aria-hidden="true"></span>
                         </div>
                     </button>
                 </nav>
@@ -31,18 +33,19 @@
         </div>
         <div id="menu-overlay">
             <ul class="menu-overlay-ul" aria-expanded="false">
-                <li class="cs-li">
-                    <a href="https://jrxna.com" target="_blank" class="cs-li-link">
+                <li class="jrxna-list-item">
+                    <a href="https://jrxna.com" target="_blank" class="jrxna-list-item-link">
                         Home
                     </a>
                 </li>
-                <li class="cs-li">
-                    <a href="https://jrxna.com/blog" target="_blank" class="cs-li-link">
+                <li class="jrxna-list-item">
+                    <a href="https://jrxna.com/blog" target="_blank" class="jrxna-list-item-link">
                         Blog
                     </a>
                 </li>
-                <li class="cs-li">
-                    <a href="https://jrxna.com" target="_blank" class="cs-li-link cs-active">
+                <li class="jrxna-list-item">
+                    <a href="https://jrxna.com" target="_blank"
+                        class="jrxna-list-item-link jrxna-navigation-toggle-active">
                         About
                     </a>
                 </li>
@@ -51,46 +54,37 @@
     </header>
 
     <main>
-        <div id="banner-712">
-            <div class="cs-container">
-                <span class="cs-int-title">About</span>
-            </div>
-        </div>
-
-        <div class="jrxna-content-container">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit modi laborum adipisci corrupti! Aut
-                laudantium dolores impedit dolore maxime? Ipsum, magnam dicta voluptatibus enim minima accusantium iste
-                illo perspiciatis voluptas!
-            </p>
-
-            <pre><code class="language-java">/**
- * A simple example of a Java class demonstrating cloud infrastructure concepts
+        <section id="jrxna-page">        
+            <div class="jrxna-card jrxna-first-card">
+                <div class="page-title-group">
+                    <p class="jrxna-topper">Jan 26, 2025</p>
+                    <h2 class="jrxna-title">This is my story</h2>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit modi laborum adipisci corrupti! Aut
+                    laudantium dolores impedit dolore maxime? Ipsum, magnam dicta voluptatibus enim minima accusantium
+                    iste
+                    illo perspiciatis voluptas!
+                </p>
+                <pre class="line-numbers"><code class="language-java">
+/**
+ * A simple example
  */
-public class CloudInfrastructureExample {
+public class Example {
     private final String region;
     private final int instanceCount;
     private Map<String, Instance> instances;
 
-    public CloudInfrastructureExample(String region, int instanceCount) {
+    public Example(String region, int instanceCount) {
         this.region = region;
         this.instanceCount = instanceCount;
         this.instances = new HashMap<>();
     }
 
-    /**
-     * Demonstrates auto-scaling based on load
-     */
     public void scaleInstances(double currentLoad) {
         if (currentLoad > 0.8 && instances.size() < instanceCount) {
-            // Scale up when load is above 80%
-            Instance newInstance = createInstance();
-            instances.put(newInstance.getId(), newInstance);
             System.out.println("Scaled up: New instance created in " + region);
         } else if (currentLoad < 0.2 && instances.size() > 1) {
-            // Scale down when load is below 20%
-            String instanceId = instances.keySet().iterator().next();
-            instances.remove(instanceId);
             System.out.println("Scaled down: Instance terminated in " + region);
         }
     }
@@ -112,135 +106,150 @@ public class CloudInfrastructureExample {
             return id;
         }
     }
-}</code></pre>
+}
+                </code></pre>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores pariatur quos laudantium!
+                    Corporis
+                    numquam, ea nisi, optio illum vel ratione unde rerum voluptatum distinctio autem! Minima
+                    exercitationem
+                    optio dolores possimus.
+                </p>
 
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores pariatur quos laudantium! Corporis
-                numquam, ea nisi, optio illum vel ratione unde rerum voluptatum distinctio autem! Minima exercitationem
-                optio dolores possimus.
-            </p>
-
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis dolorem voluptate odio laboriosam magni
-                ut, error vel enim sapiente, magnam impedit accusantium incidunt adipisci facere ullam a est! Facilis,
-                accusantium?
-            </p>
-        </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis dolorem voluptate odio laboriosam
+                    magni
+                    ut, error vel enim sapiente, magnam impedit accusantium incidunt adipisci facere ullam a est!
+                    Facilis,
+                    accusantium?
+                </p>
+            </div>
+        </section>
     </main>
 
     <footer id="jrxna-footer">
         <div class="jrxna-content">
             <!--Top Section-->
             <div class="cs-top">
-                <div class="cs-logo-wrapper">
-                    <a href="" class="cs-logo">
+                <div class="jrxna-logo-wrapper">
+                    <a href="https://jrxna.com" class="jrxna-logo">
                         <img src="assets/images/JRXNA.png" alt="logo" aria-hidden="true" decoding="async"
                             loading="lazy">
                     </a>
-                    <div class="footer-text-group">
-                        <p class="footer-text">
-                            I offer specialized cloud infrastructure consulting services. I help organizations optimize their
-                            cloud costs, scale their systems efficiently, and implement robust architectural solutions. 
-                        </p>
-                        <p class="footer-text">
-                            This blog serves as a resource where I share insights on cloud infrastructure, system design
-                            patterns, and foundational data structures - bridging the gap between theory and practical
-                            implementation in real-world scenarios.
-                        </p>
-                    </div>
+                    <p class="footer-text">
+                        Hi, I'm Joel Rego. My primary fascination lies in Computer
+                        Science subjects like Data Structures, Algorithms, Compiler Design, Operating Systems,
+                        Databases, and Computer Networks.
+                    </p>
+                    <p class="footer-text">
+                        Here, I publish my study notes: a repository of my
+                        studies, detailed annotations, and tutorial sessions. My aim is to shed light on these
+                        topics, and to spark that same fire of curiosity in others that drives my own continued study.
+                    </p>
                 </div>
                 <ul class="cs-ul">
-                    <li class="cs-li">
+                    <li class="jrxna-list-item">
                         <h3 class="cs-header">Resources</h3>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            Terms
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
+                            JRXNA Terms
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            Privacy
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
+                            JRXNA Privacy
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            Legal
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
+                            JRXNA Legal
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            FAQs
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
+                            JRXNA FAQs
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            Press
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
+                            JRXNA Press
                         </a>
                     </li>
                 </ul>
                 <ul class="cs-ul">
-                    <li class="cs-li">
+                    <li class="jrxna-list-item">
                         <h3 class="cs-header">Projects</h3>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            Gungoose
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
+                            JRXNA Gungoose
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            Grappleshot
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
+                            JRXNA Grappleshot
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            Warthog
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
+                            JRXNA Warthog
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            Scorpion
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
+                            JRXNA Scorpion
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            Razorback
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
+                            JRXNA Razorback
                         </a>
                     </li>
                 </ul>
                 <ul class="cs-ul">
-                    <li class="cs-li">
+                    <li class="jrxna-list-item">
                         <h3 class="cs-header">Contact</h3>
                     </li>
-                    <li class="cs-li"> 
-                        <a href="" class="cs-link">
-                            hello@jrxna.com
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk">
+                            hi@jrxna.com
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            Austin, TX
-                        </a>
+                    <li class="jrxna-list-item">
+                        <p class="jrxna-list-itemnk">
+                            Los Angeles, CA
+                        </p>
+                        <p class="jrxna-list-itemnk">
+                            United States
+                        </p>
+                    </li>
+                    <li class="jrxna-list-item">
+                        <p class="jrxna-list-itemnk">
+                            Bangalore, KA
+                        </p>
+                        <p class="jrxna-list-itemnk">
+                            India
+                        </p>
                     </li>
                 </ul>
             </div>
             <!--Middle Section-->
             <div class="cs-middle">
                 <!--Navigation-->
-                <ul class="cs-nav">
-                    <li class="cs-nav-li">
-                        <a href="https://jrxna.com" target="_blank" class="cs-nav-link">
+                <ul class="jrxna-nav">
+                    <li class="jrxna-nav-li">
+                        <a href="https://jrxna.com" target="_blank" class="jrxna-nav-link">
                             Home
                         </a>
                     </li>
-                    <li class="cs-nav-li">
-                        <a href="https://jrxna.com" target="_blank" class="cs-nav-link">
+                    <li class="jrxna-nav-li">
+                        <a href="https://jrxna.com/blog" target="_blank" class="jrxna-nav-link">
                             Blog
                         </a>
                     </li>
-                    <li class="cs-nav-li">
-                        <a href="https://jrxna.com" target="_blank" class="cs-nav-link">
+                    <li class="jrxna-nav-li">
+                        <a href="https://jrxna.com/about" target="_blank" class="jrxna-nav-link">
                             About
                         </a>
                     </li>
@@ -249,32 +258,44 @@ public class CloudInfrastructureExample {
                 <!--Social-->
                 <ul class="cs-social">
                     <li class="cs-social-li">
-                        <a href="" class="cs-social-link" aria-label="Bluesky" target="_blank" rel="noopener">
-                            <img class="cs-social-icon cs-default" src="assets/icons/bluesky.svg" alt="Bluesky icon"
+                        <a href="https://linkedin.com/in/jrxna" class="cs-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <img class="cs-social-icon cs-default" src="assets/icons/linkedin.svg" alt="LinkedIn"
                                 loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
                         </a>
                     </li>
                     <li class="cs-social-li">
-                        <a href="" class="cs-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
-                            <img class="cs-social-icon cs-default" src="assets/icons/linkedin.svg" alt="LinkedIn icon"
+                        <a href="https://bsky.app/profile/jrxna.com" class="cs-social-link" aria-label="Bluesky" target="_blank" rel="noopener">
+                            <img class="cs-social-icon cs-default" src="assets/icons/bluesky.svg" alt="Bluesky"
                                 loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
                         </a>
                     </li>
                     <li class="cs-social-li">
-                        <a href="" class="cs-social-link" aria-label="GitHub" target="_blank" rel="noopener">
-                            <img class="cs-social-icon cs-default" src="assets/icons/github.svg" alt="GitHub icon"
+                        <a href="https://medium.com/@jrxna" class="cs-social-link" aria-label="Medium" target="_blank" rel="noopener">
+                            <img class="cs-social-icon cs-default" src="assets/icons/medium.svg" alt="Medium"
                                 loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
                         </a>
                     </li>
                     <li class="cs-social-li">
-                        <a href="" class="cs-social-link" aria-label="YouTube" target="_blank" rel="noopener">
-                            <img class="cs-social-icon cs-default" src="assets/icons/youtube.svg" alt="YouTube icon"
+                        <a href="https://youtube.com/@jrxna" class="cs-social-link" aria-label="YouTube" target="_blank" rel="noopener">
+                            <img class="cs-social-icon cs-default" src="assets/icons/youtube.svg" alt="YouTube"
                                 loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
                         </a>
                     </li>
                     <li class="cs-social-li">
-                        <a href="" class="cs-social-link" aria-label="Spotify" target="_blank" rel="noopener">
-                            <img class="cs-social-icon cs-default" src="assets/icons/spotify.svg" alt="Spotify icon"
+                        <a href="https://open.spotify.com/show/7upwpH8kvEdV3kVeUXuri1?si=ng4tVCZ8SOWxyqM7OLcIvw" class="cs-social-link" aria-label="Spotify" target="_blank" rel="noopener">
+                            <img class="cs-social-icon cs-default" src="assets/icons/spotify.svg" alt="Spotify"
+                                loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
+                        </a>
+                    </li>
+                    <li class="cs-social-li">
+                        <a href="https://github.com/jrxna" class="cs-social-link" aria-label="GitHub" target="_blank" rel="noopener">
+                            <img class="cs-social-icon cs-default" src="assets/icons/github.svg" alt="GitHub"
+                                loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
+                        </a>
+                    </li>
+                    <li class="cs-social-li">
+                        <a href="https://patreon.com/jrxna" class="cs-social-link" aria-label="Patreon" target="_blank" rel="noopener">
+                            <img class="cs-social-icon cs-default" src="assets/icons/patreon.svg" alt="Patreon"
                                 loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
                         </a>
                     </li>
@@ -282,13 +303,16 @@ public class CloudInfrastructureExample {
             </div>
             <!--Bottom Section-->
             <div class="divider"></div>
-            <div class="cs-copyright">© JRXNA • All Rights Reserved • Generated with <a href="https://github.com/jrxna/mongoose" style="color: #fff; text-decoration: none;">JRXNA Mongoose</a></div>
+            <div class="cs-copyright">© JRXNA • All Rights Reserved • Generated with <a
+                    href="https://github.com/jrxna/mongoose" style="color: #fff; text-decoration: none;">JRXNA
+                    Mongoose</a></div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
 
 </html>

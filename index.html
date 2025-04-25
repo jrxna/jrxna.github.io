@@ -13,16 +13,19 @@
 <body>
     <header>
         <div id="jrxna-navigation">
-            <div class="cs-container">
-                <a href="https://jrxna.com" class="cs-logo" aria-label="JRXNA">
+            <div class="jrxna-container">
+                <a href="https://jrxna.com" class="jrxna-logo" aria-label="JRXNA">
                     <img src="assets/images/JRXNA.png" alt="logo" aria-hidden="true" decoding="async">
                 </a>
-                <nav class="cs-nav" role="navigation">
-                    <button class="cs-toggle" aria-label="mobile menu toggle">
-                        <div class="cs-box" aria-hidden="true">
-                            <span class="cs-line cs-line1" aria-hidden="true"></span>
-                            <span class="cs-line cs-line2" aria-hidden="true"></span>
-                            <span class="cs-line cs-line3" aria-hidden="true"></span>
+                <nav class="jrxna-nav" role="navigation">
+                    <button class="jrxna-navigation-menu-toggle" aria-label="JRXNA Navigation Menu Toggle">
+                        <div class="jrxna-navigation-toggle-box" aria-hidden="true">
+                            <span class="jrxna-navigation-toggle-line jrxna-navigation-toggle-line1"
+                                aria-hidden="true"></span>
+                            <span class="jrxna-navigation-toggle-line jrxna-navigation-toggle-line2"
+                                aria-hidden="true"></span>
+                            <span class="jrxna-navigation-toggle-line jrxna-navigation-toggle-line3"
+                                aria-hidden="true"></span>
                         </div>
                     </button>
                 </nav>
@@ -30,18 +33,19 @@
         </div>
         <div id="menu-overlay">
             <ul class="menu-overlay-ul" aria-expanded="false">
-                <li class="cs-li">
-                    <a href="https://jrxna.com" target="_blank" class="cs-li-link cs-active">
+                <li class="jrxna-list-item">
+                    <a href="https://jrxna.com" target="_blank"
+                        class="jrxna-list-item-link jrxna-navigation-toggle-active">
                         Home
                     </a>
                 </li>
-                <li class="cs-li">
-                    <a href="https://jrxna.com/blog" target="_blank" class="cs-li-link">
+                <li class="jrxna-list-item">
+                    <a href="./blog.html" target="_blank" class="jrxna-list-item-link">
                         Blog
                     </a>
                 </li>
-                <li class="cs-li">
-                    <a href="https://jrxna.com/about" target="_blank" class="cs-li-link">
+                <li class="jrxna-list-item">
+                    <a href="./about.html" target="_blank" class="jrxna-list-item-link">
                         About
                     </a>
                 </li>
@@ -51,50 +55,459 @@
 
     <main>
         <section id="jrxna-hero">
+            <div class="jrxna-card jrxna-first-card jrxna-display-card">
+                <div class="jrxna-dual-content-image">
+                    <img loading="lazy" decoding="async" src="./assets/images/Profile.webp" aria-hidden="true">
+                </div>
+                <div class="jrxna-dual-content-text">
+                    <p class="jrxna-topper">Welcome to JRXNA Base 117</p>
+                    <h2 class="jrxna-title hero-title">A Deep Dive into Computer Science</h2>
+                    <p class="jrxna-text">
+                        Hi, I'm Joel Rego. My primary fascination lies in Computer
+                        Science subjects like Data Structures, Algorithms, Compiler Design, Operating Systems,
+                        Databases, and Computer Networks.
+                    </p>
+                    <p class="jrxna-text">
+                        Here, I publish my study notes: a repository of my
+                        studies, detailed annotations, and tutorial sessions. My aim is to shed light on these
+                        topics, and to spark that same fire of curiosity in others that drives my own continued study.
+                    </p>
+                    <a class="jrxna-button-solid" aria-label="learn more" href="https://jrxna.com/about.html">Read My Story</a>
+                    <div class="numbers">
+                        <div class="divider"></div>
+                        <ul class="cs-ul">
+                            <li class="cs-item">
+                                <span class="cs-number">200+</span>
+                                <h3 class="cs-h3">Tutorials</h3>
+                            </li>
+                            <li class="cs-item">
+                                <span class="cs-number">100+</span>
+                                <h3 class="cs-h3">Podcasts</h3>
+                            </li>
+                            <li class="cs-item">
+                                <span class="cs-number">50+</span>
+                                <h3 class="cs-h3">Articles</h3>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="jrxna-academy">
             <div class="jrxna-content">
-                <span class="jrxna-topper">JRXNA Consulting</span>
-                <h1 class="jrxna-title">Cloud Consulting Services</h1>
-                <p class="jrxna-text">
-                    Hello. My name is Joel Rego. I offer specialized cloud infrastructure consulting services. I help
-                    organizations optimize their
-                    cloud costs, scale their systems efficiently, and implement robust architectural solutions.
-                    This blog serves as a resource where I share insights on cloud infrastructure, system design
-                    patterns, and foundational data structures - bridging the gap between theory and practical
-                    implementation in real-world scenarios.
-                </p>
-                <div class="jrxna-hero-button-group">
-                    <a href="https://jrxna.com/blog" target="_blank" class="cs-button-solid-secondary"><span>Consult Now</span></a>
-                    <a href="#jrxna-blog" class="cs-button-solid-secondary"
-                        onclick="event.preventDefault(); scrollToSection('#jrxna-blog');">
-                        <span>JRXNA Research</span>
-                    </a>
-                    <a href="#jrxna-pricing" class="cs-button-solid-secondary"
-                        onclick="event.preventDefault(); scrollToSection('#jrxna-pricing');">
-                        <span>JRXNA Academy</span>
-                    </a>
-                    <a href="#jrxna-dual-content" class="cs-button-solid-secondary"
-                        onclick="event.preventDefault(); scrollToSection('#jrxna-dual-content');">
-                        <span>JRXNA Podcast</span>
-                    </a>
+                <div class="title-group">
+                    <p class="jrxna-topper">JRXNA Academy</p>
+                    <h2 class="jrxna-title">Tutorials</h2>
+                </div>
+                <ul class="cs-card-group">
+                    <li class="cs-item">
+                        <h3 class="cs-h3">Data Structures</h3>
+                        <div class="divider"></div>
+                        <ul class="cs-ul">
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="Check Mark" width="20" height="20">
+                                Arrays and Linked Lists: Fundamental Structures
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Stacks, Queues, and Their Diverse Applications
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Trees: Hierarchical Data Organization and Traversal
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Binary Search Trees: Efficient Searching and Updates
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Heaps and Priority Queues: Managing Ordered Data
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Hashing: Efficient Data Retrieval Techniques Explored
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Graphs: Representing Relationships and Connections
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Graph Traversal Algorithms: DFS and BFS in Detail
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Spanning Trees and Shortest Paths: Optimization
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Advanced Data Structures: Tries and Segment Trees
+                            </li>
+                        </ul>
+                        <a href="#" class="jrxna-button-solid card-button"><span>Watch Playlist</span></a>
+                    </li>
+                    <li class="cs-item cs-popular">
+                        <h3 class="cs-h3">Algorithms</h3>
+                        <div class="divider"></div>
+                        <ul class="cs-ul">
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Algorithm Analysis: Time and Space Complexity Basics
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Sorting Algorithms: Principles and Key Techniques
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Searching Algorithms: Efficient Information Retrieval
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Divide and Conquer: Problem Solving Strategy Deep Dive
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Greedy Algorithms: Making Locally Optimal Choices
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Dynamic Programming: Optimal Substructure and Overlap
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Graph Algorithms: Network Flows and Matching Explored
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                String Matching Algorithms: Pattern Searching in Text
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Computational Complexity: P, NP, and NP-Completeness
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Advanced Algorithmic Techniques and Applications
+                            </li>
+                        </ul>
+                        <a href="#" class="jrxna-button-solid card-button"><span>Watch Playlist</span></a>
+                    </li>
+                    <li class="cs-item">
+                        <h3 class="cs-h3">Compiler Design</h3>
+                        <div class="divider"></div>
+                        <ul class="cs-ul">
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Introduction to Compiling: Phases and Overall Structure
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Lexical Analysis: Tokenization and Regular Expressions
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Syntax Analysis: Parsing Techniques and Grammars
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Semantic Analysis: Type Checking and Scope Management
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Intermediate Code Generation: Representations Explored
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Code Optimization: Enhancing Efficiency and Performance
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Target Code Generation: Translating to Machine Code
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Symbol Tables: Managing Identifiers and Attributes
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Error Handling and Recovery in the Compilation Process
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Advanced Topics: Just-in-Time Compilation and More
+                            </li>
+                        </ul>
+                        <a href="#" class="jrxna-button-solid card-button"><span>Watch Playlist</span></a>
+                    </li>
+                    <li class="cs-item">
+                        <h3 class="cs-h3">Operating Systems</h3>
+                        <div class="divider"></div>
+                        <ul class="cs-ul">
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="Check Mark" width="20" height="20">
+                                Introduction to OS: Structure, Functions, and Evolution
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Process Management: Creation, Scheduling, and Control
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Process Synchronization: Managing Concurrent Execution
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Deadlocks: Detection, Prevention, and Avoidance
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Memory Management: Allocation, Paging, and Segmentation
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Virtual Memory: Demand Paging and Address Translation
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                File Systems: Organization, Access, and Management
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Input/Output Systems: Device Management and Handling
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Security and Protection: Mechanisms and Policies
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Distributed Operating Systems: Concepts and Architectures
+                            </li>
+                        </ul>
+                        <a href="#" class="jrxna-button-solid card-button"><span>Watch Playlist</span></a>
+                    </li>
+                    <li class="cs-item">
+                        <h3 class="cs-h3">Databases</h3>
+                        <div class="divider"></div>
+                        <ul class="cs-ul">
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Introduction to Databases: Concepts and Data Models
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Relational Model: Structure, Keys, and Constraints
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Relational Algebra and Calculus: Querying Fundamentals
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                SQL: Data Definition, Manipulation, and Control
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Database Normalization: Eliminating Redundancy Issues
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Transaction Management: Concurrency and Recovery
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                File Organization and Indexing: Efficient Data Access
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                NoSQL Databases: Key Concepts and Types Explored
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Data Warehousing and Data Mining Fundamentals
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Advanced Database Topics: Big Data and Cloud Databases
+                            </li>
+                        </ul>
+                        <a href="#" class="jrxna-button-solid card-button"><span>Watch Playlist</span></a>
+                    </li>
+                    <li class="cs-item">
+                        <h3 class="cs-h3">Computer Networks</h3>
+                        <div class="divider"></div>
+                        <ul class="cs-ul">
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Introduction to Networks: Topologies and Architectures
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Physical Layer: Transmission Media and Signaling
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Data Link Layer: Framing, Error Control, and MAC
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Network Layer: IP Addressing and Routing Protocols
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Transport Layer: TCP and UDP Protocols in Detail
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Application Layer: Protocols like HTTP and DNS
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Network Security: Firewalls, Encryption, and VPNs
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Wireless Networks: Standards and Mobile Communication
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Network Management: Monitoring and Troubleshooting
+                            </li>
+                            <li class="jrxna-list-item">
+                                <img class="jrxna-list-item-img" aria-hidden="true" loading="lazy" decoding="async"
+                                    src="assets/images/Check.svg" alt="code stitch icon" width="20" height="20">
+                                Advanced Networking Concepts: SDN and Future Trends
+                            </li>
+                        </ul>
+                        <a href="#" class="jrxna-button-solid card-button"><span>Watch Playlist</span></a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="jrxna-podcast">
+            <div class="jrxna-card jrxna-display-card">
+                <div class="jrxna-dual-content-image">
+                    <img loading="lazy" decoding="async" src="./assets/images/Podcast.webp" aria-hidden="true">
+                </div>
+                <div class="jrxna-dual-content-text">
+                    <p class="jrxna-topper">JRXNA Stream</p>
+                    <h2 class="jrxna-title">Podcasts</h2>
+                    <p class="jrxna-text">
+                        JRXNA Stream is where I explore the fascinating science behind effective study habits,
+                        productivity
+                        secrets, and the joy of intellectual discovery.
+                    </p>
+
+                    <p class="jrxna-text">
+                        Each episode provides evidence-based strategies and practical techniques to help you study
+                        smarter, manage your time effectively, and develop the skills for lifelong success.
+                    </p>
+                    <p class="jrxna-text">
+                        Tune in to spark your interest, gain actionable
+                        insights, and cultivate a love of learning.
+                    </p>
+
+                    <a class="jrxna-button-solid" aria-label="learn more" href="https://open.spotify.com/show/7upwpH8kvEdV3kVeUXuri1?si=ng4tVCZ8SOWxyqM7OLcIvw"><span>Listen on Spotify</span></a>
+                    <div class="numbers">
+                        <div class="divider"></div>
+                        <ul class="cs-ul">
+                            <li class="cs-item">
+                                <span class="cs-number">50+</span>
+                                <h3 class="cs-h3">Episodes</h3>
+                            </li>
+                            <li class="cs-item">
+                                <span class="cs-number">10K+</span>
+                                <h3 class="cs-h3">Downloads</h3>
+                            </li>
+                            <li class="cs-item">
+                                <span class="cs-number">4.8</span>
+                                <h3 class="cs-h3">Rating</h3>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="jrxna-blog">
             <div class="jrxna-content">
-                <span class="jrxna-topper">JRXNA Research</span>
-                <h1 class="jrxna-subtitle">Read My Articles</h1>
+                <div class="title-group">
+                    <p class="jrxna-topper">JRXNA Notes</p>
+                    <h2 class="jrxna-title">Articles</h2>
+                </div>
                 <ul class="cs-card-group">
                     <li class="cs-item">
-                        <a class="cs-link" href="/">
+                        <a class="jrxna-list-itemnk" href="/">
                             <div class="cs-item-text">
                                 <h3 class="blog-title">
                                     Architecting Event-Driven Microservices: A Deep Dive into AWS EventBridge and Lambda
                                     Integration
                                     <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
+                                        <img class="cs-icon" decoding="async" src="/assets/images/Arrow.svg" alt="arrow"
+                                            width="413" height="374" aria-hidden="true">
                                     </picture>
                                 </h3>
                                 <div class="cs-info">
@@ -112,15 +525,14 @@
                         </a>
                     </li>
                     <li class="cs-item">
-                        <a class="cs-link" href="/">
+                        <a class="jrxna-list-itemnk" href="/">
                             <div class="cs-item-text">
                                 <h3 class="blog-title">
                                     Zero-Trust Architecture in Multi-Cloud Environments: Implementing Identity-Aware
                                     Proxies
                                     <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
+                                        <img class="cs-icon" decoding="async" src="/assets/images/Arrow.svg" alt="arrow"
+                                            width="413" height="374" aria-hidden="true">
                                     </picture>
                                 </h3>
                                 <div class="cs-info">
@@ -138,14 +550,13 @@
                         </a>
                     </li>
                     <li class="cs-item">
-                        <a class="cs-link" href="/">
+                        <a class="jrxna-list-itemnk" href="/">
                             <div class="cs-item-text">
                                 <h3 class="blog-title">
                                     Infrastructure as Code at Scale: Managing Terraform State in GitOps Workflows
                                     <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
+                                        <img class="cs-icon" decoding="async" src="/assets/images/Arrow.svg" alt="arrow"
+                                            width="413" height="374" aria-hidden="true">
                                     </picture>
                                 </h3>
                                 <div class="cs-info">
@@ -163,15 +574,14 @@
                         </a>
                     </li>
                     <li class="cs-item">
-                        <a class="cs-link" href="/">
+                        <a class="jrxna-list-itemnk" href="/">
                             <div class="cs-item-text">
                                 <h3 class="blog-title">
                                     Architecting Event-Driven Microservices: A Deep Dive into AWS EventBridge and Lambda
                                     Integration
                                     <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
+                                        <img class="cs-icon" decoding="async" src="/assets/images/Arrow.svg" alt="arrow"
+                                            width="413" height="374" aria-hidden="true">
                                     </picture>
                                 </h3>
                                 <div class="cs-info">
@@ -189,15 +599,14 @@
                         </a>
                     </li>
                     <li class="cs-item">
-                        <a class="cs-link" href="/">
+                        <a class="jrxna-list-itemnk" href="/">
                             <div class="cs-item-text">
                                 <h3 class="blog-title">
                                     Zero-Trust Architecture in Multi-Cloud Environments: Implementing Identity-Aware
                                     Proxies
                                     <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
+                                        <img class="cs-icon" decoding="async" src="/assets/images/Arrow.svg" alt="arrow"
+                                            width="413" height="374" aria-hidden="true">
                                     </picture>
                                 </h3>
                                 <div class="cs-info">
@@ -215,14 +624,13 @@
                         </a>
                     </li>
                     <li class="cs-item">
-                        <a class="cs-link" href="/">
+                        <a class="jrxna-list-itemnk" href="/">
                             <div class="cs-item-text">
                                 <h3 class="blog-title">
                                     Infrastructure as Code at Scale: Managing Terraform State in GitOps Workflows
                                     <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
+                                        <img class="cs-icon" decoding="async" src="/assets/images/Arrow.svg" alt="arrow"
+                                            width="413" height="374" aria-hidden="true">
                                     </picture>
                                 </h3>
                                 <div class="cs-info">
@@ -240,15 +648,14 @@
                         </a>
                     </li>
                     <li class="cs-item">
-                        <a class="cs-link" href="/">
+                        <a class="jrxna-list-itemnk" href="/">
                             <div class="cs-item-text">
                                 <h3 class="blog-title">
                                     Architecting Event-Driven Microservices: A Deep Dive into AWS EventBridge and Lambda
                                     Integration
                                     <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
+                                        <img class="cs-icon" decoding="async" src="/assets/images/Arrow.svg" alt="arrow"
+                                            width="413" height="374" aria-hidden="true">
                                     </picture>
                                 </h3>
                                 <div class="cs-info">
@@ -266,15 +673,14 @@
                         </a>
                     </li>
                     <li class="cs-item">
-                        <a class="cs-link" href="/">
+                        <a class="jrxna-list-itemnk" href="/">
                             <div class="cs-item-text">
                                 <h3 class="blog-title">
                                     Zero-Trust Architecture in Multi-Cloud Environments: Implementing Identity-Aware
                                     Proxies
                                     <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
+                                        <img class="cs-icon" decoding="async" src="/assets/images/Arrow.svg" alt="arrow"
+                                            width="413" height="374" aria-hidden="true">
                                     </picture>
                                 </h3>
                                 <div class="cs-info">
@@ -292,14 +698,13 @@
                         </a>
                     </li>
                     <li class="cs-item">
-                        <a class="cs-link" href="/">
+                        <a class="jrxna-list-itemnk" href="/">
                             <div class="cs-item-text">
                                 <h3 class="blog-title">
                                     Infrastructure as Code at Scale: Managing Terraform State in GitOps Workflows
                                     <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
+                                        <img class="cs-icon" decoding="async" src="/assets/images/Arrow.svg" alt="arrow"
+                                            width="413" height="374" aria-hidden="true">
                                     </picture>
                                 </h3>
                                 <div class="cs-info">
@@ -317,248 +722,6 @@
                         </a>
                     </li>
                 </ul>
-                <div class="jrxna-hero-button-group">
-                    <a href="https://jrxna.com/blog" target="_blank" class="cs-button-solid"><span>Read My Articles</span></a>
-                    <a href="https://buymeacoffee.com/jrxna" target="_blank" class="cs-button-solid-tertiary"><span>Consult Now</span></a>
-                </div>
-            </div>
-        </section>
-
-        <section id="jrxna-pricing">
-            <div class="jrxna-content">
-                <span class="jrxna-topper">JRXNA Academy</span>
-                <h1 class="jrxna-subtitle">Watch My Videos</h1>
-                <ul class="cs-card-group">
-                    <!-- Option 1 -->
-                    <li class="cs-item">
-                        <h3 class="cs-h3">Data Structures</h3>
-                        <div class="divider"></div>
-                        <ul class="cs-ul">
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Time and Space Complexity Analysis
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Arrays and Strings in Depth
-                            </li>
-                            <li class="cs-li cs-disabled">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Understanding Linked Lists
-                            </li>
-                            <li class="cs-li cs-disabled">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Stacks and Queues in Depth
-                            </li>
-                            <li class="cs-li cs-disabled">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Trees and Binary Search Trees
-                            </li>
-                            <li class="cs-li cs-disabled">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Graphs: BFS, DFS, and Shortest Path
-                            </li>
-                            <li class="cs-li cs-disabled">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Sorting and Searching Algorithms
-                            </li>
-                            <li class="cs-li cs-disabled">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Dynamic Programming in Depth
-                            </li>
-                            <li class="cs-li cs-disabled">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Greedy Algorithms and Backtracking
-                            </li>
-                        </ul>
-                        <a href="#" class="cs-button-solid card-button"><span>Watch Playlist</span></a>
-                    </li>
-                    <!-- Option 2 -->
-                    <li class="cs-item cs-popular">
-                        <h3 class="cs-h3">System Design</h3>
-                        <div class="divider"></div>
-                        <ul class="cs-ul">
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Fundamentals of System Design
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Scalability and Load Balancing
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Cache Mechanisms and Strategies
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Database Design: SQL vs NoSQL
-                            </li>
-                            <li class="cs-li cs-disabled">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Distributed System Architecture
-                            </li>
-                            <li class="cs-li cs-disabled">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                APIs and Microservices Integration
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Reliability and Fault Tolerance
-                            </li>
-                            <li class="cs-li cs-disabled">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Designing Messaging Systems
-                            </li>
-                            <li class="cs-li cs-disabled">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Case Studies: Real-World Systems
-                            </li>
-                        </ul>
-                        <a href="#" class="cs-button-solid-secondary card-button"><span>Watch Playlist</span></a>
-                    </li>
-                    <!-- Option 3 -->
-                    <li class="cs-item">
-                        <h3 class="cs-h3">Cloud Infrastructure</h3>
-                        <div class="divider"></div>
-                        <ul class="cs-ul">
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Cloud Computing Fundamentals
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Compute Services and Instances
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Storage Solutions and Services
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Database Services and Options
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Networking and CDN Architecture
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Serverless Computing Frameworks
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Real-World Architecture
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Multi-Cloud Patterns
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Platform Engineering
-                            </li>
-                        </ul>
-                        <a href="#" class="cs-button-solid card-button"><span>Watch Playlist</span></a>
-                    </li>
-                </ul>
-                <div class="jrxna-hero-button-group">
-                    <a href="https://jrxna.com/blog" target="_blank" class="cs-button-solid"><span>Watch My Videos</span></a>
-                    <a href="https://buymeacoffee.com/jrxna" target="_blank" class="cs-button-solid-secondary"><span>Consult Now</span></a>
-                </div>
-            </div>
-        </section>
-
-        <section id="jrxna-dual-content">
-            <div class="cs-image-group">
-                <!--Image-->
-                <picture class="cs-picture">
-                    <img loading="lazy" decoding="async" src="./assets/images/Profile.webp" aria-hidden="true">
-                </picture>
-            </div>
-            <div class="cs-content">
-                <span class="jrxna-topper">JRXNA Podcast</span>
-                <h2 class="jrxna-subtitle">Listen To My Podcasts</h2>
-                <p class="jrxna-text">
-                    JRXNA Podcast explores cutting-edge cloud infrastructure strategies, architectural patterns, and
-                    optimization techniques through in-depth conversations with industry experts. Each episode delivers
-                    actionable insights on cloud cost management, scalability challenges, and emerging technologies that
-                    help businesses build more resilient and efficient systems.
-                </p>
-
-                <a class="cs-button-solid" aria-label="learn more" href=""><span>Listen on Spotify</span></a>
-                <div class="numbers">
-                    <div class="divider"></div>
-                    <ul class="cs-ul">
-                        <li class="cs-item">
-                            <span class="cs-number">100+</span>
-                            <h3 class="cs-h3">Optimization Strategies</h3>
-                        </li>
-                        <li class="cs-item">
-                            <span class="cs-number">50+</span>
-                            <h3 class="cs-h3">Enterprise Solutions</h3>
-                        </li>
-                        <li class="cs-item">
-                            <span class="cs-number">50+</span>
-                            <h3 class="cs-h3">Architecture Patterns</h3>
-                        </li>
-                    </ul>
-                </div>
-            </div>
             </div>
         </section>
     </main>
@@ -567,114 +730,125 @@
         <div class="jrxna-content">
             <!--Top Section-->
             <div class="cs-top">
-                <div class="cs-logo-wrapper">
-                    <a href="" class="cs-logo">
+                <div class="jrxna-logo-wrapper">
+                    <a href="https://jrxna.com" class="jrxna-logo">
                         <img src="assets/images/JRXNA.png" alt="logo" aria-hidden="true" decoding="async"
                             loading="lazy">
                     </a>
-                    <div class="footer-text-group">
-                        <p class="footer-text">
-                            I offer specialized cloud infrastructure consulting services. I help organizations optimize
-                            their
-                            cloud costs, scale their systems efficiently, and implement robust architectural solutions.
-                            This blog serves as a resource where I share insights on cloud infrastructure, system design
-                            patterns, and foundational data structures - bridging the gap between theory and practical
-                            implementation in real-world scenarios.
-                        </p>
-                    </div>
+                    <p class="footer-text">
+                        Hi, I'm Joel Rego. My primary fascination lies in Computer
+                        Science subjects like Data Structures, Algorithms, Compiler Design, Operating Systems,
+                        Databases, and Computer Networks.
+                    </p>
+                    <p class="footer-text">
+                        Here, I publish my study notes: a repository of my
+                        studies, detailed annotations, and tutorial sessions. My aim is to shed light on these
+                        topics, and to spark that same fire of curiosity in others that drives my own continued study.
+                    </p>
                 </div>
                 <ul class="cs-ul">
-                    <li class="cs-li">
+                    <li class="jrxna-list-item">
                         <h3 class="cs-header">Resources</h3>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
                             JRXNA Terms
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
                             JRXNA Privacy
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
                             JRXNA Legal
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
                             JRXNA FAQs
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
                             JRXNA Press
                         </a>
                     </li>
                 </ul>
                 <ul class="cs-ul">
-                    <li class="cs-li">
+                    <li class="jrxna-list-item">
                         <h3 class="cs-header">Projects</h3>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
                             JRXNA Gungoose
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
                             JRXNA Grappleshot
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
                             JRXNA Warthog
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
                             JRXNA Scorpion
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
                             JRXNA Razorback
                         </a>
                     </li>
                 </ul>
                 <ul class="cs-ul">
-                    <li class="cs-li">
+                    <li class="jrxna-list-item">
                         <h3 class="cs-header">Contact</h3>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link">
-                            hello@jrxna.com
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk">
+                            hi@jrxna.com
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            Austin, TX
-                        </a>
+                    <li class="jrxna-list-item">
+                        <p class="jrxna-list-itemnk">
+                            Los Angeles, CA
+                        </p>
+                        <p class="jrxna-list-itemnk">
+                            United States
+                        </p>
+                    </li>
+                    <li class="jrxna-list-item">
+                        <p class="jrxna-list-itemnk">
+                            Bangalore, KA
+                        </p>
+                        <p class="jrxna-list-itemnk">
+                            India
+                        </p>
                     </li>
                 </ul>
             </div>
             <!--Middle Section-->
             <div class="cs-middle">
                 <!--Navigation-->
-                <ul class="cs-nav">
-                    <li class="cs-nav-li">
-                        <a href="https://jrxna.com" target="_blank" class="cs-nav-link">
+                <ul class="jrxna-nav">
+                    <li class="jrxna-nav-li">
+                        <a href="https://jrxna.com" target="_blank" class="jrxna-nav-link">
                             Home
                         </a>
                     </li>
-                    <li class="cs-nav-li">
-                        <a href="https://jrxna.com/blog" target="_blank" class="cs-nav-link">
+                    <li class="jrxna-nav-li">
+                        <a href="https://jrxna.com/blog" target="_blank" class="jrxna-nav-link">
                             Blog
                         </a>
                     </li>
-                    <li class="cs-nav-li">
-                        <a href="https://jrxna.com/about" target="_blank" class="cs-nav-link">
+                    <li class="jrxna-nav-li">
+                        <a href="https://jrxna.com/about" target="_blank" class="jrxna-nav-link">
                             About
                         </a>
                     </li>
@@ -683,32 +857,44 @@
                 <!--Social-->
                 <ul class="cs-social">
                     <li class="cs-social-li">
-                        <a href="" class="cs-social-link" aria-label="Bluesky" target="_blank" rel="noopener">
-                            <img class="cs-social-icon cs-default" src="assets/icons/bluesky.svg" alt="Bluesky icon"
+                        <a href="https://linkedin.com/in/jrxna" class="cs-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <img class="cs-social-icon cs-default" src="assets/icons/linkedin.svg" alt="LinkedIn"
                                 loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
                         </a>
                     </li>
                     <li class="cs-social-li">
-                        <a href="" class="cs-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
-                            <img class="cs-social-icon cs-default" src="assets/icons/linkedin.svg" alt="LinkedIn icon"
+                        <a href="https://bsky.app/profile/jrxna.com" class="cs-social-link" aria-label="Bluesky" target="_blank" rel="noopener">
+                            <img class="cs-social-icon cs-default" src="assets/icons/bluesky.svg" alt="Bluesky"
                                 loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
                         </a>
                     </li>
                     <li class="cs-social-li">
-                        <a href="" class="cs-social-link" aria-label="GitHub" target="_blank" rel="noopener">
-                            <img class="cs-social-icon cs-default" src="assets/icons/github.svg" alt="GitHub icon"
+                        <a href="https://medium.com/@jrxna" class="cs-social-link" aria-label="Medium" target="_blank" rel="noopener">
+                            <img class="cs-social-icon cs-default" src="assets/icons/medium.svg" alt="Medium"
                                 loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
                         </a>
                     </li>
                     <li class="cs-social-li">
-                        <a href="" class="cs-social-link" aria-label="YouTube" target="_blank" rel="noopener">
-                            <img class="cs-social-icon cs-default" src="assets/icons/youtube.svg" alt="YouTube icon"
+                        <a href="https://youtube.com/@jrxna" class="cs-social-link" aria-label="YouTube" target="_blank" rel="noopener">
+                            <img class="cs-social-icon cs-default" src="assets/icons/youtube.svg" alt="YouTube"
                                 loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
                         </a>
                     </li>
                     <li class="cs-social-li">
-                        <a href="" class="cs-social-link" aria-label="Spotify" target="_blank" rel="noopener">
-                            <img class="cs-social-icon cs-default" src="assets/icons/spotify.svg" alt="Spotify icon"
+                        <a href="https://open.spotify.com/show/7upwpH8kvEdV3kVeUXuri1?si=ng4tVCZ8SOWxyqM7OLcIvw" class="cs-social-link" aria-label="Spotify" target="_blank" rel="noopener">
+                            <img class="cs-social-icon cs-default" src="assets/icons/spotify.svg" alt="Spotify"
+                                loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
+                        </a>
+                    </li>
+                    <li class="cs-social-li">
+                        <a href="https://github.com/jrxna" class="cs-social-link" aria-label="GitHub" target="_blank" rel="noopener">
+                            <img class="cs-social-icon cs-default" src="assets/icons/github.svg" alt="GitHub"
+                                loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
+                        </a>
+                    </li>
+                    <li class="cs-social-li">
+                        <a href="https://patreon.com/jrxna" class="cs-social-link" aria-label="Patreon" target="_blank" rel="noopener">
+                            <img class="cs-social-icon cs-default" src="assets/icons/patreon.svg" alt="Patreon"
                                 loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
                         </a>
                     </li>
@@ -716,7 +902,9 @@
             </div>
             <!--Bottom Section-->
             <div class="divider"></div>
-            <div class="cs-copyright">© JRXNA • All Rights Reserved • Generated with <a href="https://github.com/jrxna/mongoose" style="color: #fff; text-decoration: none;">JRXNA Mongoose</a></div>
+            <div class="cs-copyright">© JRXNA • All Rights Reserved • Generated with <a
+                    href="https://github.com/jrxna/mongoose" style="color: #fff; text-decoration: none;">JRXNA
+                    Mongoose</a></div>
         </div>
     </footer>
 

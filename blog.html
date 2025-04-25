@@ -13,16 +13,16 @@
 <body>
     <header>
         <div id="jrxna-navigation">
-            <div class="cs-container">
-                <a href="https://jrxna.com" class="cs-logo" aria-label="JRXNA">
+            <div class="jrxna-container">
+                <a href="https://jrxna.com" class="jrxna-logo" aria-label="JRXNA">
                     <img src="assets/images/JRXNA.png" alt="logo" aria-hidden="true" decoding="async">
                 </a>
-                <nav class="cs-nav" role="navigation">
-                    <button class="cs-toggle" aria-label="mobile menu toggle">
-                        <div class="cs-box" aria-hidden="true">
-                            <span class="cs-line cs-line1" aria-hidden="true"></span>
-                            <span class="cs-line cs-line2" aria-hidden="true"></span>
-                            <span class="cs-line cs-line3" aria-hidden="true"></span>
+                <nav class="jrxna-nav" role="navigation">
+                    <button class="jrxna-navigation-menu-toggle" aria-label="mobile menu toggle">
+                        <div class="jrxna-navigation-toggle-box" aria-hidden="true">
+                            <span class="jrxna-navigation-toggle-line jrxna-navigation-toggle-line1" aria-hidden="true"></span>
+                            <span class="jrxna-navigation-toggle-line jrxna-navigation-toggle-line2" aria-hidden="true"></span>
+                            <span class="jrxna-navigation-toggle-line jrxna-navigation-toggle-line3" aria-hidden="true"></span>
                         </div>
                     </button>
                 </nav>
@@ -30,18 +30,18 @@
         </div>
         <div id="menu-overlay">
             <ul class="menu-overlay-ul" aria-expanded="false">
-                <li class="cs-li">
-                    <a href="https://jrxna.com" target="_blank" class="cs-li-link">
+                <li class="jrxna-list-item">
+                    <a href="https://jrxna.com" target="_blank" class="jrxna-list-item-link">
                         Home
                     </a>
                 </li>
-                <li class="cs-li">
-                    <a href="https://jrxna.com/blog" target="_blank" class="cs-li-link cs-active">
+                <li class="jrxna-list-item">
+                    <a href="https://jrxna.com/blog" target="_blank" class="jrxna-list-item-link jrxna-navigation-toggle-active">
                         Blog
                     </a>
                 </li>
-                <li class="cs-li">
-                    <a href="https://jrxna.com/about" target="_blank" class="cs-li-link">
+                <li class="jrxna-list-item">
+                    <a href="https://jrxna.com/about" target="_blank" class="jrxna-list-item-link">
                         About
                     </a>
                 </li>
@@ -50,35 +50,32 @@
     </header>
 
     <main>
-        <div id="banner-712">
-            <div class="cs-container">
-                <span class="cs-int-title">Notes</span>
-            </div>
-        </div>
-
         <section id="jrxna-blog">
-            <div class="jrxna-content">
+            <div class="jrxna-first-component">
+                <div class="title-group">
+                    <p class="jrxna-topper">JRXNA Notes</p>
+                    <h2 class="jrxna-title">Articles</h2>
+                </div>
                 <ul class="cs-card-group">
                     <li class="cs-item">
-                        <a class="cs-link" href="/">
+                        <a class="jrxna-list-itemnk" href="/">
                             <div class="cs-item-text">
                                 <h3 class="blog-title">
                                     Architecting Event-Driven Microservices: A Deep Dive into AWS EventBridge and Lambda
                                     Integration
                                     <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
+                                        <img class="cs-icon" decoding="async" src="/assets/images/Arrow.svg" alt="arrow"
+                                            width="413" height="374" aria-hidden="true">
                                     </picture>
                                 </h3>
                                 <div class="cs-info">
                                     <div class="divider"></div>
                                     <div class="content">
                                         <span class="cs-date">
-                                            07 Sep, 2022
+                                            15 Mar, 2024
                                         </span>
                                         <span class="cs-category">
-                                            Cloud Infrastructure
+                                            AWS Lambda
                                         </span>
                                     </div>
                                 </div>
@@ -86,25 +83,24 @@
                         </a>
                     </li>
                     <li class="cs-item">
-                        <a class="cs-link" href="/">
+                        <a class="jrxna-list-itemnk" href="/">
                             <div class="cs-item-text">
                                 <h3 class="blog-title">
                                     Zero-Trust Architecture in Multi-Cloud Environments: Implementing Identity-Aware
                                     Proxies
                                     <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
+                                        <img class="cs-icon" decoding="async" src="/assets/images/Arrow.svg" alt="arrow"
+                                            width="413" height="374" aria-hidden="true">
                                     </picture>
                                 </h3>
                                 <div class="cs-info">
                                     <div class="divider"></div>
                                     <div class="content">
                                         <span class="cs-date">
-                                            07 Sep, 2022
+                                            28 Feb, 2024
                                         </span>
                                         <span class="cs-category">
-                                            Cloud Infrastructure
+                                            Kubernetes
                                         </span>
                                     </div>
                                 </div>
@@ -112,24 +108,23 @@
                         </a>
                     </li>
                     <li class="cs-item">
-                        <a class="cs-link" href="/">
+                        <a class="jrxna-list-itemnk" href="/">
                             <div class="cs-item-text">
                                 <h3 class="blog-title">
                                     Infrastructure as Code at Scale: Managing Terraform State in GitOps Workflows
                                     <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
+                                        <img class="cs-icon" decoding="async" src="/assets/images/Arrow.svg" alt="arrow"
+                                            width="413" height="374" aria-hidden="true">
                                     </picture>
                                 </h3>
                                 <div class="cs-info">
                                     <div class="divider"></div>
                                     <div class="content">
                                         <span class="cs-date">
-                                            07 Sep, 2022
+                                            10 Jan, 2024
                                         </span>
                                         <span class="cs-category">
-                                            Cloud Infrastructure
+                                            Terraform
                                         </span>
                                     </div>
                                 </div>
@@ -137,25 +132,24 @@
                         </a>
                     </li>
                     <li class="cs-item">
-                        <a class="cs-link" href="/">
+                        <a class="jrxna-list-itemnk" href="/">
                             <div class="cs-item-text">
                                 <h3 class="blog-title">
                                     Architecting Event-Driven Microservices: A Deep Dive into AWS EventBridge and Lambda
                                     Integration
                                     <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
+                                        <img class="cs-icon" decoding="async" src="/assets/images/Arrow.svg" alt="arrow"
+                                            width="413" height="374" aria-hidden="true">
                                     </picture>
                                 </h3>
                                 <div class="cs-info">
                                     <div class="divider"></div>
                                     <div class="content">
                                         <span class="cs-date">
-                                            07 Sep, 2022
+                                            05 Mar, 2024
                                         </span>
                                         <span class="cs-category">
-                                            Cloud Infrastructure
+                                            Azure Functions
                                         </span>
                                     </div>
                                 </div>
@@ -163,25 +157,24 @@
                         </a>
                     </li>
                     <li class="cs-item">
-                        <a class="cs-link" href="/">
+                        <a class="jrxna-list-itemnk" href="/">
                             <div class="cs-item-text">
                                 <h3 class="blog-title">
                                     Zero-Trust Architecture in Multi-Cloud Environments: Implementing Identity-Aware
                                     Proxies
                                     <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
+                                        <img class="cs-icon" decoding="async" src="/assets/images/Arrow.svg" alt="arrow"
+                                            width="413" height="374" aria-hidden="true">
                                     </picture>
                                 </h3>
                                 <div class="cs-info">
                                     <div class="divider"></div>
                                     <div class="content">
                                         <span class="cs-date">
-                                            07 Sep, 2022
+                                            20 Feb, 2024
                                         </span>
                                         <span class="cs-category">
-                                            Cloud Infrastructure
+                                            Docker
                                         </span>
                                     </div>
                                 </div>
@@ -189,24 +182,23 @@
                         </a>
                     </li>
                     <li class="cs-item">
-                        <a class="cs-link" href="/">
+                        <a class="jrxna-list-itemnk" href="/">
                             <div class="cs-item-text">
                                 <h3 class="blog-title">
                                     Infrastructure as Code at Scale: Managing Terraform State in GitOps Workflows
                                     <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
+                                        <img class="cs-icon" decoding="async" src="/assets/images/Arrow.svg" alt="arrow"
+                                            width="413" height="374" aria-hidden="true">
                                     </picture>
                                 </h3>
                                 <div class="cs-info">
                                     <div class="divider"></div>
                                     <div class="content">
                                         <span class="cs-date">
-                                            07 Sep, 2022
+                                            15 Jan, 2024
                                         </span>
                                         <span class="cs-category">
-                                            Cloud Infrastructure
+                                            GCP
                                         </span>
                                     </div>
                                 </div>
@@ -214,25 +206,24 @@
                         </a>
                     </li>
                     <li class="cs-item">
-                        <a class="cs-link" href="/">
+                        <a class="jrxna-list-itemnk" href="/">
                             <div class="cs-item-text">
                                 <h3 class="blog-title">
                                     Architecting Event-Driven Microservices: A Deep Dive into AWS EventBridge and Lambda
                                     Integration
                                     <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
+                                        <img class="cs-icon" decoding="async" src="/assets/images/Arrow.svg" alt="arrow"
+                                            width="413" height="374" aria-hidden="true">
                                     </picture>
                                 </h3>
                                 <div class="cs-info">
                                     <div class="divider"></div>
                                     <div class="content">
                                         <span class="cs-date">
-                                            07 Sep, 2022
+                                            01 Mar, 2024
                                         </span>
                                         <span class="cs-category">
-                                            Cloud Infrastructure
+                                            Serverless
                                         </span>
                                     </div>
                                 </div>
@@ -240,25 +231,24 @@
                         </a>
                     </li>
                     <li class="cs-item">
-                        <a class="cs-link" href="/">
+                        <a class="jrxna-list-itemnk" href="/">
                             <div class="cs-item-text">
                                 <h3 class="blog-title">
                                     Zero-Trust Architecture in Multi-Cloud Environments: Implementing Identity-Aware
                                     Proxies
                                     <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
+                                        <img class="cs-icon" decoding="async" src="/assets/images/Arrow.svg" alt="arrow"
+                                            width="413" height="374" aria-hidden="true">
                                     </picture>
                                 </h3>
                                 <div class="cs-info">
                                     <div class="divider"></div>
                                     <div class="content">
                                         <span class="cs-date">
-                                            07 Sep, 2022
+                                            12 Feb, 2024
                                         </span>
                                         <span class="cs-category">
-                                            Cloud Infrastructure
+                                            Microservices
                                         </span>
                                     </div>
                                 </div>
@@ -266,24 +256,23 @@
                         </a>
                     </li>
                     <li class="cs-item">
-                        <a class="cs-link" href="/">
+                        <a class="jrxna-list-itemnk" href="/">
                             <div class="cs-item-text">
                                 <h3 class="blog-title">
                                     Infrastructure as Code at Scale: Managing Terraform State in GitOps Workflows
                                     <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
+                                        <img class="cs-icon" decoding="async" src="/assets/images/Arrow.svg" alt="arrow"
+                                            width="413" height="374" aria-hidden="true">
                                     </picture>
                                 </h3>
                                 <div class="cs-info">
                                     <div class="divider"></div>
                                     <div class="content">
                                         <span class="cs-date">
-                                            07 Sep, 2022
+                                            25 Jan, 2024
                                         </span>
                                         <span class="cs-category">
-                                            Cloud Infrastructure
+                                            Cloud Security
                                         </span>
                                     </div>
                                 </div>
@@ -293,122 +282,131 @@
                 </ul>
             </div>
         </section>
-
     </main>
 
     <footer id="jrxna-footer">
         <div class="jrxna-content">
             <!--Top Section-->
             <div class="cs-top">
-                <div class="cs-logo-wrapper">
-                    <a href="" class="cs-logo">
+                <div class="jrxna-logo-wrapper">
+                    <a href="https://jrxna.com" class="jrxna-logo">
                         <img src="assets/images/JRXNA.png" alt="logo" aria-hidden="true" decoding="async"
                             loading="lazy">
                     </a>
-                    <div class="footer-text-group">
-                        <p class="footer-text">
-                            I offer specialized cloud infrastructure consulting services. I help organizations optimize their
-                            cloud costs, scale their systems efficiently, and implement robust architectural solutions. 
-                        </p>
-                        <p class="footer-text">
-                            This blog serves as a resource where I share insights on cloud infrastructure, system design
-                            patterns, and foundational data structures - bridging the gap between theory and practical
-                            implementation in real-world scenarios.
-                        </p>
-                    </div>
+                    <p class="footer-text">
+                        Hi, I'm Joel Rego. My primary fascination lies in Computer
+                        Science subjects like Data Structures, Algorithms, Compiler Design, Operating Systems,
+                        Databases, and Computer Networks.
+                    </p>
+                    <p class="footer-text">
+                        Here, I publish my study notes: a repository of my
+                        studies, detailed annotations, and tutorial sessions. My aim is to shed light on these
+                        topics, and to spark that same fire of curiosity in others that drives my own continued study.
+                    </p>
                 </div>
                 <ul class="cs-ul">
-                    <li class="cs-li">
+                    <li class="jrxna-list-item">
                         <h3 class="cs-header">Resources</h3>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            Terms
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
+                            JRXNA Terms
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            Privacy
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
+                            JRXNA Privacy
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            Legal
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
+                            JRXNA Legal
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            FAQs
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
+                            JRXNA FAQs
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            Press
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
+                            JRXNA Press
                         </a>
                     </li>
                 </ul>
                 <ul class="cs-ul">
-                    <li class="cs-li">
+                    <li class="jrxna-list-item">
                         <h3 class="cs-header">Projects</h3>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            Gungoose
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
+                            JRXNA Gungoose
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            Grappleshot
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
+                            JRXNA Grappleshot
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            Warthog
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
+                            JRXNA Warthog
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            Scorpion
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
+                            JRXNA Scorpion
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            Razorback
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk" target="_blank" rel="noopener">
+                            JRXNA Razorback
                         </a>
                     </li>
                 </ul>
                 <ul class="cs-ul">
-                    <li class="cs-li">
+                    <li class="jrxna-list-item">
                         <h3 class="cs-header">Contact</h3>
                     </li>
-                    <li class="cs-li"> 
-                        <a href="" class="cs-link">
-                            hello@jrxna.com
+                    <li class="jrxna-list-item">
+                        <a href="" class="jrxna-list-itemnk">
+                            hi@jrxna.com
                         </a>
                     </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            Austin, TX
-                        </a>
+                    <li class="jrxna-list-item">
+                        <p class="jrxna-list-itemnk">
+                            Los Angeles, CA
+                        </p>
+                        <p class="jrxna-list-itemnk">
+                            United States
+                        </p>
+                    </li>
+                    <li class="jrxna-list-item">
+                        <p class="jrxna-list-itemnk">
+                            Bangalore, KA
+                        </p>
+                        <p class="jrxna-list-itemnk">
+                            India
+                        </p>
                     </li>
                 </ul>
             </div>
             <!--Middle Section-->
             <div class="cs-middle">
                 <!--Navigation-->
-                <ul class="cs-nav">
-                    <li class="cs-nav-li">
-                        <a href="https://jrxna.com" target="_blank" class="cs-nav-link">
+                <ul class="jrxna-nav">
+                    <li class="jrxna-nav-li">
+                        <a href="https://jrxna.com" target="_blank" class="jrxna-nav-link">
                             Home
                         </a>
                     </li>
-                    <li class="cs-nav-li">
-                        <a href="https://jrxna.com" target="_blank" class="cs-nav-link">
-                            Notes
+                    <li class="jrxna-nav-li">
+                        <a href="https://jrxna.com/blog" target="_blank" class="jrxna-nav-link">
+                            Blog
                         </a>
                     </li>
-                    <li class="cs-nav-li">
-                        <a href="https://jrxna.com" target="_blank" class="cs-nav-link">
+                    <li class="jrxna-nav-li">
+                        <a href="https://jrxna.com/about" target="_blank" class="jrxna-nav-link">
                             About
                         </a>
                     </li>
@@ -417,32 +415,44 @@
                 <!--Social-->
                 <ul class="cs-social">
                     <li class="cs-social-li">
-                        <a href="" class="cs-social-link" aria-label="Bluesky" target="_blank" rel="noopener">
-                            <img class="cs-social-icon cs-default" src="assets/icons/bluesky.svg" alt="Bluesky icon"
+                        <a href="https://linkedin.com/in/jrxna" class="cs-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <img class="cs-social-icon cs-default" src="assets/icons/linkedin.svg" alt="LinkedIn"
                                 loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
                         </a>
                     </li>
                     <li class="cs-social-li">
-                        <a href="" class="cs-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
-                            <img class="cs-social-icon cs-default" src="assets/icons/linkedin.svg" alt="LinkedIn icon"
+                        <a href="https://bsky.app/profile/jrxna.com" class="cs-social-link" aria-label="Bluesky" target="_blank" rel="noopener">
+                            <img class="cs-social-icon cs-default" src="assets/icons/bluesky.svg" alt="Bluesky"
                                 loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
                         </a>
                     </li>
                     <li class="cs-social-li">
-                        <a href="" class="cs-social-link" aria-label="GitHub" target="_blank" rel="noopener">
-                            <img class="cs-social-icon cs-default" src="assets/icons/github.svg" alt="GitHub icon"
+                        <a href="https://medium.com/@jrxna" class="cs-social-link" aria-label="Medium" target="_blank" rel="noopener">
+                            <img class="cs-social-icon cs-default" src="assets/icons/medium.svg" alt="Medium"
                                 loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
                         </a>
                     </li>
                     <li class="cs-social-li">
-                        <a href="" class="cs-social-link" aria-label="YouTube" target="_blank" rel="noopener">
-                            <img class="cs-social-icon cs-default" src="assets/icons/youtube.svg" alt="YouTube icon"
+                        <a href="https://youtube.com/@jrxna" class="cs-social-link" aria-label="YouTube" target="_blank" rel="noopener">
+                            <img class="cs-social-icon cs-default" src="assets/icons/youtube.svg" alt="YouTube"
                                 loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
                         </a>
                     </li>
                     <li class="cs-social-li">
-                        <a href="" class="cs-social-link" aria-label="Spotify" target="_blank" rel="noopener">
-                            <img class="cs-social-icon cs-default" src="assets/icons/spotify.svg" alt="Spotify icon"
+                        <a href="https://open.spotify.com/show/7upwpH8kvEdV3kVeUXuri1?si=ng4tVCZ8SOWxyqM7OLcIvw" class="cs-social-link" aria-label="Spotify" target="_blank" rel="noopener">
+                            <img class="cs-social-icon cs-default" src="assets/icons/spotify.svg" alt="Spotify"
+                                loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
+                        </a>
+                    </li>
+                    <li class="cs-social-li">
+                        <a href="https://github.com/jrxna" class="cs-social-link" aria-label="GitHub" target="_blank" rel="noopener">
+                            <img class="cs-social-icon cs-default" src="assets/icons/github.svg" alt="GitHub"
+                                loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
+                        </a>
+                    </li>
+                    <li class="cs-social-li">
+                        <a href="https://patreon.com/jrxna" class="cs-social-link" aria-label="Patreon" target="_blank" rel="noopener">
+                            <img class="cs-social-icon cs-default" src="assets/icons/patreon.svg" alt="Patreon"
                                 loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
                         </a>
                     </li>
@@ -450,7 +460,9 @@
             </div>
             <!--Bottom Section-->
             <div class="divider"></div>
-            <div class="cs-copyright">© JRXNA • All Rights Reserved • Generated with <a href="https://github.com/jrxna/mongoose" style="color: #fff; text-decoration: none;">JRXNA Mongoose</a></div>
+            <div class="cs-copyright">© JRXNA • All Rights Reserved • Generated with <a
+                    href="https://github.com/jrxna/mongoose" style="color: #fff; text-decoration: none;">JRXNA
+                    Mongoose</a></div>
         </div>
     </footer>
 
