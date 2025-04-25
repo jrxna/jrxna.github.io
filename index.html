@@ -1,726 +1,495 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="assets/images/Favicon.png">
-    <title>Home | JRXNA</title>
-    <link rel="stylesheet" href="css/core-styles.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <title>JRXNA Base</title>
+    <link rel="icon" type="image/png" href="assets/images/Favicon.png">
+    <style>
+        @font-face {
+            font-family: 'JetBrains';
+            src: url('assets/fonts/JetBrainsMono.woff2') format('woff2');
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: "JetBrains";
+            background: #1E2650 url('assets/images/Background.png') no-repeat center center;
+            background-size: cover;
+            color: #e6edf3;
+            font-size: 15px;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Base styles */
+        .page-wrapper {
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: grid;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            z-index: 100;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            border-left: 1px solid #28607F;
+            border-right: 1px solid #28607F;
+            border-bottom: 1px solid #28607F;
+        }
+
+        .header, .sidebar, .main-content, .toc { 
+            background: #1E2650;
+        }
+
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Stream Link */
+        .stream-link {
+            color: #e6edf3;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .stream-link:hover {
+            color: #D34516;
+        }
+
+        /* Menu Toggle */
+        .menu-toggle-label {
+            display: none;
+            color: #e6edf3;
+            transition: color 0.2s;
+
+        }
+        
+        .menu-toggle-label:hover {
+            color: #D34516;
+        }
+
+        .menu-toggle { display: none; }
+
+        /* Sidebar */
+        .sidebar-section { margin-bottom: 8px; }
+        .sidebar-section details { margin-bottom: 8px; }
+        .sidebar-section details[open] { margin-bottom: 24px; }
+
+        .sidebar-title {
+            color: #e6edf3;
+            padding: 12px 24px;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.2s;
+        }
+        .sidebar-title:hover { color: #D34516; }
+        
+        details summary::-webkit-details-marker,
+        details summary::marker { display: none; }
+        details[open] .sidebar-title {
+            color: #D34516;
+            background: rgba(211, 69, 22, 0.1);
+        }
+
+        .note-list { list-style: none; }
+        .note-link {
+            display: block;
+            padding: 8px 24px;
+            color: #e6edf3;
+            text-decoration: none;
+            transition: all 0.2s;
+            border-left: 4px solid transparent;
+        }
+        .note-link:hover {
+            background: rgba(211, 69, 22, 0.1);
+            color: #D34516;
+        }
+        .note-link.active {
+            background: rgba(211, 69, 22, 0.15);
+            color: #D34516;
+            border-left-color: #D34516;
+        }
+
+        /* Content */
+        .content-header { margin-bottom: 16px; }
+        .page-title {
+            color: #D34516;
+            margin-bottom: 8px;
+        }
+        .page-meta { color: #8b949e; }
+        
+        h1, h2, h3 {
+            color: #D34516;
+            margin-bottom: 8px;
+        }
+
+        .content-body p {
+            margin-bottom: 16px;
+            color: #f0f6fc;
+        }
+        .content-body ul, .content-body ol { margin: 16px 0 16px 32px; }
+        .content-body li { margin-bottom: 8px; color: #f0f6fc; }
+        .content-body code {
+            background: #1a1a1a;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'JetBrains';
+            border: 1px solid #333;
+        }
+        .content-body blockquote {
+            border-left: 4px solid #D34516;
+            padding-left: 16px;
+            margin: 20px 0;
+            color: #a9b1ba;
+            font-style: italic;
+        }
+
+        /* TOC */
+        .toc-list { list-style: none; }
+        .toc-item { margin-bottom: 8px; }
+        .toc-link {
+            display: block;
+            color: #e6edf3;
+            text-decoration: none;
+            padding: 4px 0;
+            transition: color 0.2s;
+        }
+        .toc-link:hover { color: #D34516; }
+        .toc-link.level-2 { padding-left: 0; }
+        .toc-link.level-3 { padding-left: 16px; }
+
+        /* Hide scrollbars */
+        .sidebar::-webkit-scrollbar,
+        .main-content::-webkit-scrollbar,
+        .toc::-webkit-scrollbar { display: none; }
+        .sidebar, .main-content, .toc { scrollbar-width: none; -ms-overflow-style: none; }
+
+        /* Desktop: >=1280px */
+        @media (min-width: 1280px) {
+            .page-wrapper {
+                width: 1280px;
+                margin: 0 auto;
+            }
+
+            .container {
+                grid-template: "sidebar main toc" 1fr / 320px 640px 320px;
+            }
+
+            .header {
+                left: 50%;
+                transform: translateX(-50%);
+                width: 1280px;
+            }
+
+            .sidebar { 
+                grid-area: sidebar; 
+                padding: 84px 0 24px;
+                overflow-y: auto;
+                height: 100vh;
+                border-left: 1px solid #28607F;
+                border-right: 1px solid #28607F;
+            }
+            
+            .main-content {
+                grid-area: main;
+                padding: 84px 24px 24px;
+                overflow-y: auto;
+                height: 100vh;
+            }
+            
+            .toc {
+                grid-area: toc;
+                padding: 84px 24px 24px;
+                overflow-y: auto;
+                height: 100vh;
+                border-left: 1px solid #28607F;
+                border-right: 1px solid #28607F;
+            }
+        }
+
+        /* Mobile: ≤1280px */
+        @media (max-width: 1280px) {
+            .page-wrapper {
+                border-left: 1px solid #28607F;
+                border-right: 1px solid #28607F;
+            }
+
+            .container { 
+                grid-template: "main" auto "toc" auto / 1fr;
+                padding-top: 60px;
+            }
+            
+            .header {
+                display: grid;
+                grid-template-columns: 50px 1fr auto;
+                align-items: center;
+            }
+
+            .logo { justify-content: center; }
+            
+            .menu-toggle-label { display: block; }
+            
+            .sidebar {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                width: 280px;
+                height: calc(100vh - 60px);
+                transform: translateX(-100%);
+                transition: transform 0.3s;
+                z-index: 150;
+                border-right: 1px solid #28607F;
+                overflow-y: auto;
+                padding: 24px 0;
+            }
+            
+            #menu-toggle:checked ~ .sidebar { transform: translateX(0); }
+            
+            .overlay {
+                display: none;
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 149;
+                cursor: pointer;
+            }
+            
+            #menu-toggle:checked ~ .overlay { display: block; }
+
+            .main-content {
+                grid-area: main;
+                padding: 32px 24px;
+                overflow-y: visible;
+                height: auto;
+            }
+
+            .toc {
+                grid-area: toc;
+                padding: 24px;
+                height: auto;
+                overflow-y: visible;
+                border-top: 1px solid #28607F;
+            }
+        }
+
+        /* Mobile: ≤768px */
+        @media (max-width: 768px) {
+            .main-content { padding: 24px 16px; }
+            .toc { padding: 16px; }
+            .sidebar { width: 260px; }
+        }
+    </style>
 </head>
-
 <body>
-    <header>
-        <div id="jrxna-navigation">
-            <div class="cs-container">
-                <a href="https://jrxna.com" class="cs-logo" aria-label="JRXNA">
-                    <img src="assets/images/JRXNA.png" alt="logo" aria-hidden="true" decoding="async">
-                </a>
-                <nav class="cs-nav" role="navigation">
-                    <button class="cs-toggle" aria-label="mobile menu toggle">
-                        <div class="cs-box" aria-hidden="true">
-                            <span class="cs-line cs-line1" aria-hidden="true"></span>
-                            <span class="cs-line cs-line2" aria-hidden="true"></span>
-                            <span class="cs-line cs-line3" aria-hidden="true"></span>
-                        </div>
-                    </button>
-                </nav>
-            </div>
-        </div>
-        <div id="menu-overlay">
-            <ul class="menu-overlay-ul" aria-expanded="false">
-                <li class="cs-li">
-                    <a href="https://jrxna.com" target="_blank" class="cs-li-link cs-active">
-                        Home
-                    </a>
-                </li>
-                <li class="cs-li">
-                    <a href="https://jrxna.com/blog" target="_blank" class="cs-li-link">
-                        Blog
-                    </a>
-                </li>
-                <li class="cs-li">
-                    <a href="https://jrxna.com/about" target="_blank" class="cs-li-link">
-                        About
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </header>
-
-    <main>
-        <section id="jrxna-hero">
-            <div class="jrxna-content">
-                <span class="jrxna-topper">JRXNA Consulting</span>
-                <h1 class="jrxna-title">Cloud Consulting Services</h1>
-                <p class="jrxna-text">
-                    Hello. My name is Joel Rego. I offer specialized cloud infrastructure consulting services. I help
-                    organizations optimize their
-                    cloud costs, scale their systems efficiently, and implement robust architectural solutions.
-                    This blog serves as a resource where I share insights on cloud infrastructure, system design
-                    patterns, and foundational data structures - bridging the gap between theory and practical
-                    implementation in real-world scenarios.
-                </p>
-                <div class="jrxna-hero-button-group">
-                    <a href="https://jrxna.com/blog" target="_blank" class="cs-button-solid-secondary"><span>Consult Now</span></a>
-                    <a href="#jrxna-blog" class="cs-button-solid-secondary"
-                        onclick="event.preventDefault(); scrollToSection('#jrxna-blog');">
-                        <span>JRXNA Research</span>
-                    </a>
-                    <a href="#jrxna-pricing" class="cs-button-solid-secondary"
-                        onclick="event.preventDefault(); scrollToSection('#jrxna-pricing');">
-                        <span>JRXNA Academy</span>
-                    </a>
-                    <a href="#jrxna-dual-content" class="cs-button-solid-secondary"
-                        onclick="event.preventDefault(); scrollToSection('#jrxna-dual-content');">
-                        <span>JRXNA Podcast</span>
-                    </a>
+    <div class="page-wrapper">
+        <div class="container">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <header class="header">
+                <label for="menu-toggle" class="menu-toggle-label">Notes</label>
+                <div class="logo">
+                    <img src="assets/images/Logotype.png" alt="JRXNA Logo" style="height:24px; vertical-align:middle;">
                 </div>
-            </div>
-        </section>
+                <a href="#" class="stream-link">Stream</a>
+            </header>
+            <label for="menu-toggle" class="overlay"></label>
 
-        <section id="jrxna-blog">
-            <div class="jrxna-content">
-                <span class="jrxna-topper">JRXNA Research</span>
-                <h1 class="jrxna-subtitle">Read My Articles</h1>
-                <ul class="cs-card-group">
-                    <li class="cs-item">
-                        <a class="cs-link" href="/">
-                            <div class="cs-item-text">
-                                <h3 class="blog-title">
-                                    Architecting Event-Driven Microservices: A Deep Dive into AWS EventBridge and Lambda
-                                    Integration
-                                    <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
-                                    </picture>
-                                </h3>
-                                <div class="cs-info">
-                                    <div class="divider"></div>
-                                    <div class="content">
-                                        <span class="cs-date">
-                                            15 Mar, 2024
-                                        </span>
-                                        <span class="cs-category">
-                                            AWS Lambda
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="cs-item">
-                        <a class="cs-link" href="/">
-                            <div class="cs-item-text">
-                                <h3 class="blog-title">
-                                    Zero-Trust Architecture in Multi-Cloud Environments: Implementing Identity-Aware
-                                    Proxies
-                                    <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
-                                    </picture>
-                                </h3>
-                                <div class="cs-info">
-                                    <div class="divider"></div>
-                                    <div class="content">
-                                        <span class="cs-date">
-                                            28 Feb, 2024
-                                        </span>
-                                        <span class="cs-category">
-                                            Kubernetes
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="cs-item">
-                        <a class="cs-link" href="/">
-                            <div class="cs-item-text">
-                                <h3 class="blog-title">
-                                    Infrastructure as Code at Scale: Managing Terraform State in GitOps Workflows
-                                    <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
-                                    </picture>
-                                </h3>
-                                <div class="cs-info">
-                                    <div class="divider"></div>
-                                    <div class="content">
-                                        <span class="cs-date">
-                                            10 Jan, 2024
-                                        </span>
-                                        <span class="cs-category">
-                                            Terraform
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="cs-item">
-                        <a class="cs-link" href="/">
-                            <div class="cs-item-text">
-                                <h3 class="blog-title">
-                                    Architecting Event-Driven Microservices: A Deep Dive into AWS EventBridge and Lambda
-                                    Integration
-                                    <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
-                                    </picture>
-                                </h3>
-                                <div class="cs-info">
-                                    <div class="divider"></div>
-                                    <div class="content">
-                                        <span class="cs-date">
-                                            05 Mar, 2024
-                                        </span>
-                                        <span class="cs-category">
-                                            Azure Functions
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="cs-item">
-                        <a class="cs-link" href="/">
-                            <div class="cs-item-text">
-                                <h3 class="blog-title">
-                                    Zero-Trust Architecture in Multi-Cloud Environments: Implementing Identity-Aware
-                                    Proxies
-                                    <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
-                                    </picture>
-                                </h3>
-                                <div class="cs-info">
-                                    <div class="divider"></div>
-                                    <div class="content">
-                                        <span class="cs-date">
-                                            20 Feb, 2024
-                                        </span>
-                                        <span class="cs-category">
-                                            Docker
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="cs-item">
-                        <a class="cs-link" href="/">
-                            <div class="cs-item-text">
-                                <h3 class="blog-title">
-                                    Infrastructure as Code at Scale: Managing Terraform State in GitOps Workflows
-                                    <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
-                                    </picture>
-                                </h3>
-                                <div class="cs-info">
-                                    <div class="divider"></div>
-                                    <div class="content">
-                                        <span class="cs-date">
-                                            15 Jan, 2024
-                                        </span>
-                                        <span class="cs-category">
-                                            GCP
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="cs-item">
-                        <a class="cs-link" href="/">
-                            <div class="cs-item-text">
-                                <h3 class="blog-title">
-                                    Architecting Event-Driven Microservices: A Deep Dive into AWS EventBridge and Lambda
-                                    Integration
-                                    <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
-                                    </picture>
-                                </h3>
-                                <div class="cs-info">
-                                    <div class="divider"></div>
-                                    <div class="content">
-                                        <span class="cs-date">
-                                            01 Mar, 2024
-                                        </span>
-                                        <span class="cs-category">
-                                            Serverless
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="cs-item">
-                        <a class="cs-link" href="/">
-                            <div class="cs-item-text">
-                                <h3 class="blog-title">
-                                    Zero-Trust Architecture in Multi-Cloud Environments: Implementing Identity-Aware
-                                    Proxies
-                                    <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
-                                    </picture>
-                                </h3>
-                                <div class="cs-info">
-                                    <div class="divider"></div>
-                                    <div class="content">
-                                        <span class="cs-date">
-                                            12 Feb, 2024
-                                        </span>
-                                        <span class="cs-category">
-                                            Microservices
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="cs-item">
-                        <a class="cs-link" href="/">
-                            <div class="cs-item-text">
-                                <h3 class="blog-title">
-                                    Infrastructure as Code at Scale: Managing Terraform State in GitOps Workflows
-                                    <picture class="cs-icon-wrapper">
-                                        <img class="cs-icon" decoding="async"
-                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
-                                            alt="arrow" width="413" height="374" aria-hidden="true">
-                                    </picture>
-                                </h3>
-                                <div class="cs-info">
-                                    <div class="divider"></div>
-                                    <div class="content">
-                                        <span class="cs-date">
-                                            25 Jan, 2024
-                                        </span>
-                                        <span class="cs-category">
-                                            Cloud Security
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-                <div class="jrxna-hero-button-group">
-                    <a href="https://jrxna.com/blog" target="_blank" class="cs-button-solid"><span>Read My Articles</span></a>
-                    <a href="https://buymeacoffee.com/jrxna" target="_blank" class="cs-button-solid-tertiary"><span>Consult Now</span></a>
+            <nav class="sidebar">
+                <div class="sidebar-section">
+                    <details>
+                        <summary class="sidebar-title">Getting Started</summary>
+                        <ul class="note-list">
+                            <li class="note-item"><a href="#" class="note-link active">Introduction</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Quick Start Guide</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Installation</a></li>
+                        </ul>
+                    </details>
                 </div>
-            </div>
-        </section>
 
-        <section id="jrxna-pricing">
-            <div class="jrxna-content">
-                <span class="jrxna-topper">JRXNA Academy</span>
-                <h1 class="jrxna-subtitle">Watch My Videos</h1>
-                <ul class="cs-card-group">
-                    <!-- Option 1 -->
-                    <li class="cs-item">
-                        <h3 class="cs-h3">Data Structures</h3>
-                        <div class="divider"></div>
-                        <ul class="cs-ul">
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Time and Space Complexity Analysis
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Arrays and Strings in Depth
-                            </li>
-                            <li class="cs-li cs-disabled">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Understanding Linked Lists
-                            </li>
-                            <li class="cs-li cs-disabled">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Stacks and Queues in Depth
-                            </li>
-                            <li class="cs-li cs-disabled">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Trees and Binary Search Trees
-                            </li>
-                            <li class="cs-li cs-disabled">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Graphs: BFS, DFS, and Shortest Path
-                            </li>
-                            <li class="cs-li cs-disabled">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Sorting and Searching Algorithms
-                            </li>
-                            <li class="cs-li cs-disabled">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Dynamic Programming in Depth
-                            </li>
-                            <li class="cs-li cs-disabled">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Greedy Algorithms and Backtracking
-                            </li>
+                <div class="sidebar-section">
+                    <details>
+                        <summary class="sidebar-title">Core Concepts</summary>
+                        <ul class="note-list">
+                            <li class="note-item"><a href="#" class="note-link">Understanding Notes</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Linking and Backlinks</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Tags and Organization</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Graph View</a></li>
                         </ul>
-                        <a href="#" class="cs-button-solid card-button"><span>Watch Playlist</span></a>
-                    </li>
-                    <!-- Option 2 -->
-                    <li class="cs-item cs-popular">
-                        <h3 class="cs-h3">System Design</h3>
-                        <div class="divider"></div>
-                        <ul class="cs-ul">
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Fundamentals of System Design
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Scalability and Load Balancing
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Cache Mechanisms and Strategies
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Database Design: SQL vs NoSQL
-                            </li>
-                            <li class="cs-li cs-disabled">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Distributed System Architecture
-                            </li>
-                            <li class="cs-li cs-disabled">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                APIs and Microservices Integration
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Reliability and Fault Tolerance
-                            </li>
-                            <li class="cs-li cs-disabled">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Designing Messaging Systems
-                            </li>
-                            <li class="cs-li cs-disabled">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Case Studies: Real-World Systems
-                            </li>
-                        </ul>
-                        <a href="#" class="cs-button-solid-secondary card-button"><span>Watch Playlist</span></a>
-                    </li>
-                    <!-- Option 3 -->
-                    <li class="cs-item">
-                        <h3 class="cs-h3">Cloud Infrastructure</h3>
-                        <div class="divider"></div>
-                        <ul class="cs-ul">
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Cloud Computing Fundamentals
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Compute Services and Instances
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Storage Solutions and Services
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Database Services and Options
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Networking and CDN Architecture
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Serverless Computing Frameworks
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Real-World Architecture
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Multi-Cloud Patterns
-                            </li>
-                            <li class="cs-li">
-                                <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async"
-                                    src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg"
-                                    alt="code stitch icon" width="20" height="20">
-                                Platform Engineering
-                            </li>
-                        </ul>
-                        <a href="#" class="cs-button-solid card-button"><span>Watch Playlist</span></a>
-                    </li>
-                </ul>
-                <div class="jrxna-hero-button-group">
-                    <a href="https://jrxna.com/blog" target="_blank" class="cs-button-solid"><span>Watch My Videos</span></a>
-                    <a href="https://buymeacoffee.com/jrxna" target="_blank" class="cs-button-solid-secondary"><span>Consult Now</span></a>
+                    </details>
                 </div>
-            </div>
-        </section>
 
-        <section id="jrxna-dual-content">
-            <div class="cs-image-group">
-                <!--Image-->
-                <picture class="cs-picture">
-                    <img loading="lazy" decoding="async" src="./assets/images/Profile.webp" aria-hidden="true">
-                </picture>
-            </div>
-            <div class="cs-content">
-                <span class="jrxna-topper">JRXNA Podcast</span>
-                <h2 class="jrxna-subtitle">Listen To My Podcasts</h2>
-                <p class="jrxna-text">
-                    JRXNA Podcast explores cutting-edge cloud infrastructure strategies, architectural patterns, and
-                    optimization techniques through in-depth conversations with industry experts. Each episode delivers
-                    actionable insights on cloud cost management, scalability challenges, and emerging technologies that
-                    help businesses build more resilient and efficient systems.
-                </p>
+                <div class="sidebar-section">
+                    <details>
+                        <summary class="sidebar-title">Advanced Features</summary>
+                        <ul class="note-list">
+                            <li class="note-item"><a href="#" class="note-link">Templates</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Plugins</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Custom CSS</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Hotkeys</a></li>
+                        </ul>
+                    </details>
+                </div>
 
-                <a class="cs-button-solid" aria-label="learn more" href=""><span>Listen on Spotify</span></a>
-                <div class="numbers">
-                    <div class="divider"></div>
-                    <ul class="cs-ul">
-                        <li class="cs-item">
-                            <span class="cs-number">100+</span>
-                            <h3 class="cs-h3">Optimization Strategies</h3>
-                        </li>
-                        <li class="cs-item">
-                            <span class="cs-number">50+</span>
-                            <h3 class="cs-h3">Enterprise Solutions</h3>
-                        </li>
-                        <li class="cs-item">
-                            <span class="cs-number">50+</span>
-                            <h3 class="cs-h3">Architecture Patterns</h3>
-                        </li>
+                <div class="sidebar-section">
+                    <details>
+                        <summary class="sidebar-title">Workflows</summary>
+                        <ul class="note-list">
+                            <li class="note-item"><a href="#" class="note-link">Daily Notes</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Research Workflow</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Project Management</a></li>
+                        </ul>
+                    </details>
+                </div>
+
+                <div class="sidebar-section">
+                    <details>
+                        <summary class="sidebar-title">Productivity</summary>
+                        <ul class="note-list">
+                            <li class="note-item"><a href="#" class="note-link">Task Management</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Time Blocking</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Goal Setting</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Habit Tracking</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Weekly Reviews</a></li>
+                        </ul>
+                    </details>
+                </div>
+
+                <div class="sidebar-section">
+                    <details>
+                        <summary class="sidebar-title">Learning</summary>
+                        <ul class="note-list">
+                            <li class="note-item"><a href="#" class="note-link">Active Reading</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Spaced Repetition</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Note-taking Methods</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Mind Mapping</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Feynman Technique</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Cornell Notes</a></li>
+                        </ul>
+                    </details>
+                </div>
+
+                <div class="sidebar-section">
+                    <details>
+                        <summary class="sidebar-title">Tools & Technology</summary>
+                        <ul class="note-list">
+                            <li class="note-item"><a href="#" class="note-link">Markdown Syntax</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Version Control</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Automation Scripts</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Integration Setup</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Backup Strategies</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Mobile Sync</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Export Options</a></li>
+                        </ul>
+                    </details>
+                </div>
+
+                <div class="sidebar-section">
+                    <details>
+                        <summary class="sidebar-title">Reference</summary>
+                        <ul class="note-list">
+                            <li class="note-item"><a href="#" class="note-link">Keyboard Shortcuts</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Command Palette</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Troubleshooting</a></li>
+                            <li class="note-item"><a href="#" class="note-link">FAQ</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Community Resources</a></li>
+                            <li class="note-item"><a href="#" class="note-link">Update Notes</a></li>
+                        </ul>
+                    </details>
+                </div>
+            </nav>
+
+            <main class="main-content">
+                <div class="content-header">
+                    <h1 class="page-title">Introduction to Knowledge Management</h1>
+                    <div class="page-meta">August 13, 2025</div>
+                </div>
+
+                <div class="content-body">
+                    <p>Welcome to your personal knowledge base! This system is designed to help you capture, organize, and connect your thoughts, ideas, and information in a meaningful way.</p>
+
+                    <h2 id="what-is-knowledge-management">What is Knowledge Management?</h2>
+                    <p>Knowledge management is the practice of capturing, distributing, and effectively using knowledge. In a personal context, it's about creating a system that helps you:</p>
+                    
+                    <ul>
+                        <li>Capture ideas and information quickly</li>
+                        <li>Find what you need when you need it</li>
+                        <li>Make connections between different concepts</li>
+                        <li>Build upon your existing knowledge</li>
                     </ul>
-                </div>
-            </div>
-            </div>
-        </section>
-    </main>
 
-    <footer id="jrxna-footer">
-        <div class="jrxna-content">
-            <!--Top Section-->
-            <div class="cs-top">
-                <div class="cs-logo-wrapper">
-                    <a href="" class="cs-logo">
-                        <img src="assets/images/JRXNA.png" alt="logo" aria-hidden="true" decoding="async"
-                            loading="lazy">
-                    </a>
-                    <div class="footer-text-group">
-                        <p class="footer-text">
-                            I offer specialized cloud infrastructure consulting services. I help organizations optimize
-                            their
-                            cloud costs, scale their systems efficiently, and implement robust architectural solutions.
-                            This blog serves as a resource where I share insights on cloud infrastructure, system design
-                            patterns, and foundational data structures - bridging the gap between theory and practical
-                            implementation in real-world scenarios.
-                        </p>
-                    </div>
-                </div>
-                <ul class="cs-ul">
-                    <li class="cs-li">
-                        <h3 class="cs-header">Resources</h3>
-                    </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            JRXNA Terms
-                        </a>
-                    </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            JRXNA Privacy
-                        </a>
-                    </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            JRXNA Legal
-                        </a>
-                    </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            JRXNA FAQs
-                        </a>
-                    </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            JRXNA Press
-                        </a>
-                    </li>
-                </ul>
-                <ul class="cs-ul">
-                    <li class="cs-li">
-                        <h3 class="cs-header">Projects</h3>
-                    </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            JRXNA Gungoose
-                        </a>
-                    </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            JRXNA Grappleshot
-                        </a>
-                    </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            JRXNA Warthog
-                        </a>
-                    </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            JRXNA Scorpion
-                        </a>
-                    </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            JRXNA Razorback
-                        </a>
-                    </li>
-                </ul>
-                <ul class="cs-ul">
-                    <li class="cs-li">
-                        <h3 class="cs-header">Contact</h3>
-                    </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link">
-                            hello@jrxna.com
-                        </a>
-                    </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-link" target="_blank" rel="noopener">
-                            Austin, TX
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <!--Middle Section-->
-            <div class="cs-middle">
-                <!--Navigation-->
-                <ul class="cs-nav">
-                    <li class="cs-nav-li">
-                        <a href="https://jrxna.com" target="_blank" class="cs-nav-link">
-                            Home
-                        </a>
-                    </li>
-                    <li class="cs-nav-li">
-                        <a href="https://jrxna.com/blog" target="_blank" class="cs-nav-link">
-                            Blog
-                        </a>
-                    </li>
-                    <li class="cs-nav-li">
-                        <a href="https://jrxna.com/about" target="_blank" class="cs-nav-link">
-                            About
-                        </a>
-                    </li>
-                </ul>
+                    <h2 id="core-principles">Core Principles</h2>
+                    <p>Our approach to knowledge management is built on several key principles that make it effective and sustainable.</p>
 
-                <!--Social-->
-                <ul class="cs-social">
-                    <li class="cs-social-li">
-                        <a href="" class="cs-social-link" aria-label="Bluesky" target="_blank" rel="noopener">
-                            <img class="cs-social-icon cs-default" src="assets/icons/bluesky.svg" alt="Bluesky icon"
-                                loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
-                        </a>
-                    </li>
-                    <li class="cs-social-li">
-                        <a href="" class="cs-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
-                            <img class="cs-social-icon cs-default" src="assets/icons/linkedin.svg" alt="LinkedIn icon"
-                                loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
-                        </a>
-                    </li>
-                    <li class="cs-social-li">
-                        <a href="" class="cs-social-link" aria-label="GitHub" target="_blank" rel="noopener">
-                            <img class="cs-social-icon cs-default" src="assets/icons/github.svg" alt="GitHub icon"
-                                loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
-                        </a>
-                    </li>
-                    <li class="cs-social-li">
-                        <a href="" class="cs-social-link" aria-label="YouTube" target="_blank" rel="noopener">
-                            <img class="cs-social-icon cs-default" src="assets/icons/youtube.svg" alt="YouTube icon"
-                                loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
-                        </a>
-                    </li>
-                    <li class="cs-social-li">
-                        <a href="" class="cs-social-link" aria-label="Spotify" target="_blank" rel="noopener">
-                            <img class="cs-social-icon cs-default" src="assets/icons/spotify.svg" alt="Spotify icon"
-                                loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
-                        </a>
-                    </li>
+                    <h3 id="atomic-notes">Atomic Notes</h3>
+                    <p>Each note should contain one main idea or concept. This makes your notes more reusable and easier to link together. Think of each note as a building block that can be combined with others to create larger structures of understanding.</p>
+
+                    <blockquote>
+                        "The best way to capture a good idea is to have a simple system that can handle a bad idea." — David Allen
+                    </blockquote>
+
+                    <h3 id="linking-everything">Linking Everything</h3>
+                    <p>The power of a knowledge management system comes from the connections between ideas. Use links liberally to connect related concepts, and don't worry about creating too many connections.</p>
+
+                    <h3 id="emergent-structure">Emergent Structure</h3>
+                    <p>Instead of trying to create the perfect organizational system upfront, let the structure emerge naturally from your notes and the connections between them. Use tags and folders as lightweight organizational tools, but rely primarily on links and search.</p>
+
+                    <h2 id="getting-started">Getting Started</h2>
+                    <p>The best way to start is simply to start. Create your first note about something you're currently thinking about or working on. Don't worry about making it perfect – you can always improve it later.</p>
+
+                    <p>Here are some ideas for your first few notes:</p>
+                    <ul>
+                        <li>A project you're currently working on</li>
+                        <li>A book you're reading</li>
+                        <li>An idea you've been thinking about</li>
+                        <li>A problem you're trying to solve</li>
+                    </ul>
+
+                    <h2 id="best-practices">Best Practices</h2>
+                    <p>As you develop your knowledge management practice, keep these best practices in mind:</p>
+
+                    <h3 id="write-for-your-future-self">Write for Your Future Self</h3>
+                    <p>When writing notes, imagine you're writing for yourself six months from now. Include enough context that you'll understand what you meant and why it was important.</p>
+
+                    <h3 id="review-regularly">Review Regularly</h3>
+                    <p>Set aside time regularly to review and update your notes. This helps reinforce the information and identify new connections you might have missed.</p>
+
+                    <h3 id="embrace-imperfection">Embrace Imperfection</h3>
+                    <p>Don't let the pursuit of the perfect note prevent you from capturing ideas. It's better to have an imperfect note than no note at all.</p>
+                </div>
+            </main>
+
+            <aside class="toc">
+                <ul class="toc-list">
+                    <li class="toc-item"><a href="#what-is-knowledge-management" class="toc-link level-2">What is Knowledge Management?</a></li>
+                    <li class="toc-item"><a href="#core-principles" class="toc-link level-2">Core Principles</a></li>
+                    <li class="toc-item"><a href="#atomic-notes" class="toc-link level-3">Atomic Notes</a></li>
+                    <li class="toc-item"><a href="#linking-everything" class="toc-link level-3">Linking Everything</a></li>
+                    <li class="toc-item"><a href="#emergent-structure" class="toc-link level-3">Emergent Structure</a></li>
+                    <li class="toc-item"><a href="#getting-started" class="toc-link level-2">Getting Started</a></li>
+                    <li class="toc-item"><a href="#best-practices" class="toc-link level-2">Best Practices</a></li>
+                    <li class="toc-item"><a href="#write-for-your-future-self" class="toc-link level-3">Write for Your Future Self</a></li>
+                    <li class="toc-item"><a href="#review-regularly" class="toc-link level-3">Review Regularly</a></li>
+                    <li class="toc-item"><a href="#embrace-imperfection" class="toc-link level-3">Embrace Imperfection</a></li>
                 </ul>
-            </div>
-            <!--Bottom Section-->
-            <div class="divider"></div>
-            <div class="cs-copyright">© JRXNA • All Rights Reserved • Generated with <a href="https://github.com/jrxna/mongoose" style="color: #fff; text-decoration: none;">JRXNA Mongoose</a></div>
+            </aside>
         </div>
-    </footer>
-
-    <script src="js/script.js"></script>
+    </div>
 </body>
-
 </html>
