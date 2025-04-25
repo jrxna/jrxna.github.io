@@ -2,13 +2,13 @@
 const body = document.querySelector("body");
 const CSnavbarMenu = document.querySelector("#jrxna-navigation");
 const navigationMenuOverlay = document.querySelector("#menu-overlay");
-const CShamburgerMenu = document.querySelector("#jrxna-navigation .cs-toggle");
+const CShamburgerMenu = document.querySelector("#jrxna-navigation .jrxna-navigation-menu-toggle");
 
 // Navigation Menu Toggle
 if (CShamburgerMenu) {
     CShamburgerMenu.addEventListener('click', function () {
-        CShamburgerMenu.classList.toggle("cs-active");
-        CSnavbarMenu.classList.toggle("cs-active");
+        CShamburgerMenu.classList.toggle("jrxna-navigation-toggle-active");
+        CSnavbarMenu.classList.toggle("jrxna-navigation-toggle-active");
         body.classList.toggle("cs-open");
         ariaExpanded();
         const active = navigationMenuOverlay.classList.toggle("active");
