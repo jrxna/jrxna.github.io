@@ -1,0 +1,110 @@
+---
+import { SITE } from '@/consts'
+import { ClientRouter } from 'astro:transitions'
+import Favicons from './Favicons.astro'
+
+interface Props {
+  title?: string
+  description?: string
+  image?: string
+  keywords?: string[]
+  author?: string
+}
+
+const {
+  title = SITE.title,
+  description = SITE.description,
+  image,
+  keywords = [],
+  author = SITE.author
+} = Astro.props
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).href
+const cleanPathname = Astro.url.pathname.replace(/\/$/, '')
+const ogImage = image || (cleanPathname ? new URL(`/og${cleanPathname}.png`, Astro.site).href : new URL('/og-default.png', Astro.site).href)
+const keywordsString = keywords.length > 0 ? keywords.join(', ') : 'blog, technology, programming, tutorials, computer science, podcasts, bible study'
+---
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=yes"
+  />
+  <meta name="generator" content={Astro.generator} />
+
+  <!-- Primary Meta Tags (deduplicated) -->
+  <meta name="title" content={title} />
+  {(() => {
+    const desc = description && description.length > 160 ? `${description.slice(0, 157)}…` : description
+    return <meta name="description" content={desc} />
+  })()}
+  <meta name="keywords" content={keywordsString} />
+  <meta name="author" content={author} />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={title} />
+  {(() => {
+    const desc = description && description.length > 160 ? `${description.slice(0, 157)}…` : description
+    return <meta property="og:description" content={desc} />
+  })()}
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content={title} />
+  <meta property="og:site_name" content={SITE.title} />
+  <meta property="og:locale" content={SITE.locale} />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content={canonicalURL} />
+  <meta name="twitter:title" content={title} />
+  {(() => {
+    const desc = description && description.length > 160 ? `${description.slice(0, 157)}…` : description
+    return <meta name="twitter:description" content={desc} />
+  })()}
+  <meta name="twitter:image" content={ogImage} />
+  <meta name="twitter:image:alt" content={title} />
+  <meta name="twitter:site" content="@jrxna" />
+  <meta name="twitter:creator" content="@jrxna" />
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta
+    name="format-detection"
+    content="telephone=no,date=no,address=no,email=no,url=no"
+  />
+
+  <meta name="theme-color" content="#312D2A" />
+
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title={SITE.title}
+    href={new URL('rss.xml', Astro.site)}
+  />
+
+  <Favicons />
+  
+  <!-- Font Preloading to prevent layout shifts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@200..700&family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+
+  <!-- Prefetch search index for faster search -->
+  <link rel="prefetch" href="/api/search-index.json" as="fetch" crossorigin="anonymous" />
+
+  <ClientRouter />
+
+  <slot />
+</head>

@@ -1,0 +1,58 @@
+---
+import {
+  getCombinedReadingTime,
+  getSubpostCount,
+  isSubpost,
+  parseAuthors,
+} from '@/lib/data-utils'
+import { formatDate } from '@/lib/utils'
+import type { CollectionEntry } from 'astro:content'
+import Link from './Link.astro'
+
+interface Props {
+  entry: CollectionEntry<'blog'>
+}
+
+const { entry } = Astro.props
+const formattedDate = formatDate(entry.data.date)
+const readTime = await getCombinedReadingTime(entry.id)
+const authors = await parseAuthors(entry.data.authors ?? [])
+const subpostCount = !isSubpost(entry.id) ? await getSubpostCount(entry.id) : 0
+---
+
+<Link
+  href={`/${entry.collection}/${entry.id}`}
+  class="group block p-4 border border-border transition-all duration-200 hover:bg-border/20"
+>
+  <div class="flex flex-col gap-2">
+    <div class="flex items-baseline justify-between gap-4">
+      <h3 class="font-semibold group-hover:text-foreground transition-colors">
+        {entry.data.title}
+      </h3>
+    </div>
+    <p class="text-foreground/70 line-clamp-1">
+      {entry.data.description}
+    </p>
+    <div class="flex flex-wrap items-center gap-x-2 text-foreground/70">
+      <span>{formattedDate}</span>
+      <span class="text-foreground/50">·</span>
+      <span>{readTime}</span>
+      {
+        authors.length > 0 && (
+          <>
+            <span class="text-foreground/50">·</span>
+            <span class="font-medium">{authors.map(a => a.name).join(', ')}</span>
+          </>
+        )
+      }
+      {
+        subpostCount > 0 && (
+          <>
+            <span class="text-foreground/50">·</span>
+            <span>{subpostCount} subposts</span>
+          </>
+        )
+      }
+    </div>
+  </div>
+</Link>

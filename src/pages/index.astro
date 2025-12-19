@@ -1,0 +1,76 @@
+---
+import BlogCard from '@/components/BlogCard.astro'
+import Link from '@/components/Link.astro'
+import PageHead from '@/components/PageHead.astro'
+import { buttonVariants } from '@/components/ui/button'
+import Layout from '@/layouts/Layout.astro'
+import { getRecentPosts } from '@/lib/data-utils'
+import { SITE } from '@/consts'
+
+// Error handling for fetching recent posts
+let latestPosts: Awaited<ReturnType<typeof getRecentPosts>> = []
+try {
+  latestPosts = await getRecentPosts(SITE.featuredPostCount)
+} catch (error) {
+  console.error('Error fetching recent posts:', error)
+}
+
+// Person Schema for homepage SEO
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": SITE.title,
+  "url": SITE.href,
+  "description": SITE.description
+}
+
+// Organization Schema
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": SITE.title,
+  "url": SITE.href,
+  "description": SITE.description
+}
+
+// Website Schema
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": SITE.title,
+  "url": SITE.href,
+  "description": SITE.description,
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": `${SITE.href}/blog?q={search_term_string}`
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+---
+<Layout>
+  <PageHead slot="head" title={SITE.title} fullTitle={true} />
+
+  <!-- Schema Markup for SEO -->
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+
+  <!-- Posts -->
+  {latestPosts && latestPosts.length > 0 && (
+    <section>
+      <div class="flex flex-col gap-4">
+        {latestPosts.map((post) => (
+          <BlogCard entry={post} />
+        ))}
+      </div>
+      <div class="mt-4">
+        <Link href="/blog" class={buttonVariants({ variant: 'outline' })}>
+          View all
+        </Link>
+      </div>
+    </section>
+  )}
+</Layout>
