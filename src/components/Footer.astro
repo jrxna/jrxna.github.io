@@ -1,0 +1,20 @@
+---
+import { SITE } from '@/consts'
+import Newsletter from './react/Newsletter'
+import { ErrorBoundary } from './react/ErrorBoundary'
+---
+
+<footer class="border-t border-border">
+  <!-- Newsletter Section -->
+  <div class="p-4">
+    <ErrorBoundary client:load>
+      <Newsletter client:load />
+    </ErrorBoundary>
+  </div>
+
+  <!-- Copyright -->
+  <div class="border-t border-border p-4 text-foreground/70 flex justify-between">
+    <span>&copy; {SITE.title}</span>
+    <span>Keep On Keeping On.</span>
+  </div>
+</footer>

@@ -1,0 +1,41 @@
+---
+import BlogCard from '@/components/BlogCard.astro'
+import PageHead from '@/components/PageHead.astro'
+import PaginationComponent from '@/components/ui/pagination'
+import { SITE } from '@/consts'
+import Layout from '@/layouts/Layout.astro'
+import { getAllPosts } from '@/lib/data-utils'
+import type { PaginateFunction } from 'astro'
+
+export async function getStaticPaths({
+  paginate,
+}: {
+  paginate: PaginateFunction
+}) {
+  const allPosts = await getAllPosts()
+  return paginate(allPosts, { pageSize: SITE.postsPerPage })
+}
+
+const { page } = Astro.props
+---
+
+<Layout>
+  <PageHead slot="head" title="Blog" />
+
+  <ul class="flex flex-col">
+    {page.data.map((post, index) => (
+      <li class={index < page.data.length - 1 ? 'mb-4' : ''}>
+        <BlogCard entry={post} />
+      </li>
+    ))}
+  </ul>
+
+  <div class="pt-4 border-t border-border -mx-4 px-4">
+    <PaginationComponent
+      currentPage={page.currentPage}
+      totalPages={page.lastPage}
+      baseUrl="/blog/"
+      client:idle
+    />
+  </div>
+</Layout>
