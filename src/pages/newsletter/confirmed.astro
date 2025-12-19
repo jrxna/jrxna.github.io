@@ -1,0 +1,35 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import PageHead from '@/components/PageHead.astro'
+// Icon removed
+import { buttonVariants } from '@/components/ui/button'
+import Link from '@/components/Link.astro'
+---
+
+<Layout>
+  <PageHead slot="head" title="Subscription Confirmed" />
+  
+  <div class="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
+    <div class="rounded-full bg-green-900/30 p-6 mb-6">
+      <div class="w-16 h-16 flex items-center justify-center text-green-400 text-4xl">✓</div>
+    </div>
+    
+    <h1 class="font-bold mb-4" style="font-size: 32px; line-height: 1.1;">
+      Subscription Confirmed!
+    </h1>
+    
+    <p class="text-muted-foreground text-lg mb-8 max-w-md">
+      Thank you for subscribing to our newsletter. You'll now receive the latest posts about infrastructure, HPC, Kubernetes, and DevOps delivered to your inbox.
+    </p>
+    
+    <div class="flex flex-col gap-4">
+      <Link href="/" class={buttonVariants({ variant: 'default', size: 'lg' })}>
+        Go to Homepage
+      </Link>
+      <Link href="/blog" class={buttonVariants({ variant: 'outline', size: 'lg' })}>
+        Browse Blog
+      </Link>
+    </div>
+  </div>
+</Layout>
+

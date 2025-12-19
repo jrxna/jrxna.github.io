@@ -1,0 +1,45 @@
+---
+import BlogCard from '@/components/BlogCard.astro'
+import PageHead from '@/components/PageHead.astro'
+import Layout from '@/layouts/Layout.astro'
+import { getAllTags, getPostsByTag } from '@/lib/data-utils'
+
+export async function getStaticPaths() {
+  const tagMap = await getAllTags()
+  const uniqueTags = Array.from(tagMap.keys())
+
+  return Promise.all(
+    uniqueTags.map(async (tag) => {
+      const posts = await getPostsByTag(tag)
+      return {
+        params: { id: tag },
+        props: {
+          tag,
+          posts,
+        },
+      }
+    }),
+  )
+}
+
+const { tag, posts } = Astro.props
+---
+
+<Layout>
+  <PageHead
+    slot="head"
+    title={`Posts tagged with "${tag}"`}
+    description={`A collection of posts tagged with ${tag}.`}
+    noindex
+  />
+
+  <ul class="flex flex-col gap-y-4">
+    {
+      posts.map((post) => (
+        <li>
+          <BlogCard entry={post} />
+        </li>
+      ))
+    }
+  </ul>
+</Layout>

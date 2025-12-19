@@ -1,0 +1,148 @@
+@reference './global.css';
+
+@layer base {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply wrap-break-word;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-balance;
+  }
+
+  p {
+    @apply text-pretty;
+  }
+}
+
+@layer components {
+  .prose {
+    @apply text-foreground leading-relaxed;
+
+    :where(p):not(:where(.not-prose, .not-prose *)) {
+      @apply text-foreground/80 my-4;
+    }
+
+    :where(h1, h2, h3, h4, h5, h6):not(:where(.not-prose, .not-prose *)) {
+      @apply text-foreground scroll-mt-32 font-semibold;
+    }
+
+    :first-child:not(:where(.not-prose, .not-prose *)) {
+      @apply mt-0;
+    }
+
+    /* Don't use an <h1> in your posts, one is already generated in blog/[...id].astro */
+    :where(h1):not(:where(.not-prose, .not-prose *)) {
+      @apply mt-8 mb-8;
+    }
+
+    :where(h2):not(:where(.not-prose, .not-prose *)) {
+      @apply mt-8 mb-4;
+    }
+
+    :where(h3):not(:where(.not-prose, .not-prose *)) {
+      @apply mt-8 mb-4;
+    }
+
+    :where(h4):not(:where(.not-prose, .not-prose *)) {
+      @apply mt-8 mb-4;
+    }
+
+    :where(h5, h6):not(:where(.not-prose, .not-prose *)) {
+      @apply mt-8 mb-4;
+    }
+
+    :where(a):not(:where(.not-prose, .not-prose *)) {
+      @apply text-foreground decoration-foreground/70 hover:decoration-foreground font-medium break-words underline underline-offset-[3px] transition-colors;
+    }
+
+    :where(strong):not(:where(.not-prose, .not-prose *)) {
+      @apply text-foreground font-medium;
+    }
+
+    :where(ul):not(:where(.not-prose, .not-prose *)) {
+      @apply marker:text-foreground/30 my-4 ml-8 list-disc [&>li]:mt-2;
+    }
+
+    :where(ol):not(:where(.not-prose, .not-prose *)) {
+      @apply marker:text-foreground/30 my-4 ml-8 list-decimal [&>li]:mt-2;
+      @apply [&[type='A']]:list-[upper-alpha] [&[type='I']]:list-[upper-roman] [&[type='a']]:list-[lower-alpha] [&[type='i']]:list-[lower-roman];
+    }
+
+    :where(li):not(:where(.not-prose, .not-prose *)) {
+      @apply text-foreground/80 pl-2 [&>p]:my-0;
+    }
+
+    :where(ul ul, ol ol, ul ol, ol ul):not(:where(.not-prose, .not-prose *)) {
+      @apply marker:text-foreground/30 my-2 ml-8;
+    }
+
+    :where(code):not(:where(.not-prose, .not-prose *)) {
+      @apply relative px-1 py-1 font-medium break-words border border-border;
+      background-color: #312D2A;
+      color: #F5F5F5;
+    }
+
+    :where(blockquote):not(:where(.not-prose, .not-prose *)) {
+      @apply [&_*]:text-foreground/70 my-8 border-l-2 pl-8;
+    }
+
+    :where(hr):not(:where(.not-prose, .not-prose *)) {
+      @apply my-8 border-t;
+    }
+
+    :where(table):not(:where(.not-prose, .not-prose *)) {
+      @apply mx-auto my-8 block max-w-fit overflow-x-auto;
+    }
+
+    :where(thead):not(:where(.not-prose, .not-prose *)) {
+      @apply border-foreground/30 border-b;
+    }
+
+    :where(th):not(:where(.not-prose, .not-prose *)) {
+      @apply px-4 py-2 font-medium;
+      @apply text-left [&[align=center]]:text-center [&[align=right]]:text-right;
+    }
+
+    :where(tr):not(:where(.not-prose, .not-prose *)) {
+      @apply border-foreground/30 border-y first:border-t-0 last:border-b-0;
+    }
+
+    :where(td):not(:where(.not-prose, .not-prose *)) {
+      @apply text-foreground/80 px-4 py-2 align-top break-words [&>*]:first:mt-0! [&>*]:last:mb-0!;
+      @apply text-left [&[align=center]]:text-center [&[align=right]]:text-right;
+    }
+
+    :where(img, video, figure, .expressive-code):not(
+        :where(.not-prose, .not-prose *)
+      ) {
+      @apply mx-auto my-8;
+    }
+
+    :where(pre):not(:where(.not-prose, .not-prose *)) {
+      @apply max-h-[min(68vh,1000px)]! overflow-x-auto overflow-y-auto [&::-webkit-scrollbar-corner]:hidden;
+    }
+
+    :where(summary):not(:where(.not-prose, .not-prose *)) {
+      @apply [&~*>*]:first:mt-0! [&~*>*]:last:mb-0!;
+    }
+
+    :where(kbd):not(:where(.not-prose, .not-prose *)) {
+      @apply text-foreground bg-border border px-2 py-1 font-medium;
+    }
+
+    :where(.katex-display):not(:where(.not-prose, .not-prose *)) {
+      @apply text-foreground/80 my-8 overflow-x-auto overflow-y-hidden py-2 tracking-normal;
+    }
+  }
+}
