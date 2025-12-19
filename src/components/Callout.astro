@@ -1,0 +1,183 @@
+---
+import { cn } from '@/lib/utils'
+import { Icon } from 'astro-icon/components'
+import { cva, type VariantProps } from 'class-variance-authority'
+
+const calloutConfig = {
+  note: {
+    style: 'border-blue-500',
+    textColor: 'text-blue-300',
+    icon: 'lucide:info',
+  },
+  tip: {
+    style: 'border-green-500',
+    textColor: 'text-green-300',
+    icon: 'lucide:lightbulb',
+  },
+  warning: {
+    style: 'border-amber-500',
+    textColor: 'text-amber-300',
+    icon: 'lucide:alert-triangle',
+  },
+  danger: {
+    style: 'border-red-500',
+    textColor: 'text-red-300',
+    icon: 'lucide:shield-alert',
+  },
+  important: {
+    style: 'border-purple-500',
+    textColor: 'text-purple-300',
+    icon: 'lucide:message-square-warning',
+  },
+  definition: {
+    style: 'border-purple-500',
+    textColor: 'text-purple-300',
+    icon: 'lucide:book-open',
+  },
+  theorem: {
+    style: 'border-teal-500',
+    textColor: 'text-teal-300',
+    icon: 'lucide:check-circle',
+  },
+  lemma: {
+    style: 'border-sky-400',
+    textColor: 'text-sky-300',
+    icon: 'lucide:puzzle',
+  },
+  proof: {
+    style: 'border-gray-500',
+    textColor: 'text-gray-300',
+    icon: 'lucide:check-square',
+  },
+  corollary: {
+    style: 'border-cyan-500',
+    textColor: 'text-cyan-300',
+    icon: 'lucide:git-branch',
+  },
+  proposition: {
+    style: 'border-slate-500',
+    textColor: 'text-slate-300',
+    icon: 'lucide:file-text',
+  },
+  axiom: {
+    style: 'border-violet-600',
+    textColor: 'text-violet-300',
+    icon: 'lucide:anchor',
+  },
+  conjecture: {
+    style: 'border-pink-500',
+    textColor: 'text-pink-300',
+    icon: 'lucide:help-circle',
+  },
+  notation: {
+    style: 'border-slate-400',
+    textColor: 'text-slate-300',
+    icon: 'lucide:pen-tool',
+  },
+  remark: {
+    style: 'border-gray-400',
+    textColor: 'text-gray-300',
+    icon: 'lucide:message-circle',
+  },
+  intuition: {
+    style: 'border-yellow-500',
+    textColor: 'text-yellow-300',
+    icon: 'lucide:lightbulb',
+  },
+  recall: {
+    style: 'border-blue-300',
+    textColor: 'text-blue-300',
+    icon: 'lucide:rotate-ccw',
+  },
+  explanation: {
+    style: 'border-lime-500',
+    textColor: 'text-lime-300',
+    icon: 'lucide:help-circle',
+  },
+  example: {
+    style: 'border-emerald-500',
+    textColor: 'text-emerald-300',
+    icon: 'lucide:code',
+  },
+  exercise: {
+    style: 'border-indigo-500',
+    textColor: 'text-indigo-300',
+    icon: 'lucide:dumbbell',
+  },
+  problem: {
+    style: 'border-orange-600',
+    textColor: 'text-orange-300',
+    icon: 'lucide:alert-circle',
+  },
+  answer: {
+    style: 'border-teal-500',
+    textColor: 'text-teal-300',
+    icon: 'lucide:check',
+  },
+  solution: {
+    style: 'border-emerald-600',
+    textColor: 'text-emerald-300',
+    icon: 'lucide:check-circle-2',
+  },
+  summary: {
+    style: 'border-sky-500',
+    textColor: 'text-sky-300',
+    icon: 'lucide:list',
+  },
+} as const
+
+const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1)
+
+const calloutVariants = cva('relative px-4 py-3 my-6 border-l-4 text-sm', {
+  variants: {
+    variant: Object.fromEntries(
+      Object.entries(calloutConfig).map(([key, config]) => [key, config.style]),
+    ),
+  },
+  defaultVariants: {
+    variant: 'note',
+  },
+})
+
+interface Props extends VariantProps<typeof calloutVariants> {
+  title?: string
+  class?: string
+  variant?: keyof typeof calloutConfig
+  defaultOpen?: boolean
+}
+
+const { title, variant = 'note', defaultOpen = true, ...rest } = Astro.props
+---
+
+<details
+  class={cn(
+    calloutVariants({ variant }),
+    rest.class,
+    '[&[open]>summary_svg:last-child]:rotate-180 [&[open]>summary]:mb-3',
+  )}
+  {...rest}
+  open={defaultOpen}
+>
+  <summary
+    class="flex cursor-pointer items-center font-medium [&::-webkit-details-marker]:hidden"
+  >
+    <Icon
+      name={calloutConfig[variant].icon}
+      class={cn('mr-2 size-4 shrink-0', calloutConfig[variant].textColor)}
+    />
+    <span class={cn('font-medium mr-2', calloutConfig[variant].textColor)}>
+      {capitalize(variant)}
+      {title && <span class="font-normal opacity-70"> ({title})</span>}
+    </span>
+    <Icon
+      name="lucide:chevron-down"
+      class={cn(
+        'ml-auto h-4 w-4 shrink-0 transition-transform duration-200',
+        calloutConfig[variant].textColor,
+      )}
+    />
+  </summary>
+  <div>
+    <slot />
+  </div>
+</details>
